@@ -1,0 +1,20 @@
+#+TITLE: 365-day-paper-reading-challenge
+#+AUTHOR: happygirlzt
+#+DATETIME: 2020-06-26 Fri
+
+* To readers
+You could fork this repo and start your own 365-day challenge on your branch. Let's study together!
+
+* Schedule
+I will read an article related to deep learning, reinforcement learning, natural language processing, and/or software engineering every day. This paper reading is more about a breadth reading. I do not want all my reading is limited to my research project. I hope I could keep pace with the latest research in AI/ML/DL/SE. So, in that case, the paper reading will be in *coarse-grained* manner.
+
+I will try to summarize the key idea of the paper. Currently, I want my daily notes to follow the structure:
+1. Problem
+2. Method
+3. Result
+4. Future work
+
+I hope I could keep it work up and improve my ability to read and write.
+
+* Record
+** Day 0
