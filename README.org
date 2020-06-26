@@ -21,7 +21,7 @@ I hope I could keep it work up and improve my ability to read and write.
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
 - Tags: bug analysis, fault injection, OpenStack
 - Proc.: ESEC/FSE 2019
-The following content is referred from [[ref-1]]
+The following content is referred from [[#ref-1]]
 - Roadmap: Cloud management systems (CMS) are important and usually have residual software bugs. -> Many high-severity failures have been occurring in cloud infrastructures and caused bad results. -> Software developers invest effort in mitigating the consequences of residual bugs. -> They aim to empirically analyze the impact of high-severity failures in the context of a large-scale, industry-applied case study, to pave the way for failure mitigation strategies in CMS. -> OpenStack is widely used and is representative. -> They adopt *software fault injection* to accelerate the occurrence of failures caused by software bugs.
 *** Problem
 This paper investigated the impact of failures in the context widespread OpenStack CMS. Mainly related to *analyssi of bugs and failures* of cloud systems and *fault injection* in cloud systems.
@@ -65,4 +65,8 @@ Current logging mechanisms in OpenStack only reports high-severity error message
 3. Preventing corruptions of persistent data and shared state.
 
 * Reference
-1. <<ref-1>>Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
+1. 
+:PROPERTIES:
+:CUSTOM_ID: ref-1
+:END:
+Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
