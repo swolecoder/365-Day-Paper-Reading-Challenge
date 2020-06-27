@@ -21,7 +21,7 @@ I hope I could keep it work up and improve my ability to read and write.
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
 - Tags: bug analysis, fault injection, OpenStack
 - Proc.: ESEC/FSE 2019
-The following content is referred from [[ref_1][paper 1]]
+The following content is referred from [1]
 - Roadmap: Cloud management systems (CMS) are important and usually have residual software bugs. -> Many high-severity failures have been occurring in cloud infrastructures and caused bad results. -> Software developers invest effort in mitigating the consequences of residual bugs. -> They aim to empirically analyze the impact of high-severity failures in the context of a large-scale, industry-applied case study, to pave the way for failure mitigation strategies in CMS. -> OpenStack is widely used and is representative. -> They adopt *software fault injection* to accelerate the occurrence of failures caused by software bugs.
 *** Problem
 This paper investigated the impact of failures in the context widespread OpenStack CMS. Mainly related to *analyssi of bugs and failures* of cloud systems and *fault injection* in cloud systems.
@@ -65,7 +65,10 @@ Current logging mechanisms in OpenStack only reports high-severity error message
 3. Preventing corruptions of persistent data and shared state.
 
 ** Day 1: SE
-- *Title*: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs
+- *Title*: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs.
+
+
+The following content is referred from [2]
 - *Keywords*: Cloud management stack, Bug reports, OpenStack
 *** Problem
 Conduct an in-depth study to help developers to detect and fix the bugs in CMS.
@@ -75,9 +78,35 @@ An empirical study of several key characteristics of bugs in OpenStack.
 *** Method
 Their study computes general statistics of *50k* OpenStack bugs, including the evolution of bugs, the distribution of bugs, and the duration of bugs. Then, they selected 579 bugs for an in-depth study. They study the input factors for triggering the bugs, the consequences of the bugs, and how the bugs are fixed.
 
+**** Data collection
+They collected bug reports from Launchpad version control system of OpenStack.
+
+There are 6 important levels, e.g., undecided, critical, high, medium, low and wishlist in OpenStack bugs. They focus on Critial, High and Medium bugs that are often more interesting to developers. In addition, they focus on /complete/ and /fixed/ bugs.
+**** Basic text parsing
+code removal, stop-word removal, stemming and lemmatization
+**** Discourse pattern matching
+Discourse patterns are rules that caputure the syntax and semantics of the text summarize a family of discourse patterns.
+
+*** Bug triggering factors
+From two perspectives: input factors and timing factors
+*** Bug consequences
+They study the scope of the impact and categorize the symptoms of the failures
+*** Bug fixing
+They categorize the bug fixes into four types: code fix, configuration fix, environment fix, and test case fix.
 *** Contribution
 1. The first comprehensive study on OpenStack bugs.
 2. The first large-scale CMS-bug benchmark.
+
+*** Result
+1. The result indicate a large portion of bugs are related to incorrect configurations.
+2. They report the consequences of the manifested bugs and incorrect output is the dominant majority (66.14%).
+3. Most of the code fixing involive a small number of lines.
+
+*** Future work
+Further research on testing and diagnosis for cloud management stack bugs. It would be promising to investigate techniques that can
+direct bug fixing based on the focused code locations, such as using machine learning classifiers to predict error-prone code regions and leveraging fault localization to pinpoint the faults.
+
 * Reference
-1.<<ref_1>>
-Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
+1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
+
+2. Zheng, W., Feng, C., Yu, T., Yang, X., & Wu, X. (2019). Towards understanding bugs in an open source cloud management stack: An empirical study of openstack software bugs. Journal of Systems and Software, 151, 210-223.
