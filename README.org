@@ -106,7 +106,39 @@ They categorize the bug fixes into four types: code fix, configuration fix, envi
 Further research on testing and diagnosis for cloud management stack bugs. It would be promising to investigate techniques that can
 direct bug fixing based on the focused code locations, such as using machine learning classifiers to predict error-prone code regions and leveraging fault localization to pinpoint the faults.
 
+** Day 2: SE
+- *Title*: Is deep learning better than traditional approaches in tag recommendation for software information sites?
+
+- *Journal*: Information and Software Technology
+- *Keywords*: Deep learning, Data analysis, Tag recommendation
+
+The following content is referred from [3]
+*** Problem
+Whether deep learning is better than traditional approaches in tag recommendation task for software information sites. 
+**** Formulation
+They assume that any software object contains a description and a set of tags. These tags in a software information site and the tags associated with an object is a subset of these tags.
+
+Given a large set of existing software objects that are attached with tags, how to automatically recommend a set of appropriate tags for a new software object.
+
+This is a multi-label classification task.
+*** Method
+- 4 DL methods: TagCNN, TagRNN, TagHAN (Hierarchical Attention Networks) and TagRCNN (Recurrent Convolutional Neural Networks)
+- 3 advanced traditional methods: EnTagRec, TagMulRec, and FastTagRec
+
+A ten-round validation
+**** Dataset
+One large-scale software information site StackOverflow , 3 medium-scale software information sites Askubuntu, Serverfault, Unix and 6 small-scale sites Codereview, Freecode, Database Administrator, Wordpress, AskDifferent and Software Engineering
+**** Evalution metrics
+top-k prediction recall, the top-k prediction precision, and the top-k prediction f1-score
+
+*** Result
+The performance of TagRNN and TagHAN approaches are worse than traditional approaches in tag recommendation tasks. The performance of TagCNN and TagRCNN approaches are better than traditional approaches in tag recommendation tasks.
+*** Future work
+How to best represent the software object or artifact with a high quality vector is still a major challenge.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
 2. Zheng, W., Feng, C., Yu, T., Yang, X., & Wu, X. (2019). Towards understanding bugs in an open source cloud management stack: An empirical study of openstack software bugs. Journal of Systems and Software, 151, 210-223.
+
+3. Zhou, P., Liu, J., Liu, X., Yang, Z., & Grundy, J. (2019). Is deep learning better than traditional approaches in tag recommendation for software information sites?. Information and software technology, 109, 1-13.
