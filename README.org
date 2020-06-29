@@ -15,6 +15,11 @@ I will try to summarize the key idea of the paper. Currently, I want my daily no
 4. Future work
 
 I hope I could keep it work up and improve my ability to read and write.
+* Contents
+1. [[Day 0][#day-0-se]]
+2. [[Day 1][#day-1-se]]
+3. [[Day 2][#day-2-se]]
+4. [[Day 3][#day-3-nlp]]
 
 * Record
 ** Day 0: SE
@@ -114,7 +119,7 @@ direct bug fixing based on the focused code locations, such as using machine lea
 
 The following content is referred from [3]
 *** Problem
-Whether deep learning is better than traditional approaches in tag recommendation task for software information sites. 
+Whether deep learning is better than traditional approaches in tag recommendation task for software information sites.
 **** Formulation
 They assume that any software object contains a description and a set of tags. These tags in a software information site and the tags associated with an object is a subset of these tags.
 
@@ -136,9 +141,41 @@ The performance of TagRNN and TagHAN approaches are worse than traditional appro
 *** Future work
 How to best represent the software object or artifact with a high quality vector is still a major challenge.
 
+** Day 3: NLP
+
+- *Title*: CodeBERT: A Pre-Trained Model for Programming and Natural Languages
+
+The following context is referred from [4]
+*** Problem
+CodeBERT is a /bimodal/ pre-trained model for natural language (NL) and programming lan- guage (PL).
+
+modality (n. 形式,形态,特征)
+
+/bimodal/ datapoint is an individual function with paired documentation, and each /unimodal/ code is a function without paired documentation
+
+*** Method
+CodeBERT captures the semantic connection between natural language and programming language, and produces general-purpose representations that can broadly support NL-PL understanding tasks (e.g. natural language code search) and generation tasks (e.g. code documentation generation)
+
+CodeBERT is trained on Github code repositories in 6 programming languages.
+
+CodeBERT has exactly the same model architecture as RoBERTa-base.
+
+They regard a piece of code as a sequence of tokens. (WordPiece)
+*** Result
+CodeBERT achieves state-of-the-art performance on both *natural language code search* and *code documentation generation*
+
+CodeBERT is the first large NL-PL pre-trained model.
+*** Future work
+A potential direction to improve CodeBERT by incorporating AST.
+1. One could learn better generators with bimodal evidence or more complicated neural architecture to improve the replaced token detection objective.
+2. The CodeBERT itself could be further improved by generation-related learning objectives.
+3. We can apply CodeBERT to more NL-PL related tasks, and extend it to more programming languages
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
 2. Zheng, W., Feng, C., Yu, T., Yang, X., & Wu, X. (2019). Towards understanding bugs in an open source cloud management stack: An empirical study of openstack software bugs. Journal of Systems and Software, 151, 210-223.
 
 3. Zhou, P., Liu, J., Liu, X., Yang, Z., & Grundy, J. (2019). Is deep learning better than traditional approaches in tag recommendation for software information sites?. Information and software technology, 109, 1-13.
+
+4. Feng, Z., Guo, D., Tang, D., Duan, N., Feng, X., Gong, M., ... & Zhou, M. (2020). Codebert: A pre-trained model for programming and natural languages. arXiv preprint arXiv:2002.08155.
