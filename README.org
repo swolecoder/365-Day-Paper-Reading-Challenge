@@ -20,6 +20,7 @@ I hope I could keep it work up and improve my ability to read and write.
 2. [[#day-1-se][Day 1]]
 3. [[#day-2-se][Day 2]]
 4. [[#day-3-nlp][Day 3]]
+5. [[#day-4-se][Day 4]]
 
 * Record
 ** Day 0: SE
@@ -171,6 +172,35 @@ A potential direction to improve CodeBERT by incorporating AST.
 2. The CodeBERT itself could be further improved by generation-related learning objectives.
 3. We can apply CodeBERT to more NL-PL related tasks, and extend it to more programming languages
 
+** Day 4: SE
+- *Title*: Examining the Impact of Self-admitted Technical Debt on Software Quality
+- *Venue*: SANER-2016
+The following context is referred from [5]
+
+*** Problem
+Understand the impact of self-admitted technical debt on software quality
+
+*** Method
+They focus on self-admitted technical debt that refers to errors that might be introduced due to intentional quick or temporary fixed.
+
+They empirically investigate the relation between SATD and software quality in five open-source projects. They examine whether (i) files with SATD have more defects compared to files without SATD, (ii) whether SATD changes introduce future defects, and (iii) whether SATD-related changes tend to be more difficult.
+
+software-quality: defects in a file and defect-inducing changes
+
+use the comment patterns to identify SATD
+
+SATD has 2 levels: (1) file-level (2) change-level
+
+Source code as the input, extract the comments. They stor all of the processed data in a PostgreSQL database and query them to answer the research questions.
+
+*** Result
+The findings show that there is no clear trend when it comes to defects and self-admitted technical debt.
+
+Their study indicates that although technical debt may have negative effects, its impact is not related to defects, rather making the system more difficult to change in the future.
+
+*** Future work
+Further study the nature of the SATD files after they became defective
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -179,3 +209,5 @@ A potential direction to improve CodeBERT by incorporating AST.
 3. Zhou, P., Liu, J., Liu, X., Yang, Z., & Grundy, J. (2019). Is deep learning better than traditional approaches in tag recommendation for software information sites?. Information and software technology, 109, 1-13.
 
 4. Feng, Z., Guo, D., Tang, D., Duan, N., Feng, X., Gong, M., ... & Zhou, M. (2020). Codebert: A pre-trained model for programming and natural languages. arXiv preprint arXiv:2002.08155.
+
+5. Wehaibi, S., Shihab, E., & Guerrouj, L. (2016, March). Examining the impact of self-admitted technical debt on software quality. In 2016 IEEE 23rd International Conference on Software Analysis, Evolution, and Reengineering (SANER) (Vol. 1, pp. 179-188). IEEE.
