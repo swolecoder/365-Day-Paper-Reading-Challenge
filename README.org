@@ -21,6 +21,7 @@ I hope I could keep it work up and improve my ability to read and write.
 3. [[#day-2-se][Day 2]]
 4. [[#day-3-nlp][Day 3]]
 5. [[#day-4-se][Day 4]]
+6. [[#day-5-se][Day 5]]
 
 * Record
 ** Day 0: SE
@@ -201,6 +202,29 @@ Their study indicates that although technical debt may have negative effects, it
 *** Future work
 Further study the nature of the SATD files after they became defective
 
+** Day 5: SE
+- *Title*: Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary
+- *Journal*: Information and Software Technology
+
+The following context is referred from [6]
+
+*** Problem
+Current detection strategies still return a large number of false positives items when detect SATD using a contextualized vocabulary. Moreover, those strategies do not allow the automatic identification of the type of debt of the identified items.
+
+*** Method
+They proposed a contextualized vocabulary model to identify self-admitted technical debt.
+
+They consider decisive patterns as those that bring cues that make it easier to identify a situation of technical debt.
+
+They conduct three empirical studies that: (i) investigated to what extent a pattern is decisive to point to a self-admitted technical debt; (ii) related patterns to TD types; and (iii) investigated the feasibility of using those patterns in practice.
+
+*** Result
+The results from the empirical studies show that over half of the ana-
+lyzed patterns were considered decisive or very decisive to identify self- admitted technical debt. We also found that composed patterns seem to be more contextualized and decisive than isolated patterns to identify SATD items. Some patterns only make sense when they are combined with other patterns.
+
+*** Future work
+We intend to better assess the vocabulary and its accuracy to identify and classify SATD items by comparing the results provided by our approach (vocabulary and eXcomment) with data sourced from manual identification of technical debt by software engineers. We also intend to apply the vocabulary to other repositories, including comments from configuration and version control systems, to investigate how it performs over different types of text comments. Lastly, we want to investi- gate how to combine static source code analysis, software metrics, and code comments analysis to improve the automatic detection of technical debt items.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -211,3 +235,5 @@ Further study the nature of the SATD files after they became defective
 4. Feng, Z., Guo, D., Tang, D., Duan, N., Feng, X., Gong, M., ... & Zhou, M. (2020). Codebert: A pre-trained model for programming and natural languages. arXiv preprint arXiv:2002.08155.
 
 5. Wehaibi, S., Shihab, E., & Guerrouj, L. (2016, March). Examining the impact of self-admitted technical debt on software quality. In 2016 IEEE 23rd International Conference on Software Analysis, Evolution, and Reengineering (SANER) (Vol. 1, pp. 179-188). IEEE.
+
+6. de Freitas Farias, M. A., de Mendonça Neto, M. G., Kalinowski, M., & Spínola, R. O. (2020). Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary. Information and Software Technology, 121, 106270.
