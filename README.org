@@ -22,6 +22,7 @@ I hope I could keep it work up and improve my ability to read and write.
 4. [[#day-3-nlp][Day 3]]
 5. [[#day-4-se][Day 4]]
 6. [[#day-5-se][Day 5]]
+7. [[#day-6-se][Day 6]]
 
 * Record
 ** Day 0: SE
@@ -225,6 +226,38 @@ lyzed patterns were considered decisive or very decisive to identify self- admit
 *** Future work
 We intend to better assess the vocabulary and its accuracy to identify and classify SATD items by comparing the results provided by our approach (vocabulary and eXcomment) with data sourced from manual identification of technical debt by software engineers. We also intend to apply the vocabulary to other repositories, including comments from configuration and version control systems, to investigate how it performs over different types of text comments. Lastly, we want to investi- gate how to combine static source code analysis, software metrics, and code comments analysis to improve the automatic detection of technical debt items.
 
+** Day 6: SE
+- *Title*: How Do Companies Collaborate in Open Source Ecosystems? An Empirical Study of OpenStack
+- *Proc*: ICSE'20
+
+The following content is referred from [7]
+*** Problem
+They try to understand how large OSS ecosystems work, and in particular on the patterns of collaboration within one such large ecosystem (i.e. OpenStack)
+
+Previous work has primarily focused on collaboration at the individual level rather than the company level
+
+OpenStack represents a high-potential arena for these companies to play a role in the rapidly evolving cloud computing technology
+
+They adopt a mixed-method research approach (i.e., using both quantitative and qualitative methods)
+*** Method
+They conducted an empirical study of the OpenStack ecosystem, in which hundreds of companies collaborate on thousands of project repositories to deliver cloud distributions.
+
+They adopted a mixed-method approach that combines an analysis of the version control history with an examination of the peer-reviewed literature and other online documents.
+
+They used OpenStack’s version control data to quantify company collaboration.
+
+*** Result
+They find statistically significant evidence that a company’s collaboration position within the network correlates positively with its productivity in terms of the average number of commits its developers make to the OpenStack projects.
+
+*** Future work
+- The definitive reason for a strong relationship between companies’ collaboration and productivity remains unclear—developing a better theory that explains this link is an avenue for future work. For example, additional factors for a regression model or conduct qualitative studies at companies that participate in OSS ecosystems.
+
+- Future work could consider other types of contributions, such as participation in online discussions, and reviewing code changes.
+
+- Furthermore, the collaboration between companies could also be explored by studying other interaction channels, such as IRC, mailing list, and issue trackers, in addition to submitting commits to the same projects.
+
+- Future studies could consider a more precise measurement of productivity
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -237,3 +270,5 @@ We intend to better assess the vocabulary and its accuracy to identify and class
 5. Wehaibi, S., Shihab, E., & Guerrouj, L. (2016, March). Examining the impact of self-admitted technical debt on software quality. In 2016 IEEE 23rd International Conference on Software Analysis, Evolution, and Reengineering (SANER) (Vol. 1, pp. 179-188). IEEE.
 
 6. de Freitas Farias, M. A., de Mendonça Neto, M. G., Kalinowski, M., & Spínola, R. O. (2020). Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary. Information and Software Technology, 121, 106270.
+
+7. Zhang, Y., Zhou, M., Stol, K. J., Wu, J., & Jin, Z. (2020). How do companies collaborate in open source ecosystems? An empirical study of OpenStack.
