@@ -23,6 +23,8 @@ I hope I could keep it work up and improve my ability to read and write.
 5. [[#day-4-se][Day 4]]
 6. [[#day-5-se][Day 5]]
 7. [[#day-6-se][Day 6]]
+8. [[#day-7-se][Day 7]]
+
 
 * Record
 ** Day 0: SE
@@ -258,6 +260,24 @@ They find statistically significant evidence that a company’s collaboration po
 
 - Future studies could consider a more precise measurement of productivity
 
+** Day 7: SE
+- *Title*: Companies' Participation in OSS Development - An Empirical Study of OpenStack
+- *Journal*: TSE'19
+
+The following content is referred from [8]
+*** Problem
+The goal is to investigate how companies contributed developers and commits to OpenStack.
+*** Method
+They mined the code commit history of OpenStack and analyzed the abundant online records about OpenStack, and its participating companies and individual developers.
+
+This study combined the analysis of code commit history with an examination of the published literature and online documents.
+
+*** Result
+volunteer participation is affected by the diversity of companies
+
+*** Future work
+How to decide a developer's contribution: future work may be needed to include other activities, e.g., bug fixes, email discussions, and code review changes, to investigate commercial participation in more detail.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -272,3 +292,5 @@ They find statistically significant evidence that a company’s collaboration po
 6. de Freitas Farias, M. A., de Mendonça Neto, M. G., Kalinowski, M., & Spínola, R. O. (2020). Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary. Information and Software Technology, 121, 106270.
 
 7. Zhang, Y., Zhou, M., Stol, K. J., Wu, J., & Jin, Z. (2020). How do companies collaborate in open source ecosystems? An empirical study of OpenStack.
+
+8. Zhang, Y., Zhou, M., Mockus, A., & Jin, Z. (2019). Companies' Participation in OSS Development-An Empirical Study of OpenStack. IEEE Transactions on Software Engineering.
