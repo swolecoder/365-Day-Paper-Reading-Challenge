@@ -24,7 +24,7 @@ I hope I could keep it work up and improve my ability to read and write.
 6. [[#day-5-se][Day 5]]
 7. [[#day-6-se][Day 6]]
 8. [[#day-7-se][Day 7]]
-
+9. [[#day-8-se][Day 8]]
 
 * Record
 ** Day 0: SE
@@ -278,6 +278,27 @@ volunteer participation is affected by the diversity of companies
 *** Future work
 How to decide a developer's contribution: future work may be needed to include other activities, e.g., bug fixes, email discussions, and code review changes, to investigate commercial participation in more detail.
 
+** Day 8: SE
+- *Title*: Detecting and Quantifying Different Types of Self-Admitted Technical Debt
+- *Proc*: 2015 IEEE 7th International Workshop on Managing Technical Debt, MTD 2015
+
+The following content is referred from [9]
+*** Problem
+Figure out what types of technical debt can be detected using source code comments
+*** Method
+1. Extract source code comments from 5 well commented open source projects that belongs to different application domains
+2. They applied a set of 4 simple filtering heuristics to remove comments that are not likely to contain self-admitted technical debt
+
+Their work is different from the aforementioned work that uses code smells to detect design technical debt since we use code comments to detect technical debt.
+
+*** Result
+They found 5 types of self-admitted technical debt which are: design debt, defect debt, documentation debt, requirement debt and test debt
+
+*** Future work
+improve the current classification adding more projects to it, increasing the dataset
+
+an advanced technique of natural language processing, which may lead to more automated ways to identify self-admitted technical debt.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -294,3 +315,5 @@ How to decide a developer's contribution: future work may be needed to include o
 7. Zhang, Y., Zhou, M., Stol, K. J., Wu, J., & Jin, Z. (2020). How do companies collaborate in open source ecosystems? An empirical study of OpenStack.
 
 8. Zhang, Y., Zhou, M., Mockus, A., & Jin, Z. (2019). Companies' Participation in OSS Development-An Empirical Study of OpenStack. IEEE Transactions on Software Engineering.
+
+9. Maldonado, E. D. S., & Shihab, E. (2015, October). Detecting and quantifying different types of self-admitted technical debt. In 2015 IEEE 7th International Workshop on Managing Technical Debt (MTD) (pp. 9-15). IEEE.
