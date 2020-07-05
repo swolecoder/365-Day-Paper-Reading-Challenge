@@ -25,6 +25,7 @@ I hope I could keep it work up and improve my ability to read and write.
 7. [[#day-6-se][Day 6]]
 8. [[#day-7-se][Day 7]]
 9. [[#day-8-se][Day 8]]
+10. [[#day-9-se][Day 9]]
 
 * Record
 ** Day 0: SE
@@ -299,6 +300,26 @@ improve the current classification adding more projects to it, increasing the da
 
 an advanced technique of natural language processing, which may lead to more automated ways to identify self-admitted technical debt.
 
+** Day 9: SE
+- *Title*: What do Programmers Discuss about Deep Learning Frameworks
+- *Journal*: EMSE
+
+The following content is referred from [10]
+*** Problem
+To understand different deep learning frameworks and compare the insights from two platforms, i.e., StackOverflow and GitHub. 
+*** Method
+latent dirichlet allocation (LDA) topic modeling techniques to derive the discussion topics related to three deep learning frameworks, namely, Tensorflow, PyTorch and Theano
+**** Research methodology
+1. Data preprocessing
+2. Determining Deep Learning workflow
+3. Topic Modeling
+*** Result
+Their observations include 1) a wide range of topics that are discussed about the three deep learning frameworks on both platforms, and the most popular workflow stages are Model Training and Preliminary Preparation. 2) the topic distributions at the workflow level and topic category level on Tensorflow and PyTorch are always similar while the topic distri- bution pattern on Theano is quite different. In addition, the topic trends at the workflow level and topic category level of the three deep learning frameworks are quite different. 3) the topics at the workflow level show different trends across the two platforms. e.g., the trend of the Preliminary Preparation stage topic on Stack Overflow comes to be rela- tively stable after 2016, while the trend of it on GitHub shows a stronger upward trend after 2016.
+
+*** Future work
+We tend to analyze how the impact trends of topics at different topic levels
+vary with respect to the number of newcomers and the number of unique users and gain some key insights. Moreover, we can also incorporate more deep learning frameworks to make the analysis more common and generalized.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -317,3 +338,5 @@ an advanced technique of natural language processing, which may lead to more aut
 8. Zhang, Y., Zhou, M., Mockus, A., & Jin, Z. (2019). Companies' Participation in OSS Development-An Empirical Study of OpenStack. IEEE Transactions on Software Engineering.
 
 9. Maldonado, E. D. S., & Shihab, E. (2015, October). Detecting and quantifying different types of self-admitted technical debt. In 2015 IEEE 7th International Workshop on Managing Technical Debt (MTD) (pp. 9-15). IEEE.
+
+10. Han, J., Shihab, E., Wan, Z., Deng, S., & Xia, X. (2020). What do Programmers Discuss about Deep Learning Frameworks. EMPIRICAL SOFTWARE ENGINEERING.
