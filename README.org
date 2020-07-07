@@ -16,17 +16,18 @@ I will try to summarize the key idea of the paper. Currently, I want my daily no
 
 I hope I could keep it work up and improve my ability to read and write.
 * Contents
-1. [[#day-0-se][Day 0]]
-2. [[#day-1-se][Day 1]]
-3. [[#day-2-se][Day 2]]
-4. [[#day-3-nlp][Day 3]]
-5. [[#day-4-se][Day 4]]
-6. [[#day-5-se][Day 5]]
-7. [[#day-6-se][Day 6]]
-8. [[#day-7-se][Day 7]]
-9. [[#day-8-se][Day 8]]
-10. [[#day-9-se][Day 9]]
-11. [[#day-10-se][Day 10]]
+1. [[#day-0-se][Day 0: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform]]
+2. [[#day-1-se][Day 1: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs]]
+3. [[#day-2-se][Day 2: Is deep learning better than traditional approaches in tag recommendation for software information sites?]]
+4. [[#day-3-nlp][Day 3: CodeBERT: A Pre-Trained Model for Programming and Natural Languages]]
+5. [[#day-4-se][Day 4: Examining the Impact of Self-admitted Technical Debt on Software Quality]]
+6. [[#day-5-se][Day 5: Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary]]
+7. [[#day-6-se][Day 6: How Do Companies Collaborate in Open Source Ecosystems? An Empirical Study of OpenStack]]
+8. [[#day-7-se][Day 7: Companies' Participation in OSS Development - An Empirical Study of OpenStack]]
+9. [[#day-8-se][Day 8: Detecting and Quantifying Different Types of Self-Admitted Technical Debt]]
+10. [[#day-9-se][Day 9: What do Programmers Discuss about Deep Learning Frameworks]]
+11. [[#day-10-se][Day 10: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems]]
+12. [[#day-11-se][Day 11: Software Engineering Challenges of Deep Learning]]
 * Record
 ** Day 0: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
@@ -344,6 +345,25 @@ Only 29% of the issues that pay TD can be traced to SATD-C. In other words, 71% 
 *** Future work
 They first intend to enlarge our dataset of SATD-I by mining other tags that may denote TD-related issues. After that, they envision an in-depth analysis of the code transformations performed to pay these debts. Based on this dataset of transformations, they may develop tools and techniques to guide developers on TD payment (e.g., by recommending how to perform changes that contribute to the actual removal of the debt).
 
+** Day 11: SE
+- *Title*: Software Engineering Challenges of Deep Learning
+- *Year*: 2018
+- *Proc*: SEAA 2018
+
+The following content is referred from [12]
+*** Problem
+The focus of this study is limited to identifying challenges specifically related to the intersection of SE practices and DL applications.
+
+The main focus of this paper is not to provide solutions, but rather to outline problem areas and, in that way, help guide future research.
+*** Method
+A diverse set of real-world ML projects has been selected for this research and are described in this section. The projects have been selected to collectively represent and exemplify different aspects of challenges.
+
+*** Result
+Although the DL technology has achieved very promising results, there is still a significant need for further research into and development in how to easily and efficiently build high-quality production-ready DL systems.
+
+*** Future work
+SE community, together with the DL community, could make an effort in finding solutions to these challenges for building production-ready systems containing DL components.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -366,3 +386,5 @@ They first intend to enlarge our dataset of SATD-I by mining other tags that may
 10. Han, J., Shihab, E., Wan, Z., Deng, S., & Xia, X. (2020). What do Programmers Discuss about Deep Learning Frameworks. EMPIRICAL SOFTWARE ENGINEERING.
 
 11. Xavier, L., Ferreira, F., Brito, R., & Valente, M. T. (2020). Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems. arXiv preprint arXiv:2003.09418.
+
+12. Arpteg, A., Brinne, B., Crnkovic-Friis, L., & Bosch, J. (2018, August). Software engineering challenges of deep learning. In 2018 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA) (pp. 50-59). IEEE.
