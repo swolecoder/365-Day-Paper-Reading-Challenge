@@ -28,6 +28,8 @@ I hope I could keep it work up and improve my ability to read and write.
 10. [[#day-9-se][Day 9: What do Programmers Discuss about Deep Learning Frameworks]]
 11. [[#day-10-se][Day 10: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems]]
 12. [[#day-11-se][Day 11: Software Engineering Challenges of Deep Learning]]
+13. [[#day-12-pl][Day 12: code2vec: Learning Distributed Representations of Code]]
+
 * Record
 ** Day 0: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
@@ -364,6 +366,40 @@ Although the DL technology has achieved very promising results, there is still a
 *** Future work
 SE community, together with the DL community, could make an effort in finding solutions to these challenges for building production-ready systems containing DL components.
 
+** Day 12: PL
+- *Title*: code2vec: Learning Distributed Representations of Code
+- *Year*: 2018
+- *Proc*: Proceedings of the ACM on Programming Languages
+
+*** Problem
+The main idea is to represent a code snippet as a single fixed-length code vector, which can be used to predict semantic properties of the snippet.
+
+learn code embeddings, continuous vectors for representing snippets of code
+
+*** Method
+This is performed by decomposing code to a collection of paths in its abstract syntax tree, and learning the atomic representation of each path simultaneously with learning how to aggregate a set of them.
+
+They present a novel framework for predicting program properties using neural
+networks.
+
+They use a novel *attention* network architecture.
+
+The main idea of their approach is to extract syntactic paths from within a code snippet, represent them as a bag of distributed vector representations, and use an attention mechanism to compute a learned weighted average of the path vectors in order to produce a single code vector.
+
+The core idea is to use soft-attention mechanism over syntactic paths that are derived from the Abstract Syntax Tree of the snippet, and aggregate all of their vector representations into a single vector.
+**** Evaluation
+They demonstrate the effectiveness of our approach for the task of predicting a method’s name given its body.
+
+*** Result
+The code vectors trained on this dataset can predict method names from files that were completely unobserved during training.
+
+The main contribution of their method is in its ability to aggregate an arbitrary sized snippet of code into a fixed-size vector in a way that captures its semantics.
+
+*** Future work
+- Closed labels vocabulary
+- Sparsity and Data-hunger
+- Dependency on variable names
+When given uninformative, obfuscated or adversarial variable names, the prediction of the label is usually less accurate.
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -388,3 +424,5 @@ SE community, together with the DL community, could make an effort in finding so
 11. Xavier, L., Ferreira, F., Brito, R., & Valente, M. T. (2020). Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems. arXiv preprint arXiv:2003.09418.
 
 12. Arpteg, A., Brinne, B., Crnkovic-Friis, L., & Bosch, J. (2018, August). Software engineering challenges of deep learning. In 2018 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA) (pp. 50-59). IEEE.
+
+13. Alon, U., Zilberstein, M., Levy, O., & Yahav, E. (2019). code2vec: Learning distributed representations of code. Proceedings of the ACM on Programming Languages, 3(POPL), 1-29.
