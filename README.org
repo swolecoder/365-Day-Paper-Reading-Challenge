@@ -29,6 +29,7 @@ I hope I could keep it work up and improve my ability to read and write.
 11. [[#day-10-se][Day 10: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems]]
 12. [[#day-11-se][Day 11: Software Engineering Challenges of Deep Learning]]
 13. [[#day-12-pl][Day 12: code2vec: Learning Distributed Representations of Code]]
+14. [[#day-13-se][Day 13: What Do Programmers Discuss about Blockchain?]]
 
 * Record
 ** Day 0: SE
@@ -371,6 +372,7 @@ SE community, together with the DL community, could make an effort in finding so
 - *Year*: 2018
 - *Proc*: Proceedings of the ACM on Programming Languages
 
+The following content is referred from [13]
 *** Problem
 The main idea is to represent a code snippet as a single fixed-length code vector, which can be used to predict semantic properties of the snippet.
 
@@ -400,6 +402,28 @@ The main contribution of their method is in its ability to aggregate an arbitrar
 - Sparsity and Data-hunger
 - Dependency on variable names
 When given uninformative, obfuscated or adversarial variable names, the prediction of the label is usually less accurate.
+
+** Day 13: SE
+- *Title*: What Do Programmers Discuss about Blockchain?
+- *Year*: 2019
+- *Journal*: TSE
+
+The following content is referred from [14]
+** Problem
+Prior studies propose the use of LDA to study the Stack Exchange discussions. However, a simplistic use of LDA would capture the topics in discussions blindly without keeping in mind the variety of the dataset and domain-specific concepts.
+
+** Method
+They propose an approach that combines balanced LDA (which ensures that the topics are balanced across a domain) with the reference architecture of a domain to capture and compare the popularity and impact of discussion topics across the Stack Exchange communities.
+** Result
+They conducted a quantitative and comparative analysis on blockchain-related posts across the architectural layers and across studied blockchain platforms where appropriate, characterized the breakdown and evolution of topics.
+
+** Future work
+Future in-depth studies are needed to determine if Stack Exchange discussions in other communities are impacted by such non-technical aspect as well or if our observations are specific to the blockchain communities.
+
+Future research could be conducted on security analysis, vulnerability detection and security hardening for blockchain platforms.
+
+Future research should take into consideration the techniques that are related to bug detection and localization for smart contract oriented programming languages
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -426,3 +450,5 @@ When given uninformative, obfuscated or adversarial variable names, the predicti
 12. Arpteg, A., Brinne, B., Crnkovic-Friis, L., & Bosch, J. (2018, August). Software engineering challenges of deep learning. In 2018 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA) (pp. 50-59). IEEE.
 
 13. Alon, U., Zilberstein, M., Levy, O., & Yahav, E. (2019). code2vec: Learning distributed representations of code. Proceedings of the ACM on Programming Languages, 3(POPL), 1-29.
+
+14. Wan, Z., Xia, X., & Hassan, A. E. (2019). What is Discussed about Blockchain? A Case Study on the Use of Balanced LDA and the Reference Architecture of a Domain to Capture Online Discussions about Blockchain platforms across the Stack Exchange Communities. IEEE Transactions on Software Engineering.
