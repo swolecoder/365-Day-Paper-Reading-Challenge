@@ -30,6 +30,7 @@ I hope I could keep it work up and improve my ability to read and write.
 12. [[#day-11-se][Day 11: Software Engineering Challenges of Deep Learning]]
 13. [[#day-12-pl][Day 12: code2vec: Learning Distributed Representations of Code]]
 14. [[#day-13-se][Day 13: What Do Programmers Discuss about Blockchain?]]
+15. [[#day-14-se][Day 14: Assessing the generalizability of code2vec token embeddings]]
 
 * Record
 ** Day 0: SE
@@ -409,20 +410,57 @@ When given uninformative, obfuscated or adversarial variable names, the predicti
 - *Journal*: TSE
 
 The following content is referred from [14]
-** Problem
+*** Problem
 Prior studies propose the use of LDA to study the Stack Exchange discussions. However, a simplistic use of LDA would capture the topics in discussions blindly without keeping in mind the variety of the dataset and domain-specific concepts.
 
-** Method
+*** Method
 They propose an approach that combines balanced LDA (which ensures that the topics are balanced across a domain) with the reference architecture of a domain to capture and compare the popularity and impact of discussion topics across the Stack Exchange communities.
-** Result
+*** Result
 They conducted a quantitative and comparative analysis on blockchain-related posts across the architectural layers and across studied blockchain platforms where appropriate, characterized the breakdown and evolution of topics.
 
-** Future work
+*** Future work
 Future in-depth studies are needed to determine if Stack Exchange discussions in other communities are impacted by such non-technical aspect as well or if our observations are specific to the blockchain communities.
 
 Future research could be conducted on security analysis, vulnerability detection and security hardening for blockchain platforms.
 
 Future research should take into consideration the techniques that are related to bug detection and localization for smart contract oriented programming languages
+
+** Day 14: SE
+- *Title*: Assessing the generalizability of code2vec token embeddings
+- *Year*: 2019
+- *Proc*: ASE
+
+The following content is referred from [15]
+*** Problem
+They want to prove the generalizability of code2vec in 3 downstream tasks, i.e., code comments generation, code authorship identification, and code clones detection.
+
+*** Method
+1. Code comments generation
+The granularity is *method*. The task involves the automatic generation of method-level comment from the body of a method.
+- Related work: Several recent work has used neural networks to synthesize natural language from source code
+
+The metric BLEU is used to measure the quality of generated comments.
+
+BLEU takes the generated translation and reference translations as input and outputs a percentage value between 0 and 100, with scores closer to 100 indicating higher quality.
+
+- Approach: They trained a Recurrent Neural Network-based Seq2Seq language model using OpenNMT
+
+2. Code authorship identification
+To identify authors successfully, approaches must be able to distinguish between the coding styles of programmers in their code.
+
+The dataset is constructed such that each author has the same number of programs in it. Thus, as a classification task, the classes are balanced and accuracy is a sufficient evaluation metric.
+
+3. Code clones detection
+Code clones detection is the task of determining if a pair of code fragments are similar to each other.
+
+For tokens in the code fragments that not in the embeddings’ vocabulary, we use the zero vector. The Cosine Similarity of two code fragments is computed based on averaging all the vectors of tokens contained in the two code fragments.
+*** Result
+Eventually, the results show that source code token embeddings cannot be readily leveraged for the downstream tasks. The experiments even show that their attempts to use them do not result in any improvements over less sophisticated methods.
+
+*** Future work
+A more comprehensive evaluation of existing source code token embeddings can be done on the three tasks we identified in this work.
+
+Beyond token embeddings, an evaluation of distributed representations of other granularities, e.g. function embeddings, in downstream tasks is a natural next step for future work.
 
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
