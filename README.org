@@ -435,7 +435,7 @@ The following content is referred from [15]
 They want to prove the generalizability of code2vec in 3 downstream tasks, i.e., code comments generation, code authorship identification, and code clones detection.
 
 *** Method
-1. Code comments generation
++ Code comments generation
 The granularity is *method*. The task involves the automatic generation of method-level comment from the body of a method.
 - Related work: Several recent work has used neural networks to synthesize natural language from source code
 
@@ -445,15 +445,16 @@ BLEU takes the generated translation and reference translations as input and out
 
 - Approach: They trained a Recurrent Neural Network-based Seq2Seq language model using OpenNMT
 
-2. Code authorship identification
++ Code authorship identification
 To identify authors successfully, approaches must be able to distinguish between the coding styles of programmers in their code.
 
 The dataset is constructed such that each author has the same number of programs in it. Thus, as a classification task, the classes are balanced and accuracy is a sufficient evaluation metric.
 
-3. Code clones detection
++ Code clones detection
 Code clones detection is the task of determining if a pair of code fragments are similar to each other.
 
 For tokens in the code fragments that not in the embeddings’ vocabulary, we use the zero vector. The Cosine Similarity of two code fragments is computed based on averaging all the vectors of tokens contained in the two code fragments.
+
 *** Result
 Eventually, the results show that source code token embeddings cannot be readily leveraged for the downstream tasks. The experiments even show that their attempts to use them do not result in any improvements over less sophisticated methods.
 
@@ -490,3 +491,5 @@ Beyond token embeddings, an evaluation of distributed representations of other g
 13. Alon, U., Zilberstein, M., Levy, O., & Yahav, E. (2019). code2vec: Learning distributed representations of code. Proceedings of the ACM on Programming Languages, 3(POPL), 1-29.
 
 14. Wan, Z., Xia, X., & Hassan, A. E. (2019). What is Discussed about Blockchain? A Case Study on the Use of Balanced LDA and the Reference Architecture of a Domain to Capture Online Discussions about Blockchain platforms across the Stack Exchange Communities. IEEE Transactions on Software Engineering.
+
+15. Kang, H. J., Bissyandé, T. F., & Lo, D. (2019, November). Assessing the generalizability of code2vec token embeddings. In 2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE) (pp. 1-12). IEEE.
