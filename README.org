@@ -31,6 +31,7 @@ I hope I could keep it work up and improve my ability to read and write.
 13. [[#day-12-pl][Day 12: code2vec: Learning Distributed Representations of Code]]
 14. [[#day-13-se][Day 13: What Do Programmers Discuss about Blockchain?]]
 15. [[#day-14-se][Day 14: Assessing the generalizability of code2vec token embeddings]]
+16. [[#day-15-se][Day 15: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
 
 * Record
 ** Day 0: SE
@@ -463,6 +464,30 @@ A more comprehensive evaluation of existing source code token embeddings can be 
 
 Beyond token embeddings, an evaluation of distributed representations of other granularities, e.g. function embeddings, in downstream tasks is a natural next step for future work.
 
+** Day 15: SE
+- *Title*: The impact factors on the performance ofmachine learning-based vulnerability detection: A comparative study
+- *Year*: 2020
+- *Journal*: Journal of Systems and Software
+- *Keyword*: Vulnerability detection, Machine learning, Comparative study, Deep learning, Feature extraction
+
+The following content is referred from [16]
+
+*** Problem
+To identify four impact factors and conduct a comparative study to investigate the performance influence of these factors
+
+*** Method
+They collect three different vulnerability code datasets from two various sources (i.e., NVD and SARD).
+
+*** Result
+the quality of datasets, classification models and vectorization methods can directly affect the detection performance, in contrast function/variable name replacement can affect the features of vulnerability detection and indirectly affect the performance
+
+*** Future work
+- First, we only focus on three types of vulnerabilities. Future research should be conducted by considering more vulnerabilities and more datasets because different types of vulnerabilities have different analysis methods and characteristics. 
+
+- Second, from the experiment result, we find that codes from NVD and SARD show different characteristics and experimental results. Each dataset itself still has many factors worth exploring. How to fairly evaluate the performance of vulnerability detection is also a topic worth discussing
+
+- Third, future research will use some more accurate and stable evaluation models. 
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -493,3 +518,5 @@ Beyond token embeddings, an evaluation of distributed representations of other g
 14. Wan, Z., Xia, X., & Hassan, A. E. (2019). What is Discussed about Blockchain? A Case Study on the Use of Balanced LDA and the Reference Architecture of a Domain to Capture Online Discussions about Blockchain platforms across the Stack Exchange Communities. IEEE Transactions on Software Engineering.
 
 15. Kang, H. J., Bissyandé, T. F., & Lo, D. (2019, November). Assessing the generalizability of code2vec token embeddings. In 2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE) (pp. 1-12). IEEE.
+
+16. Zheng, W., Gao, J., Wu, X., Liu, F., Xun, Y., Liu, G., & Chen, X. (2020). The impact factors on the performance of machine learning-based vulnerability detection: A comparative study. Journal of Systems and Software, 110659.
