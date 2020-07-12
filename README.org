@@ -32,6 +32,7 @@ I hope I could keep it work up and improve my ability to read and write.
 14. [[#day-13-se][Day 13: What Do Programmers Discuss about Blockchain?]]
 15. [[#day-14-se][Day 14: Assessing the generalizability of code2vec token embeddings]]
 16. [[#day-15-se][Day 15: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
+17. [[#day-16-se][Day 16: Going Big: A Large-Scale Study on What Big Data Developers Ask]]
 
 * Record
 ** Day 0: SE
@@ -488,6 +489,26 @@ the quality of datasets, classification models and vectorization methods can dir
 
 - Third, future research will use some more accurate and stable evaluation models. 
 
+** Day 16: SE
+- *Title*: Going Big : A Large-Scale Study on What Big Data Developers Ask
+- *Proc*: ESEC/FSE
+- *Year*: 2019
+- *Keywords*: Big data topics, Big data topic hierarchy, Big data topic difficulty, Big data topic popularity, Stackoverflow
+
+The following content is referred from [17]
+
+*** Problem
+They conduct a large-scale study on Stackoverflow to understand the interest and difficulties of big data developers.
+
+*** Method
+They develop a set of big data tags to extract big data posts from Stackoverflow; use topic modeling to group these posts into big data topics; group similar topics into categories to construct a topic hierarchy; analyze popularity and difficulty oftopics and their correlations; and discuss implications of our findings for practice, research and education of big data software development and investigate their coincidence with the findings of previous work.
+
+*** Result
+In this work they extract, topic model and categorize 157,525 big data questions and answers on Stackoverflow to understand big data topics that developers are interested in, the hierarchy of these topics, their popularity, difficulty and their correlations and implications of such understanding for practice, research and education of big data software development.
+
+*** Future work
+One avenue of future work is to conduct similar large-scale studies using *commit logs* and *bug reports* to triangulate with our results.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -520,3 +541,5 @@ the quality of datasets, classification models and vectorization methods can dir
 15. Kang, H. J., Bissyandé, T. F., & Lo, D. (2019, November). Assessing the generalizability of code2vec token embeddings. In 2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE) (pp. 1-12). IEEE.
 
 16. Zheng, W., Gao, J., Wu, X., Liu, F., Xun, Y., Liu, G., & Chen, X. (2020). The impact factors on the performance of machine learning-based vulnerability detection: A comparative study. Journal of Systems and Software, 110659.
+
+17. Bagherzadeh, M., & Khatchadourian, R. (2019, August). Going big: a large-scale study on what big data developers ask. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 432-442).
