@@ -33,6 +33,7 @@ I hope I could keep it work up and improve my ability to read and write.
 15. [[#day-14-se][Day 14: Assessing the generalizability of code2vec token embeddings]]
 16. [[#day-15-se][Day 15: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
 17. [[#day-16-se][Day 16: Going Big: A Large-Scale Study on What Big Data Developers Ask]]
+18. [[#day-17-se][Day 17: What are developers talking about? An analysis of topics and trends in Stack Overflow]]
 
 * Record
 ** Day 0: SE
@@ -509,6 +510,28 @@ In this work they extract, topic model and categorize 157,525 big data questions
 *** Future work
 One avenue of future work is to conduct similar large-scale studies using *commit logs* and *bug reports* to triangulate with our results.
 
+** Day 17: SE
+- *Title*: What are developers talking about? An analysis of topics and trends in Stack Overflow
+- *Journal*: EMSE
+- *Year*: 2014
+- *Keywords*: Q&A websites · Knowledge repository · Topic models · Trend analysis · Mining software repositories · Latent Dirichlet allocation
+
+The following content is referred from [18]
+*** Problem
+Analyzing the actual textual content of Q&A websites can help the software engineering community to better understand the thoughts and needs of developers. In the article, they present a methodology to analyze the textual content of Stack Overflow discussions.
+
+*** Method
+They use latent Dirichlet allocation (LDA), a statistical topic modeling technique, to automatically discover the main topics present in developer discussions. They analyze these discovered topics, as well as their relationships and trends over time, to gain insights into the development community.
+
+*** Result
+The analysis provides an approximation of the wants and needs of the contemporary developer.
+- Mobile application development is on the rise, faster than web development
+- Git has surpassed SVN in the VCS popularity contest
+etc.
+
+*** Future work
+The methodology can also be applied to other developer resources, such as web portals, blogs, and forums; we can cross-reference these resources with Stack Overflow to determine whether similar trends hold in those mediums.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -543,3 +566,5 @@ One avenue of future work is to conduct similar large-scale studies using *commi
 16. Zheng, W., Gao, J., Wu, X., Liu, F., Xun, Y., Liu, G., & Chen, X. (2020). The impact factors on the performance of machine learning-based vulnerability detection: A comparative study. Journal of Systems and Software, 110659.
 
 17. Bagherzadeh, M., & Khatchadourian, R. (2019, August). Going big: a large-scale study on what big data developers ask. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 432-442).
+
+18. Barua, A., Thomas, S. W., & Hassan, A. E. (2014). What are developers talking about? an analysis of topics and trends in stack overflow. Empirical Software Engineering, 19(3), 619-654.
