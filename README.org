@@ -34,7 +34,7 @@ I hope I could keep it work up and improve my ability to read and write.
 16. [[#day-15-se][Day 15: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
 17. [[#day-16-se][Day 16: Going Big: A Large-Scale Study on What Big Data Developers Ask]]
 18. [[#day-17-se][Day 17: What are developers talking about? An analysis of topics and trends in Stack Overflow]]
-
+19. [[#day18-nlp][Day 18: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
 * Record
 ** Day 0: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
@@ -532,6 +532,26 @@ etc.
 *** Future work
 The methodology can also be applied to other developer resources, such as web portals, blogs, and forums; we can cross-reference these resources with Stack Overflow to determine whether similar trends hold in those mediums.
 
+** Day 18: NLP
+- *Title*: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping
+- *Year*: 2020
+
+The following content is referred from [19]
+*** Problem
+It is often brittle to fine-tune pre-trained contextual word embedding models to supervised downstream tasks. To better understand the process, they experiment with four datasets from the GLUE benchmark, fine-tuning BERT hundreds of times on each while varying only the random seeds.
+*** Method
+They conducted a series of fine-tuning experiments on four tasks in the GLUE benchmark. Changing only training data order and the weight initialization of the fine-tuning layer—which contains only 0.0006% of the total number of parameters in the model.
+
+It is worth highlighting that in their experiments only random seeds are changed—never the fine-tuning regime, hyperparameter values, or pretrained weights.
+
+They also examine two factors influenced by the choice of random seed: weight initialization and training data order.
+
+*** Result
+They find substantial performance increases compared to previously reported results, and they quantify how the performance of the best-found model varies as a function of the number of fine-tuning trials.
+*** Future work
+They hope future work which introduces new initialization schemes will provide a similar analysis.
+
+They leave it to future work to analyze the variance from random seeds on these other models, and note that running analogous experiments would likely also lead to performance improvements.
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -568,3 +588,5 @@ The methodology can also be applied to other developer resources, such as web po
 17. Bagherzadeh, M., & Khatchadourian, R. (2019, August). Going big: a large-scale study on what big data developers ask. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 432-442).
 
 18. Barua, A., Thomas, S. W., & Hassan, A. E. (2014). What are developers talking about? an analysis of topics and trends in stack overflow. Empirical Software Engineering, 19(3), 619-654.
+
+19. Dodge, J., Ilharco, G., Schwartz, R., Farhadi, A., Hajishirzi, H., & Smith, N. (2020). Fine-tuning pretrained language models: Weight initializations, data orders, and early stopping. arXiv preprint arXiv:2002.06305.
