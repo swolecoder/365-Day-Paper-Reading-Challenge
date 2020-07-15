@@ -34,7 +34,9 @@ I hope I could keep it work up and improve my ability to read and write.
 16. [[#day-15-se][Day 15: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
 17. [[#day-16-se][Day 16: Going Big: A Large-Scale Study on What Big Data Developers Ask]]
 18. [[#day-17-se][Day 17: What are developers talking about? An analysis of topics and trends in Stack Overflow]]
-19. [[#day18-nlp][Day 18: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
+19. [[#day-18-nlp][Day 18: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
+20. [[#day-19-nlp][Day 19: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection]]
+
 * Record
 ** Day 0: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
@@ -552,6 +554,29 @@ They find substantial performance increases compared to previously reported resu
 They hope future work which introduces new initialization schemes will provide a similar analysis.
 
 They leave it to future work to analyze the variance from random seeds on these other models, and note that running analogous experiments would likely also lead to performance improvements.
+
+** Day 19: NLP
+- *Title*: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [20]
+*** Problem
+There is currently no standard way of combining topics with pretrained contex- tual representations such as BERT.
+
+*** Method
+They propose tBERT — a simple architecture combining topics with BERT for semantic similarity prediction.
+
+While other topic models can be used, they experiment with two popular topic models: LDA and GSDMM
+
+They encode two sentences S1 (with length N) and S2 (with length M) with the uncased version of BERTBASE, using the C vector from BERT’s final layer corresponding to the CLS token in the input as sentence pair representation.
+
+*** Result
+They demonstrated that adding LDA topics to BERT consistently improved performance across a range of semantic similarity prediction datasets.
+
+*** Future work
+Future work may focus on how to directly induce topic information into BERT without corrupting pretrained information and whether combining topics with other pretrained contextual models can lead to similar gains.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -590,3 +615,5 @@ They leave it to future work to analyze the variance from random seeds on these 
 18. Barua, A., Thomas, S. W., & Hassan, A. E. (2014). What are developers talking about? an analysis of topics and trends in stack overflow. Empirical Software Engineering, 19(3), 619-654.
 
 19. Dodge, J., Ilharco, G., Schwartz, R., Farhadi, A., Hajishirzi, H., & Smith, N. (2020). Fine-tuning pretrained language models: Weight initializations, data orders, and early stopping. arXiv preprint arXiv:2002.06305.
+
+20. Peinelt, N., Nguyen, D., & Liakata, M. (2020, July). tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 7047-7055).
