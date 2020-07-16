@@ -36,6 +36,7 @@ I hope I could keep it work up and improve my ability to read and write.
 18. [[#day-17-se][Day 17: What are developers talking about? An analysis of topics and trends in Stack Overflow]]
 19. [[#day-18-nlp][Day 18: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
 20. [[#day-19-nlp][Day 19: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection]]
+21. [[#day-20-nlp][Day 20: Neural Topic Modeling with Bidirectional Adversarial Training]]
 
 * Record
 ** Day 0: SE
@@ -577,6 +578,32 @@ They demonstrated that adding LDA topics to BERT consistently improved performan
 *** Future work
 Future work may focus on how to directly induce topic information into BERT without corrupting pretrained information and whether combining topics with other pretrained contextual models can lead to similar gains.
 
+** Day 20: NLP
+- *Title*: Neural Topic Modeling with Bidirectional Adversarial Training
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [21]
+
+*** Problem
+These approximate approaches have the drawback that small changes to the modeling assumptions result in a re-derivation of the inference algorithm, which can be mathematically arduous.
+
+*** Method
+They propose a novel *Bidirectional Adversarial Topic (BAT)* model, which is based on bidirectional adversarial training and aims to learn the two-way non-linear projection between two high-dimensional distributions.
+
+The proposed BAT employs a generator network to learn the projection function from randomly-sampled document-topic distribution to document-word distribution. Moreover, an encoder network is used to learn the inverse projection, transforming a document-word distribution into a document-topic distribution.
+
+*** Result
+Compared with LDA, BAT achieves a comparable result in accuracy since both models have the same Dirichlet prior assumption over topics and only employ the word co-occurrence information. Gaussian-BAT outperforms the second best model, BAT, by nearly 6% in accuracy.
+
+**** Evaluation
+topic coherence values
+
+They also compare the average topic coherence values (all topics taken into account) numerically to show the effectiveness of proposed BAT and Gaussian-BAT.
+
+*** Future work
+They would like to devise a nonparametric neural topic model based on adversarial training. Besides, developing correlated topic modelsis another promising direction.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -617,3 +644,5 @@ Future work may focus on how to directly induce topic information into BERT with
 19. Dodge, J., Ilharco, G., Schwartz, R., Farhadi, A., Hajishirzi, H., & Smith, N. (2020). Fine-tuning pretrained language models: Weight initializations, data orders, and early stopping. arXiv preprint arXiv:2002.06305.
 
 20. Peinelt, N., Nguyen, D., & Liakata, M. (2020, July). tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 7047-7055).
+
+21. Wang, R., Hu, X., Zhou, D., He, Y., Xiong, Y., Ye, C., & Xu, H. (2020). Neural Topic Modeling with Bidirectional Adversarial Training. arXiv preprint arXiv:2004.12331.
