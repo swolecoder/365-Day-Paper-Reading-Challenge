@@ -37,7 +37,7 @@ I hope I could keep it work up and improve my ability to read and write.
 19. [[#day-18-nlp][Day 18: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
 20. [[#day-19-nlp][Day 19: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection]]
 21. [[#day-20-nlp][Day 20: Neural Topic Modeling with Bidirectional Adversarial Training]]
-
+22. [[#day-21-nlp][Day 21: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization]]
 * Record
 ** Day 0: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
@@ -604,6 +604,26 @@ They also compare the average topic coherence values (all topics taken into acco
 *** Future work
 They would like to devise a nonparametric neural topic model based on adversarial training. Besides, developing correlated topic modelsis another promising direction.
 
+** Day 21: NLP
+- *Title*: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [22]
+*** Problem
+Due to limited data resources from downstream tasks and the extremely high complexity of pre-trained models, aggressive fine-tuning often causes the fine-tuned model to overfit the training data of downstream tasks and fail to generalize to unseen data.
+
+*** Method
+To fully harness the power of fine-tuning in a more principled manner, we propose a new learning framework for robust and efficient fine-tuning on the pre-trained language models through regularized optimization techniques.
+
+They introduce the smoothness-inducing adversarial regularization and proximal point optimization into large scale language model fine-tuning.
+
+*** Result
+They achieve state-of-the-art results on several popular NLP benchmarks (e.g., GLUE, SNLI, SciTail, and ANLI).
+
+*** Future work
+They also demonstrate that the proposed framework is applicable to domain adaptation and results in a significant performance improvement. The proposed fine-tuning framework can be generalized to solve other transfer learning problems.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -646,3 +666,5 @@ They would like to devise a nonparametric neural topic model based on adversaria
 20. Peinelt, N., Nguyen, D., & Liakata, M. (2020, July). tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 7047-7055).
 
 21. Wang, R., Hu, X., Zhou, D., He, Y., Xiong, Y., Ye, C., & Xu, H. (2020). Neural Topic Modeling with Bidirectional Adversarial Training. arXiv preprint arXiv:2004.12331.
+
+22. 
