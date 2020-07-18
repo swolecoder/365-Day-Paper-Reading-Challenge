@@ -624,6 +624,24 @@ They achieve state-of-the-art results on several popular NLP benchmarks (e.g., G
 *** Future work
 They also demonstrate that the proposed framework is applicable to domain adaptation and results in a significant performance improvement. The proposed fine-tuning framework can be generalized to solve other transfer learning problems.
 
+** Day 22: NLP
+- *Title*: Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [23]
+*** Problem
+In this paper, they investigate how to efficiently apply the pre-training language model BERT on the unsupervised domain adaptation.
+
+*** Method
+They design a post-training procedure, which contains the target domain masked language model task and a novel domain-distinguish pre-training task. The post-training procedure will encourage BERT to be domain-aware and distill the domain-specific features in a self-supervised way. Based on this, we could then conduct the adversarial training to derive the enhanced domain-invariant features.
+
+*** Result
+Experiments on Amazon reviews benchmark dataset show that the model gets the average result 90.12% in accuracy, 4.22% absolute improvement compared with state-of-the-art methods.
+
+*** Future work
+In the future, they would like to investigate the application of their theory in these domain adaptation tasks.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -667,4 +685,6 @@ They also demonstrate that the proposed framework is applicable to domain adapta
 
 21. Wang, R., Hu, X., Zhou, D., He, Y., Xiong, Y., Ye, C., & Xu, H. (2020). Neural Topic Modeling with Bidirectional Adversarial Training. arXiv preprint arXiv:2004.12331.
 
-22. 
+22. Jiang, H., He, P., Chen, W., Liu, X., Gao, J., & Zhao, T. (2019). Smart: Robust and efficient fine-tuning for pre-trained natural language models through principled regularized optimization. arXiv preprint arXiv:1911.03437.
+
+23. Du, C., Sun, H., Wang, J., Qi, Q., & Liao, J. (2020, July). Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 4019-4028).
