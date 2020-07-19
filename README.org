@@ -38,6 +38,7 @@ I hope I could keep it work up and improve my ability to read and write.
 20. [[#day-19-nlp][Day 19: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection]]
 21. [[#day-20-nlp][Day 20: Neural Topic Modeling with Bidirectional Adversarial Training]]
 22. [[#day-21-nlp][Day 21: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization]]
+23. [[#day-22-nlp][Day 22: A Primer in BERTology: What we know about how BERT works]]
 * Record
 ** Day 0: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
@@ -642,6 +643,30 @@ Experiments on Amazon reviews benchmark dataset show that the model gets the ave
 *** Future work
 In the future, they would like to investigate the application of their theory in these domain adaptation tasks.
 
+** Day 23: NLP
+- *Title*: A Primer in BERTology: What we know about how BERT works
+- *Year*: 2020
+
+The following content is referred from [24]
+*** Problem
+Transformer-based models are now widely used in NLP, but we still do not understand a lot about their inner workings.
+
+*** Content
+This is a survey about BERT related research.
+
+- Overview of BERT architecture
+- BERT embeddings
+- Localizing linguistic knowledge
+- Training BERT
+  + pre-training
+  + fine-tuning
+- Compression
+
+*** Future work
+- Benchmarks that require verbal reasoning
+- Developing methods to “teach” reasoning
+- Learning what happens at inference time
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -688,3 +713,5 @@ In the future, they would like to investigate the application of their theory in
 22. Jiang, H., He, P., Chen, W., Liu, X., Gao, J., & Zhao, T. (2019). Smart: Robust and efficient fine-tuning for pre-trained natural language models through principled regularized optimization. arXiv preprint arXiv:1911.03437.
 
 23. Du, C., Sun, H., Wang, J., Qi, Q., & Liao, J. (2020, July). Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 4019-4028).
+
+24. Rogers, A., Kovaleva, O., & Rumshisky, A. (2020). A primer in bertology: What we know about how bert works. arXiv preprint arXiv:2002.12327.
