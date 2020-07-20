@@ -39,6 +39,8 @@ I hope I could keep it work up and improve my ability to read and write.
 21. [[#day-20-nlp][Day 20: Neural Topic Modeling with Bidirectional Adversarial Training]]
 22. [[#day-21-nlp][Day 21: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization]]
 23. [[#day-22-nlp][Day 22: A Primer in BERTology: What we know about how BERT works]]
+24. [[#day-23-nlp][Day 23: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study]]
+
 * Record
 ** Day 0: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
@@ -667,6 +669,23 @@ This is a survey about BERT related research.
 - Developing methods to “teach” reasoning
 - Learning what happens at inference time
 
+** Day 24: NLP
+- *Title*: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study
+- *Year*: 2020
+
+The following content is referred from [25]
+*** Problem
+While RL algorithms are often conceptually simple, their state-of-the-art implementations take numerous low- and high-level design decisions that strongly affect the performance of the resulting agents.
+
+The primary goal of this paper is to understand how the different choices affect the final performance of an agent and to derive recommendations for these choices.
+
+*** Method
+As a step towards filling that gap, they implement >50 such “choices” in a unified on-policy RL framework, allowing them to investigate their impact in a large-scale empirical study. They train over 250’000 agents in five continuous control environments of different complexity and provide insights and practical recommendations for on-policy training of RL agents.
+
+*** Result
+While many of their experimental findings confirm common RL practices, some of them are quite surprising, e.g. the policy initialization scheme significantly influences the performance while it is rarely even mentioned in RL publications.
+
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -715,3 +734,5 @@ This is a survey about BERT related research.
 23. Du, C., Sun, H., Wang, J., Qi, Q., & Liao, J. (2020, July). Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 4019-4028).
 
 24. Rogers, A., Kovaleva, O., & Rumshisky, A. (2020). A primer in bertology: What we know about how bert works. arXiv preprint arXiv:2002.12327.
+
+25. Andrychowicz, M., Raichuk, A., Stańczyk, P., Orsini, M., Girgin, S., Marinier, R., ... & Gelly, S. (2020). What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study. arXiv preprint arXiv:2006.05990.
