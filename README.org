@@ -16,33 +16,36 @@ I will try to summarize the key idea of the paper. Currently, I want my daily no
 
 I hope I could keep it work up and improve my ability to read and write.
 * Contents
-1. [[#day-0-se][Day 0: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform]]
-2. [[#day-1-se][Day 1: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs]]
-3. [[#day-2-se][Day 2: Is deep learning better than traditional approaches in tag recommendation for software information sites?]]
-4. [[#day-3-nlp][Day 3: CodeBERT: A Pre-Trained Model for Programming and Natural Languages]]
-5. [[#day-4-se][Day 4: Examining the Impact of Self-admitted Technical Debt on Software Quality]]
-6. [[#day-5-se][Day 5: Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary]]
-7. [[#day-6-se][Day 6: How Do Companies Collaborate in Open Source Ecosystems? An Empirical Study of OpenStack]]
-8. [[#day-7-se][Day 7: Companies' Participation in OSS Development - An Empirical Study of OpenStack]]
-9. [[#day-8-se][Day 8: Detecting and Quantifying Different Types of Self-Admitted Technical Debt]]
-10. [[#day-9-se][Day 9: What do Programmers Discuss about Deep Learning Frameworks]]
-11. [[#day-10-se][Day 10: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems]]
-12. [[#day-11-se][Day 11: Software Engineering Challenges of Deep Learning]]
-13. [[#day-12-pl][Day 12: code2vec: Learning Distributed Representations of Code]]
-14. [[#day-13-se][Day 13: What Do Programmers Discuss about Blockchain?]]
-15. [[#day-14-se][Day 14: Assessing the generalizability of code2vec token embeddings]]
-16. [[#day-15-se][Day 15: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
-17. [[#day-16-se][Day 16: Going Big: A Large-Scale Study on What Big Data Developers Ask]]
-18. [[#day-17-se][Day 17: What are developers talking about? An analysis of topics and trends in Stack Overflow]]
-19. [[#day-18-nlp][Day 18: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
-20. [[#day-19-nlp][Day 19: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection]]
-21. [[#day-20-nlp][Day 20: Neural Topic Modeling with Bidirectional Adversarial Training]]
-22. [[#day-21-nlp][Day 21: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization]]
-23. [[#day-22-nlp][Day 22: A Primer in BERTology: What we know about how BERT works]]
-24. [[#day-23-nlp][Day 23: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study]]
-25. [[#day-24-nlp][Day 24: A Transformer-based Approach for Source Code Summarization]]
+1. [[#day-1-se][Day 1: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform]]
+2. [[#day-2-se][Day 2: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs]]
+3. [[#day-3-se][Day 3: Is deep learning better than traditional approaches in tag recommendation for software information sites?]]
+4. [[#day-4-nlp][Day 4: CodeBERT: A Pre-Trained Model for Programming and Natural Languages]]
+5. [[#day-5-se][Day 5: Examining the Impact of Self-admitted Technical Debt on Software Quality]]
+6. [[#day-6-se][Day 6: Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary]]
+7. [[#day-7-se][Day 7: How Do Companies Collaborate in Open Source Ecosystems? An Empirical Study of OpenStack]]
+8. [[#day-8-se][Day 8: Companies' Participation in OSS Development - An Empirical Study of OpenStack]]
+9. [[#day-9-se][Day 9: Detecting and Quantifying Different Types of Self-Admitted Technical Debt]]
+10. [[#day-10-se][Day 10: What do Programmers Discuss about Deep Learning Frameworks]]
+11. [[#day-11-se][Day 11: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems]]
+12. [[#day-12-se][Day 12: Software Engineering Challenges of Deep Learning]]
+13. [[#day-13-pl][Day 13: code2vec: Learning Distributed Representations of Code]]
+14. [[#day-14-se][Day 14: What Do Programmers Discuss about Blockchain?]]
+15. [[#day-15-se][Day 15: Assessing the generalizability of code2vec token embeddings]]
+16. [[#day-16-se][Day 16: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
+17. [[#day-17-se][Day 17: Going Big: A Large-Scale Study on What Big Data Developers Ask]]
+18. [[#day-18-se][Day 18: What are developers talking about? An analysis of topics and trends in Stack Overflow]]
+19. [[#day-19-nlp][Day 19: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
+20. [[#day-20-nlp][Day 20: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection]]
+21. [[#day-21-nlp][Day 21: Neural Topic Modeling with Bidirectional Adversarial Training]]
+22. [[#day-22-nlp][Day 22: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization]]
+23. [[#day-23-nlp][Day 23: Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis]]
+24. [[#day-24-nlp][Day 24: A Primer in BERTology: What we know about how BERT works]]
+25. [[#day-25-nlp][Day 25: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study]]
+26. [[#day-26-nlp][Day 26: A Transformer-based Approach for Source Code Summarization]]
+27. [[#day-27-nlp][Day 27: A Survey on Contextual Embeddings]]
+
 * Record
-** Day 0: SE
+** Day 1: SE
 - *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
 - Tags: bug analysis, fault injection, OpenStack
 - Proc.: ESEC/FSE 2019
@@ -89,7 +92,7 @@ In summary, there is a risk that failures are not timely detected and notified, 
 Current logging mechanisms in OpenStack only reports high-severity error messages for many of the failures. Some failures with late or no API errors that would benefit from logs to diagnose the failure, but they are missing.
 3. Preventing corruptions of persistent data and shared state.
 
-** Day 1: SE
+** Day 2: SE
 - *Title*: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs.
 
 
@@ -131,7 +134,7 @@ They categorize the bug fixes into four types: code fix, configuration fix, envi
 Further research on testing and diagnosis for cloud management stack bugs. It would be promising to investigate techniques that can
 direct bug fixing based on the focused code locations, such as using machine learning classifiers to predict error-prone code regions and leveraging fault localization to pinpoint the faults.
 
-** Day 2: SE
+** Day 3: SE
 - *Title*: Is deep learning better than traditional approaches in tag recommendation for software information sites?
 
 - *Journal*: Information and Software Technology
@@ -161,8 +164,7 @@ The performance of TagRNN and TagHAN approaches are worse than traditional appro
 *** Future work
 How to best represent the software object or artifact with a high quality vector is still a major challenge.
 
-** Day 3: NLP
-
+** Day 4: NLP
 - *Title*: CodeBERT: A Pre-Trained Model for Programming and Natural Languages
 
 The following context is referred from [4]
@@ -191,7 +193,7 @@ A potential direction to improve CodeBERT by incorporating AST.
 2. The CodeBERT itself could be further improved by generation-related learning objectives.
 3. We can apply CodeBERT to more NL-PL related tasks, and extend it to more programming languages
 
-** Day 4: SE
+** Day 5: SE
 - *Title*: Examining the Impact of Self-admitted Technical Debt on Software Quality
 - *Venue*: SANER-2016
 The following context is referred from [5]
@@ -220,7 +222,7 @@ Their study indicates that although technical debt may have negative effects, it
 *** Future work
 Further study the nature of the SATD files after they became defective
 
-** Day 5: SE
+** Day 6: SE
 - *Title*: Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary
 - *Journal*: Information and Software Technology
 
@@ -243,7 +245,7 @@ lyzed patterns were considered decisive or very decisive to identify self- admit
 *** Future work
 We intend to better assess the vocabulary and its accuracy to identify and classify SATD items by comparing the results provided by our approach (vocabulary and eXcomment) with data sourced from manual identification of technical debt by software engineers. We also intend to apply the vocabulary to other repositories, including comments from configuration and version control systems, to investigate how it performs over different types of text comments. Lastly, we want to investi- gate how to combine static source code analysis, software metrics, and code comments analysis to improve the automatic detection of technical debt items.
 
-** Day 6: SE
+** Day 7: SE
 - *Title*: How Do Companies Collaborate in Open Source Ecosystems? An Empirical Study of OpenStack
 - *Proc*: ICSE'20
 
@@ -275,7 +277,7 @@ They find statistically significant evidence that a company’s collaboration po
 
 - Future studies could consider a more precise measurement of productivity
 
-** Day 7: SE
+** Day 8: SE
 - *Title*: Companies' Participation in OSS Development - An Empirical Study of OpenStack
 - *Journal*: TSE'19
 
@@ -293,7 +295,7 @@ volunteer participation is affected by the diversity of companies
 *** Future work
 How to decide a developer's contribution: future work may be needed to include other activities, e.g., bug fixes, email discussions, and code review changes, to investigate commercial participation in more detail.
 
-** Day 8: SE
+** Day 9: SE
 - *Title*: Detecting and Quantifying Different Types of Self-Admitted Technical Debt
 - *Proc*: 2015 IEEE 7th International Workshop on Managing Technical Debt, MTD 2015
 
@@ -314,7 +316,7 @@ improve the current classification adding more projects to it, increasing the da
 
 an advanced technique of natural language processing, which may lead to more automated ways to identify self-admitted technical debt.
 
-** Day 9: SE
+** Day 10: SE
 - *Title*: What do Programmers Discuss about Deep Learning Frameworks
 - *Journal*: EMSE
 
@@ -334,8 +336,7 @@ Their observations include 1) a wide range of topics that are discussed about th
 We tend to analyze how the impact trends of topics at different topic levels
 vary with respect to the number of newcomers and the number of unique users and gain some key insights. Moreover, we can also incorporate more deep learning frameworks to make the analysis more common and generalized.
 
-
-** Day 10: SE
+** Day 11: SE
 - *Title*: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems
 - *Proc*: MSR'20
 
@@ -358,7 +359,7 @@ Only 29% of the issues that pay TD can be traced to SATD-C. In other words, 71% 
 *** Future work
 They first intend to enlarge our dataset of SATD-I by mining other tags that may denote TD-related issues. After that, they envision an in-depth analysis of the code transformations performed to pay these debts. Based on this dataset of transformations, they may develop tools and techniques to guide developers on TD payment (e.g., by recommending how to perform changes that contribute to the actual removal of the debt).
 
-** Day 11: SE
+** Day 12: SE
 - *Title*: Software Engineering Challenges of Deep Learning
 - *Year*: 2018
 - *Proc*: SEAA 2018
@@ -377,7 +378,7 @@ Although the DL technology has achieved very promising results, there is still a
 *** Future work
 SE community, together with the DL community, could make an effort in finding solutions to these challenges for building production-ready systems containing DL components.
 
-** Day 12: PL
+** Day 13: PL
 - *Title*: code2vec: Learning Distributed Representations of Code
 - *Year*: 2018
 - *Proc*: Proceedings of the ACM on Programming Languages
@@ -413,7 +414,7 @@ The main contribution of their method is in its ability to aggregate an arbitrar
 - Dependency on variable names
 When given uninformative, obfuscated or adversarial variable names, the prediction of the label is usually less accurate.
 
-** Day 13: SE
+** Day 14: SE
 - *Title*: What Do Programmers Discuss about Blockchain?
 - *Year*: 2019
 - *Journal*: TSE
@@ -434,7 +435,7 @@ Future research could be conducted on security analysis, vulnerability detection
 
 Future research should take into consideration the techniques that are related to bug detection and localization for smart contract oriented programming languages
 
-** Day 14: SE
+** Day 15: SE
 - *Title*: Assessing the generalizability of code2vec token embeddings
 - *Year*: 2019
 - *Proc*: ASE
@@ -472,7 +473,7 @@ A more comprehensive evaluation of existing source code token embeddings can be 
 
 Beyond token embeddings, an evaluation of distributed representations of other granularities, e.g. function embeddings, in downstream tasks is a natural next step for future work.
 
-** Day 15: SE
+** Day 16: SE
 - *Title*: The impact factors on the performance ofmachine learning-based vulnerability detection: A comparative study
 - *Year*: 2020
 - *Journal*: Journal of Systems and Software
@@ -496,7 +497,7 @@ the quality of datasets, classification models and vectorization methods can dir
 
 - Third, future research will use some more accurate and stable evaluation models. 
 
-** Day 16: SE
+** Day 17: SE
 - *Title*: Going Big : A Large-Scale Study on What Big Data Developers Ask
 - *Proc*: ESEC/FSE
 - *Year*: 2019
@@ -516,7 +517,7 @@ In this work they extract, topic model and categorize 157,525 big data questions
 *** Future work
 One avenue of future work is to conduct similar large-scale studies using *commit logs* and *bug reports* to triangulate with our results.
 
-** Day 17: SE
+** Day 18: SE
 - *Title*: What are developers talking about? An analysis of topics and trends in Stack Overflow
 - *Journal*: EMSE
 - *Year*: 2014
@@ -538,7 +539,7 @@ etc.
 *** Future work
 The methodology can also be applied to other developer resources, such as web portals, blogs, and forums; we can cross-reference these resources with Stack Overflow to determine whether similar trends hold in those mediums.
 
-** Day 18: NLP
+** Day 19: NLP
 - *Title*: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping
 - *Year*: 2020
 
@@ -559,7 +560,7 @@ They hope future work which introduces new initialization schemes will provide a
 
 They leave it to future work to analyze the variance from random seeds on these other models, and note that running analogous experiments would likely also lead to performance improvements.
 
-** Day 19: NLP
+** Day 20: NLP
 - *Title*: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection
 - *Year*: 2020
 - *Proc*: ACL
@@ -581,7 +582,7 @@ They demonstrated that adding LDA topics to BERT consistently improved performan
 *** Future work
 Future work may focus on how to directly induce topic information into BERT without corrupting pretrained information and whether combining topics with other pretrained contextual models can lead to similar gains.
 
-** Day 20: NLP
+** Day 21: NLP
 - *Title*: Neural Topic Modeling with Bidirectional Adversarial Training
 - *Year*: 2020
 - *Proc*: ACL
@@ -607,7 +608,7 @@ They also compare the average topic coherence values (all topics taken into acco
 *** Future work
 They would like to devise a nonparametric neural topic model based on adversarial training. Besides, developing correlated topic modelsis another promising direction.
 
-** Day 21: NLP
+** Day 22: NLP
 - *Title*: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization
 - *Year*: 2020
 - *Proc*: ACL
@@ -627,7 +628,7 @@ They achieve state-of-the-art results on several popular NLP benchmarks (e.g., G
 *** Future work
 They also demonstrate that the proposed framework is applicable to domain adaptation and results in a significant performance improvement. The proposed fine-tuning framework can be generalized to solve other transfer learning problems.
 
-** Day 22: NLP
+** Day 23: NLP
 - *Title*: Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis
 - *Year*: 2020
 - *Proc*: ACL
@@ -645,7 +646,7 @@ Experiments on Amazon reviews benchmark dataset show that the model gets the ave
 *** Future work
 In the future, they would like to investigate the application of their theory in these domain adaptation tasks.
 
-** Day 23: NLP
+** Day 24: NLP
 - *Title*: A Primer in BERTology: What we know about how BERT works
 - *Year*: 2020
 
@@ -669,7 +670,7 @@ This is a survey about BERT related research.
 - Developing methods to “teach” reasoning
 - Learning what happens at inference time
 
-** Day 24: NLP
+** Day 25: NLP
 - *Title*: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study
 - *Year*: 2020
 
@@ -685,7 +686,7 @@ As a step towards filling that gap, they implement >50 such “choices” in a u
 *** Result
 While many of their experimental findings confirm common RL practices, some of them are quite surprising, e.g. the policy initialization scheme significantly influences the performance while it is rarely even mentioned in RL publications.
 
-** Day 25: NLP
+** Day 26: NLP
 - *Title*: A Transformer-based Approach for Source Code Summarization
 - *Year*: 2020
 - *Proc*: ACL
@@ -702,6 +703,34 @@ In this work, they show that, by modeling the pairwise relationship between sour
 
 *** Future work
 They want to study the effective incorporation of code structure into the Transformer and apply the techniques in other software engineering sequence generation tasks (e.g., commit message generation for source code changes).
+
+** Day 27: NLP
+- *Title*: A Survey on Contextual Embeddings
+- *Year*: 2020
+
+The following content is referred from [27]
+
+This survey reviews existing contextual embedding models, cross-lingual polyglot pre-training, the application of contextual embeddings in downstream tasks, model compression, and model analyses.
+
+** Pre-training methods for contextual embeddings
+1. Unsupervised pre-training via language modeling
+2. Supervised objectives
+
+** Cross-lingual polyglot pre-training for contextual embeddings
+1. Joint training & shared vocabulary
+2. Joint training & separate vocabularies
+3. Separate training & separate vocabularies
+
+** Downstream learning
+There are three main ways to use pre-trained contextual embeddings in downstream tasks: (1) Feature-based methods, (2) Fine-tuning methods, and (3) Adapter methods.
+
+** Model compression
+Work on compressing language models utilizes (1) Low-rank approximation, (2) Knowledge distillation, and (3) Weight quantization, to make them usable in embedded systems and edge devices.
+** Current challenges
+1. Better pre-training objectives
+2. Understanding the knowledge encoded in pre-trained models
+3. Model robustness
+4. Controlled generation of sequences
 
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
@@ -755,3 +784,5 @@ They want to study the effective incorporation of code structure into the Transf
 25. Andrychowicz, M., Raichuk, A., Stańczyk, P., Orsini, M., Girgin, S., Marinier, R., ... & Gelly, S. (2020). What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study. arXiv preprint arXiv:2006.05990.
 
 26. Ahmad, W. U., Chakraborty, S., Ray, B., & Chang, K. W. (2020). A Transformer-based Approach for Source Code Summarization. arXiv preprint arXiv:2005.00653.
+
+27. Liu, Q., Kusner, M. J., & Blunsom, P. (2020). A Survey on Contextual Embeddings. arXiv preprint arXiv:2003.07278.
