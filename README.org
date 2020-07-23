@@ -43,6 +43,7 @@ I hope I could keep it work up and improve my ability to read and write.
 25. [[#day-25-nlp][Day 25: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study]]
 26. [[#day-26-nlp][Day 26: A Transformer-based Approach for Source Code Summarization]]
 27. [[#day-27-nlp][Day 27: A Survey on Contextual Embeddings]]
+28. [[#day-28-se][Day 28: TranS3: A Transformer-based Framework for Unifying Code Summarization and Code Search]]
 
 * Record
 ** Day 1: SE
@@ -732,6 +733,21 @@ Work on compressing language models utilizes (1) Low-rank approximation, (2) Kno
 3. Model robustness
 4. Controlled generation of sequences
 
+** Day 28: SE
+- *Title*: TranS3: A Transformer-based Framework for Unifying Code Summarization and Code Search
+- *Year*: 2020
+
+The following content is referred from [28]
+
+*** Problem
+Code summarization and code search have been widely adopted in soſtware development and maintenance. However, few studies have explored the efficacy of unifying them.
+
+*** Method
+In this paper, they propose TranS3, a transformer-based framework to integrate code summarization with code search. Specifically, for code summarization, TranS3 enables an actorcritic network, where in the actor network, we encode the collected code snippets via transformer- and tree-transformer-based encoder and decode the given code snippet to generate its comment.
+
+*** Result
+They conduct a set of extensive experiments on the effectiveness and efficiency of TranS3 in terms of both the code summarization and code search components compared with state-of-the-art approaches. The experimental results suggest that TranS3 can significantly outperform multiple state-of-the-art approaches in both code summarization and code search and the study results further strengthen the efficacy ofTranS3 from the developers’ points of view.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -786,3 +802,5 @@ Work on compressing language models utilizes (1) Low-rank approximation, (2) Kno
 26. Ahmad, W. U., Chakraborty, S., Ray, B., & Chang, K. W. (2020). A Transformer-based Approach for Source Code Summarization. arXiv preprint arXiv:2005.00653.
 
 27. Liu, Q., Kusner, M. J., & Blunsom, P. (2020). A Survey on Contextual Embeddings. arXiv preprint arXiv:2003.07278.
+
+28. Wang, W., Zhang, Y., Zeng, Z., & Xu, G. (2020). TranS^ 3: A Transformer-based Framework for Unifying Code Summarization and Code Search. arXiv preprint arXiv:2003.03238.
