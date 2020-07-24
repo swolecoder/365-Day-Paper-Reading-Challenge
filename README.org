@@ -44,6 +44,7 @@ I hope I could keep it work up and improve my ability to read and write.
 26. [[#day-26-nlp][Day 26: A Transformer-based Approach for Source Code Summarization]]
 27. [[#day-27-nlp][Day 27: A Survey on Contextual Embeddings]]
 28. [[#day-28-se][Day 28: TranS3: A Transformer-based Framework for Unifying Code Summarization and Code Search]]
+29. [[#day-29-se][Day 29: An Empirical Study on TensorFlow Program Bugs]]
 
 * Record
 ** Day 1: SE
@@ -748,6 +749,28 @@ In this paper, they propose TranS3, a transformer-based framework to integrate c
 *** Result
 They conduct a set of extensive experiments on the effectiveness and efficiency of TranS3 in terms of both the code summarization and code search components compared with state-of-the-art approaches. The experimental results suggest that TranS3 can significantly outperform multiple state-of-the-art approaches in both code summarization and code search and the study results further strengthen the efficacy ofTranS3 from the developers’ points of view.
 
+
+** Day 29: SE
+- *Title*: An Empirical Study on TensorFlow Program Bugs
+- *Year*: 2018
+
+The following content is referred from [29]
+*** Problem
+Although recent research efforts were made on testing and debugging deep learning applications, the characteristics of deep learning defects have never been studied.
+
+*** Method
+They studied deep learning applications built on top of TensorFlow and collected program bugs related to TensorFlow from StackOverflow QA pages and Github projects. We extracted information from QA pages, commit messages, pull request messages, and issue discussions to examine the root causes and symptoms of these bugs. We also studied the strategies deployed by TensorFlow users for bug detection and localization.
+
+The study collected 175 TensorFlow coding bugs from GitHub issues and StackOverflow questions. They analyzed these bugs quantitatively and qualitatively, and reported (1) their symptoms and root causes, (2) the challenges in their detection, and (3) the challenges in their localization.
+
+*** Result
+In general, they found the fixing patterns are strongly correlated to the root causes ofthe bug.
+
+This finding suggests that analyzing the root causes could be useful for further developing automated repair approaches.
+
+*** Future work
+Others can conduct analysis on bug repair or fixing patterns of the Tensorflow bugs.
+
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -804,3 +827,5 @@ They conduct a set of extensive experiments on the effectiveness and efficiency 
 27. Liu, Q., Kusner, M. J., & Blunsom, P. (2020). A Survey on Contextual Embeddings. arXiv preprint arXiv:2003.07278.
 
 28. Wang, W., Zhang, Y., Zeng, Z., & Xu, G. (2020). TranS^ 3: A Transformer-based Framework for Unifying Code Summarization and Code Search. arXiv preprint arXiv:2003.03238.
+
+29. Zhang, Y., Chen, Y., Cheung, S. C., Xiong, Y., & Zhang, L. (2018, July). An empirical study on TensorFlow program bugs. In Proceedings of the 27th ACM SIGSOFT International Symposium on Software Testing and Analysis (pp. 129-140).
