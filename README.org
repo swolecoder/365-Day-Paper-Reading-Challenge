@@ -45,6 +45,7 @@ I hope I could keep it work up and improve my ability to read and write.
 27. [[#day-27-nlp][Day 27: A Survey on Contextual Embeddings]]
 28. [[#day-28-se][Day 28: TranS3: A Transformer-based Framework for Unifying Code Summarization and Code Search]]
 29. [[#day-29-se][Day 29: An Empirical Study on TensorFlow Program Bugs]]
+30. [[#day-30-ai][Day 30: Graph Few-shot Learning via Knowledge Transfer]]
 
 * Record
 ** Day 1: SE
@@ -771,6 +772,22 @@ This finding suggests that analyzing the root causes could be useful for further
 *** Future work
 Others can conduct analysis on bug repair or fixing patterns of the Tensorflow bugs.
 
+
+** Day 30: AI
+- *Title*: Graph Few-shot Learning via Knowledge Transfer
+- *Year*: 2019
+
+The following content is referred from [30]
+*** Problem
+Most GNNs have shallow layers with a limited receptive field and may not achieve satisfactory performance especially when the number of labeled nodes is quite small.
+
+*** Method
+They proposed a graph few-shot learning (GFL) algorithm that incorporates prior knowledge learned from auxiliary graphs to improve classification accuracy on the target graph.
+
+*** Result
+Extensive experiments and ablation studies on four real-world graph datasets demonstrate the effectiveness of their proposed model and the contribution of each component.
+
+*** Future work
 * Reference
 1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
 
@@ -829,3 +846,5 @@ Others can conduct analysis on bug repair or fixing patterns of the Tensorflow b
 28. Wang, W., Zhang, Y., Zeng, Z., & Xu, G. (2020). TranS^ 3: A Transformer-based Framework for Unifying Code Summarization and Code Search. arXiv preprint arXiv:2003.03238.
 
 29. Zhang, Y., Chen, Y., Cheung, S. C., Xiong, Y., & Zhang, L. (2018, July). An empirical study on TensorFlow program bugs. In Proceedings of the 27th ACM SIGSOFT International Symposium on Software Testing and Analysis (pp. 129-140).
+
+30. Yao, H., Zhang, C., Wei, Y., Jiang, M., Wang, S., Huang, J., ... & Li, Z. (2019). Graph few-shot learning via knowledge transfer. arXiv preprint arXiv:1910.03053.
