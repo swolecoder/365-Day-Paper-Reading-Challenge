@@ -1,0 +1,29 @@
+* Duration
+From 26 July 2020 to 
+* Content
+1. [[#day-31-dm][Day 31: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding]]
+
+* Day 31: DM
+- *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
+- *Year*: 2020
+- *Proc*: KDD
+
+The following content is referred from [1]
+** Keywords
+Topic Mining; Topic Hierarchy; Text Embedding; Tree Embedding
+** Problem
+They propose a new task, *Hierarchical Topic Mining*, which takes only a topic hierarchy described by category names as user guidance, and aims to retrieve a set of coherent and representative terms under each category to help users comprehend his/her interested topics.
+
+** Method
+Hierarchical Topic Mining is weakly-supervised as it requires the user to provide the names of the hierarchy categories which serve as the minimal supervision and focuses on retrieving representative terms only for the provided categories.
+
+** Result
+The proposed model, named JoSH, mines a high-quality set of hierarchical topics with high efficiency and benefits weakly-supervised hierarchical text classification tasks.
+
+** Future work
+- One can extend JoSH to not only focus on a user-given category structure, but also be able to discover other latent topics from a text corpus, probably by relaxing the assumption that a document is generated from one ofthe given topics or collaborating with other taxonomy construction algorithms.
+
+- Embedding tree or graph structures along with textual data in the spherical space for mining structured knowledge from text corpora.
+
+* Reference
+1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
