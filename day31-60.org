@@ -2,6 +2,7 @@
 From 26 July 2020 to 
 * Content
 1. [[#day-31-dm][Day 31: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding]]
+2. [[#day-32-se][Day 32: Simulee: Detecting CUDA Synchronization Bugs via Memory-Access Modeling]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -25,5 +26,26 @@ The proposed model, named JoSH, mines a high-quality set of hierarchical topics 
 
 - Embedding tree or graph structures along with textual data in the spherical space for mining structured knowledge from text corpora.
 
+* Day 32: SE
+- *Title*: Simulee: Detecting CUDA Synchronization Bugs via Memory-Access Modeling
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [2]
+
+** Problem
+How to effectively and efficiently detect CUDA synchronization bugs remains a challenging open problem.
+
+** Method
+They pro-pose the first lightweight CUDA synchronization bug detection framework, namely Simulee, to model CUDA program execution by interpreting the corresponding LLVM bytecode and collecting the memory-access information for automatically detecting general CUDA synchronization bugs.
+
+** Result
+Simulee can detect 21 out of the 24 manually identified bugs in our preliminary study and also 24 previously unknown bugs among all projects, 10 of which have already been confirmed by the developers.
+
+The results suggest that Simulee is able to detect most of the manually identified synchronization bugs in the benchmark.
+
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
+
+2. APA is unavailable now
