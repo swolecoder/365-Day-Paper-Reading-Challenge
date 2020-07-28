@@ -3,6 +3,7 @@ From 26 July 2020 to
 * Content
 1. [[#day-31-dm][Day 31: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding]]
 2. [[#day-32-se][Day 32: Simulee: Detecting CUDA Synchronization Bugs via Memory-Access Modeling]]
+3. [[#day-33-se][Day 33: Identifying experts in software libraries and frameworks among GitHub users]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -32,7 +33,6 @@ The proposed model, named JoSH, mines a high-quality set of hierarchical topics 
 - *Proc*: ICSE
 
 The following content is referred from [2]
-
 ** Problem
 How to effectively and efficiently detect CUDA synchronization bugs remains a challenging open problem.
 
@@ -44,8 +44,30 @@ Simulee can detect 21 out of the 24 manually identified bugs in our preliminary 
 
 The results suggest that Simulee is able to detect most of the manually identified synchronization bugs in the benchmark.
 
+* Day 33: SE
+- *Title*: Identifying experts in software libraries and frameworks among GitHub users
+
+- *Year*: 2019
+- *Proc*: MSR
+
+The following content is referred from [3]
+** Problem
+We still lack techniques to assess developers expertise in widely popular libraries and frameworks.
+
+** Method
+They evaluate the performance of unsupervised (based on clustering) and supervised machine learning classifiers (Random Forest and SVM) to identify experts in three popular JavaScript libraries: facebook/react, mongodb/node-mongodb, and socketio/socket.io.
+
+** Result
+First, they found that standard machine learning classifiers (e.g., Random Forest and SVM) do not have a good performance in this problem, at least when they are trained with all developers from a sample of GitHub users. The main reason is that not all experts have a strong presence on GitHub. By contrast, they used clustering techniques to identify experts with high activity on GitHub projects that depend on particular libraries and frameworks. Particularly, they found clusters with 74% (REACT), 65% (NODE-MONGODB), and 75% (SOCKET.IO) of experts.
+
+** Future work
+(1) investigate other target libraries and frameworks; 
+(2) investigate the use of features from other platforms, such as Stack Overflow and TopCoder;
+(3) investigate the accuracy of the proposed method with other developers, including developers of less popular projects
 
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
 2. APA is unavailable now
+
+3. Montandon, J. E., Silva, L. L., & Valente, M. T. (2019, May). Identifying experts in software libraries and frameworks among GitHub users. In 2019 IEEE/ACM 16th International Conference on Mining Software Repositories (MSR) (pp. 276-287). IEEE.
