@@ -4,6 +4,8 @@ From 26 July 2020 to
 1. [[#day-31-dm][Day 31: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding]]
 2. [[#day-32-se][Day 32: Simulee: Detecting CUDA Synchronization Bugs via Memory-Access Modeling]]
 3. [[#day-33-se][Day 33: Identifying experts in software libraries and frameworks among GitHub users]]
+4. [[#day-34-nlp][Day 34: DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference]]
+
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -65,9 +67,40 @@ First, they found that standard machine learning classifiers (e.g., Random Fores
 (2) investigate the use of features from other platforms, such as Stack Overflow and TopCoder;
 (3) investigate the accuracy of the proposed method with other developers, including developers of less popular projects
 
+* Day 34: NLP
+- *Title*: DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference
+- *Year*: 2020
+- *Proc*: NLP
+
+The following content is referred from [4]
+
+** Problem
+Large-scale pre-trained language models are slow in inference.
+
+** Method
+They propose DeeBERT (Dynamic early exiting for BERT) to accelerate BERT.
+
+The inspiration comes from a well-known observation in the computer vision community: in deep convolutional neural networks, higher layers typically produce more detailed and finer-grained features.
+
+DeeBERT accelerates BERT inference by inserting extra classification layers (which we refer to as off-ramps) between each transformer layer of BERT.
+
+There is no early stopping and the checkpoint after full fine-tuning is chosen.
+
+** Result
+They conduct experiments on BERT and RoBERTa with six GLUE datasets, showing that DeeBERT is capable of accelerating model inference by up to ∼40% with minimal model quality degradation on downstream tasks.
+
+DeeBERT, an effective method that exploits redundancy in BERT models to achieve better quality–efficiency trade-offs.
+
+** Future work
+(1) DeeBERT’s training method, while maintaining good quality in the last off-ramp, reduces model capacity available for intermediate off-ramps; it would be important to look for a method that achieves a better balance between all off-ramps.
+
+(2) The reasons why some transformer layers appear redundant2 and why DeeBERT considers some samples easier than others remain unknown; it would be interesting to further explore relationships between pre-training and layer redundancy, sample complexity and exit layer, and related characteristics.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
 2. APA is unavailable now
 
 3. Montandon, J. E., Silva, L. L., & Valente, M. T. (2019, May). Identifying experts in software libraries and frameworks among GitHub users. In 2019 IEEE/ACM 16th International Conference on Mining Software Repositories (MSR) (pp. 276-287). IEEE.
+
+4. Xin, J., Tang, R., Lee, J., Yu, Y., & Lin, J. (2020). DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference. arXiv preprint arXiv:2004.12993.
