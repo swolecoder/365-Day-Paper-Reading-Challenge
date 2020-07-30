@@ -5,7 +5,7 @@ From 26 July 2020 to
 2. [[#day-32-se][Day 32: Simulee: Detecting CUDA Synchronization Bugs via Memory-Access Modeling]]
 3. [[#day-33-se][Day 33: Identifying experts in software libraries and frameworks among GitHub users]]
 4. [[#day-34-nlp][Day 34: DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference]]
-
+5. [[#day-35-ir][Day 35: Table Search Using a Deep Contextualized Language Model]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -96,6 +96,26 @@ DeeBERT, an effective method that exploits redundancy in BERT models to achieve 
 
 (2) The reasons why some transformer layers appear redundant2 and why DeeBERT considers some samples easier than others remain unknown; it would be interesting to further explore relationships between pre-training and layer redundancy, sample complexity and exit layer, and related characteristics.
 
+* Day 35: IR
+- *Title*: Table Search Using a Deep Contextualized Language Model
+- *Year*: 2020
+- *Proc*: SIGIR
+
+The following content is referred from [5]
+** Problem
+They consider the task ofad hoc table retrieval where given a keyword query, a list of ranked tables are returned.
+
+They use the deep contextualized language model BERT for the task of ad hoc table retrieval. They investigate how to encode table content considering the table structure and input length limit of BERT. We also propose an approach that incorporates features from prior literature on table retrieval and jointly trains them with BERT.
+
+** Method
+In experiments on public datasets, they show that their best approach can outperform the previous state-of-the-art method and BERT baselines with a large margin under different evaluation metrics.
+
+** Result
+Our proposed Hybrid-BERT-Row-Max method outperforms the previous state-of-the-art and BERT baselines with a large margin on WikiTables dataset.
+
+** Future work
+Future work could design a framework that automatically chooses the strategy considering the query types. Besides, designing pretraining tasks for tables and pretraining BERT on a large table collection could be promising to further improve the performance of BERT on table-related tasks such as table retrieval.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -104,3 +124,5 @@ DeeBERT, an effective method that exploits redundancy in BERT models to achieve 
 3. Montandon, J. E., Silva, L. L., & Valente, M. T. (2019, May). Identifying experts in software libraries and frameworks among GitHub users. In 2019 IEEE/ACM 16th International Conference on Mining Software Repositories (MSR) (pp. 276-287). IEEE.
 
 4. Xin, J., Tang, R., Lee, J., Yu, Y., & Lin, J. (2020). DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference. arXiv preprint arXiv:2004.12993.
+
+5. Chen, Z., Trabelsi, M., Heflin, J., Xu, Y., & Davison, B. D. (2020). Table Search Using a Deep Contextualized Language Model. arXiv preprint arXiv:2005.09207.
