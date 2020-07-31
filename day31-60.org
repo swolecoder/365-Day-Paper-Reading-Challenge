@@ -6,6 +6,7 @@ From 26 July 2020 to
 3. [[#day-33-se][Day 33: Identifying experts in software libraries and frameworks among GitHub users]]
 4. [[#day-34-nlp][Day 34: DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference]]
 5. [[#day-35-ir][Day 35: Table Search Using a Deep Contextualized Language Model]]
+6. [[#day-36-ir][Day 36: An Analysis of BERT in Document Ranking]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -116,6 +117,30 @@ Our proposed Hybrid-BERT-Row-Max method outperforms the previous state-of-the-ar
 ** Future work
 Future work could design a framework that automatically chooses the strategy considering the query types. Besides, designing pretraining tasks for tables and pretraining BERT on a large table collection could be promising to further improve the performance of BERT on table-related tasks such as table retrieval.
 
+* Day 36: IR
+- *Title*: An Analysis of BERT in Document Ranking
+- *Year*: 2020
+- *Proc*: SIGIR
+
+The following content is referred from [6]
+** Problem
+To increase the explainability of the ranking process performed by BERT, we investigate a state-of-the-art BERT-based ranking model with focus on its attention mechanism and interaction behavior.
+
+They believe this baseline is too simple, so whether and how BERT can learn good representations for queries and documents is not thoroughly investigated.
+
+** Method
+First, an attribution technique is used to study the token importance in different layers. 
+
+Second, several probing classifiers are trained to study the relevance signal carried by the token representations. 
+
+Third, they compare the performance of BERT when its attention matrix is masked in different ways to investigate the importance of interactions.
+
+** Result
+It demonstrates that BERT extracts query-independent representations for document. Thus, the representations ofdocument tokens can be pre-calculated offline to improve efficiency.
+
+** Future work
+transforming BERT to a more efficient representation-focused model
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -126,3 +151,5 @@ Future work could design a framework that automatically chooses the strategy con
 4. Xin, J., Tang, R., Lee, J., Yu, Y., & Lin, J. (2020). DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference. arXiv preprint arXiv:2004.12993.
 
 5. Chen, Z., Trabelsi, M., Heflin, J., Xu, Y., & Davison, B. D. (2020). Table Search Using a Deep Contextualized Language Model. arXiv preprint arXiv:2005.09207.
+
+6. An Analysis of BERT in Document Ranking APA is unavailable now
