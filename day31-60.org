@@ -7,6 +7,7 @@ From 26 July 2020 to
 4. [[#day-34-nlp][Day 34: DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference]]
 5. [[#day-35-ir][Day 35: Table Search Using a Deep Contextualized Language Model]]
 6. [[#day-36-ir][Day 36: An Analysis of BERT in Document Ranking]]
+7. [[#day-37-ir][Day 38: A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -139,7 +140,26 @@ Third, they compare the performance of BERT when its attention matrix is masked 
 It demonstrates that BERT extracts query-independent representations for document. Thus, the representations ofdocument tokens can be pre-calculated offline to improve efficiency.
 
 ** Future work
-transforming BERT to a more efficient representation-focused model
+Transforming BERT to a more efficient representation-focused model
+
+* Day 37: IR
+- *Title*: A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension
+- *Year*: 2020
+- *Proc*: SIGIR
+
+The following content is referred from [7]
+** Problem
+In this paper, inspired by the observation that most probing tasks involve identifying matched pairs of phrases (e.g. coreference requires matching an entity and a pronoun), they propose a pairwise probe to understand BERT fine-tuning on the machine reading comprehension (MRC) task.
+
+** Method
+In order to probe the above phenomena, we design a pairwise ranking metric to quantitatively compare pre-trained and fine-tuned model with in-domain data. The metric is designed to measure whether matching pairs are closer than random un-matching pairs that aim to provide insight about how well related information are encoded.
+
+** Result
+(1) Fine-tuning has little effect on the fundamental and low-level information and general semantic tasks. 
+(2) For specific abilities required for downstream tasks, fine-tuned BERT is better than pre-trained BERT and such gaps are obvious after the fifth layer
+
+** Future work
+One can apply the pairwise ranking metric to analyze impact of fine-tuning on other tasks.
 
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
@@ -153,3 +173,5 @@ transforming BERT to a more efficient representation-focused model
 5. Chen, Z., Trabelsi, M., Heflin, J., Xu, Y., & Davison, B. D. (2020). Table Search Using a Deep Contextualized Language Model. arXiv preprint arXiv:2005.09207.
 
 6. An Analysis of BERT in Document Ranking APA is unavailable now
+
+7. Cai, J., Zhu, Z., Nie, P., & Liu, Q. (2020). A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension. arXiv preprint arXiv:2006.01346.
