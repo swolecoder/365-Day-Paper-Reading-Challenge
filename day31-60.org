@@ -9,6 +9,7 @@ From 26 July 2020 to
 6. [[#day-36-ir][Day 36: An Analysis of BERT in Document Ranking]]
 7. [[#day-37-ir][Day 38: A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension]]
 8. [[#day-38-se][Day 39: TRADER: Trace Divergence Analysis and Embedding Regulation for Debugging Recurrent Neural Networks]]
+9. [[#day-39-nlp][Day 40: Beyond Accuracy: Behavioral Testing of NLP Models with CheckList]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -167,7 +168,7 @@ One can apply the pairwise ranking metric to analyze impact of fine-tuning on ot
 - *Year*: 2020
 - *Proc*: ICSE
 
- The following content is referred from [8]
+The following content is referred from [8]
 ** Problem
 They propose a new technique to automatically diagnose how problematic embeddings impact model performance, by comparing model execution traces from correctly and incorrectly executed samples.
 
@@ -176,6 +177,23 @@ They focus on debugging RNN models for textual inputs (e.g., sentiment analysis 
 
 ** Result
 The experiments show that TRADER can consistently and effectively improve accuracy for real world models and datasets by 5.37% on average, which represents substantial improvement in the literature of RNN models.
+
+* Day 40: NLP
+- *Title*: Beyond Accuracy: Behavioral Testing of NLP Models with CheckList
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [9]
+** Problem
+While useful, accuracy on benchmarks is not sufficient for evaluating NLP models.
+
+** Method
+They introduce CheckList, a task-agnostic methodology for testing NLP models
+
+CheckList includes a matrix of general linguistic capabilities and test types that facilitate comprehensive test ideation, as well as a software tool to generate a large and diverse number of test cases quickly. 
+
+** Result
+They illustrate the utility of CheckList with tests for three tasks, identifying critical failures in both commercial and state-of-art models. In a user study, a team responsible for a commercial sentiment analysis model found new and actionable bugs in an extensively tested model. In another user study, NLP practitioners with CheckList created twice as many tests, and found almost three times as many bugs as users without it.
 
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
@@ -193,3 +211,5 @@ The experiments show that TRADER can consistently and effectively improve accura
 7. Cai, J., Zhu, Z., Nie, P., & Liu, Q. (2020). A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension. arXiv preprint arXiv:2006.01346.
 
 8. Tao, G., Ma, S., Liu, Y., Xu, Q., & Zhang, X. TRADER: Trace Divergence Analysis and Embedding Regulation for Debugging Recurrent Neural Networks.
+
+9. Ribeiro, M. T., Wu, T., Guestrin, C., & Singh, S. (2020). Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. arXiv preprint arXiv:2005.04118.
