@@ -10,6 +10,8 @@ From 26 July 2020 to
 7. [[#day-37-ir][Day 38: A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension]]
 8. [[#day-38-se][Day 39: TRADER: Trace Divergence Analysis and Embedding Regulation for Debugging Recurrent Neural Networks]]
 9. [[#day-39-nlp][Day 40: Beyond Accuracy: Behavioral Testing of NLP Models with CheckList]]
+10. [[#day-40-se][Day 41: Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?]]
+
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -163,7 +165,7 @@ In order to probe the above phenomena, we design a pairwise ranking metric to qu
 ** Future work
 One can apply the pairwise ranking metric to analyze impact of fine-tuning on other tasks.
 
-* Day 39: SE
+* Day 38: SE
 - *Title*: TRADER: Trace Divergence Analysis and Embedding Regulation for Debugging Recurrent Neural Networks
 - *Year*: 2020
 - *Proc*: ICSE
@@ -178,7 +180,7 @@ They focus on debugging RNN models for textual inputs (e.g., sentiment analysis 
 ** Result
 The experiments show that TRADER can consistently and effectively improve accuracy for real world models and datasets by 5.37% on average, which represents substantial improvement in the literature of RNN models.
 
-* Day 40: NLP
+* Day 39: NLP
 - *Title*: Beyond Accuracy: Behavioral Testing of NLP Models with CheckList
 - *Year*: 2020
 - *Proc*: ACL
@@ -194,6 +196,28 @@ CheckList includes a matrix of general linguistic capabilities and test types th
 
 ** Result
 They illustrate the utility of CheckList with tests for three tasks, identifying critical failures in both commercial and state-of-art models. In a user study, a team responsible for a commercial sentiment analysis model found new and actionable bugs in an extensively tested model. In another user study, NLP practitioners with CheckList created twice as many tests, and found almost three times as many bugs as users without it.
+
+* Day 40: SE
+- *Title*: Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?
+- *Year*: 2020
+- *Proc*: SE
+
+The following content is referred from [10]
+** Problem
+To understand if programmers have difficulty learning additional programming languages, they conducted an empirical study of Stack Overflow questions across 18 different programming languages.
+
+** Method
+They hypothesized that previous knowledge could potentially interfere with learning a new programming language. From their inspection of 450 Stack Overflow questions, they found 276 instances of interference that occurred due to faulty assumptions originating from knowledge about a different language.
+
+They analyzed 450 posts for 18 different programming languages and qualitatively coded each post, characterizing posts in terms of whether or not programmers made incorrect assumptions based on their previous programming knowledge. Then, to understand what learning strategies programmers used when learning another language and why previous knowledge could interfere with this process. They interviewed 16 professional programmers who had recently switched to a new programming language.
+
+** Result
+- Cross-language interference is a problem: 276 (61%) cross-language posts on Stack Overflow contained incorrect assumptions due to interference with previous language knowledge.
+
+- Based on our interviews, professional programmers primarily learned new languages on their own, using an opportunistic strategy that often involved relating the new language to previous language knowledge; however, this results in interference which harms their learning.
+
+- Learning a new language involves breaking down old habits, shifting one’s mindset, dealing with little-to-no mapping to previous languages, searching for proper documentation, and retooling in a new environment. All together, these challenges make learning another language difficult.
+
 
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
@@ -213,3 +237,5 @@ They illustrate the utility of CheckList with tests for three tasks, identifying
 8. Tao, G., Ma, S., Liu, Y., Xu, Q., & Zhang, X. TRADER: Trace Divergence Analysis and Embedding Regulation for Debugging Recurrent Neural Networks.
 
 9. Ribeiro, M. T., Wu, T., Guestrin, C., & Singh, S. (2020). Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. arXiv preprint arXiv:2005.04118.
+
+10. Shrestha, N., Botta, C., Barik, T., & Parnin, C. (2020, May). Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?. In Proceedings of the 42nd International Conference on Software Engineering, ICSE.
