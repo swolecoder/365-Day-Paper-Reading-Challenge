@@ -7,11 +7,11 @@ From 26 July 2020 to
 4. [[#day-34-nlp][Day 34: DeeBERT: Dynamic Early Exiting for Accelerating BERT Inference]]
 5. [[#day-35-ir][Day 35: Table Search Using a Deep Contextualized Language Model]]
 6. [[#day-36-ir][Day 36: An Analysis of BERT in Document Ranking]]
-7. [[#day-37-ir][Day 38: A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension]]
-8. [[#day-38-se][Day 39: TRADER: Trace Divergence Analysis and Embedding Regulation for Debugging Recurrent Neural Networks]]
-9. [[#day-39-nlp][Day 40: Beyond Accuracy: Behavioral Testing of NLP Models with CheckList]]
-10. [[#day-40-se][Day 41: Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?]]
-
+7. [[#day-37-ir][Day 37: A Pairwise Probe for Understanding BERT Fine-Tuning on Machine Reading Comprehension]]
+8. [[#day-38-se][Day 38: TRADER: Trace Divergence Analysis and Embedding Regulation for Debugging Recurrent Neural Networks]]
+9. [[#day-39-nlp][Day 39: Beyond Accuracy: Behavioral Testing of NLP Models with CheckList]]
+10. [[#day-40-se][Day 40: Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?]]
+11. [[#day-41-se][Day 41: Deep Transfer Bug Localization]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -218,6 +218,27 @@ They analyzed 450 posts for 18 different programming languages and qualitatively
 
 - Learning a new language involves breaking down old habits, shifting one’s mindset, dealing with little-to-no mapping to previous languages, searching for proper documentation, and retooling in a new environment. All together, these challenges make learning another language difficult.
 
+* Day 41: SE
+- *Title*: Deep Transfer Bug Localization Xuan
+- *Year*: 2019
+- *Journal*: TSE
+
+The following content is referred from [11]
+** Problem
+Sufficient bug data is often unavailable for many projects and companies. This raises the need for cross-project bug localization – the use of data from a project to help locate bugs in another project
+
+** Method
+They propose a deep transfer learning approach for cross-project bug localization. The proposed approach named TRANP-CNN extracts transferable semantic features from source project and fully exploits labeled data from target project for effective cross-project bug localization.
+
+They proposed a novel deep transfer neural network named TRANP-CNN (TRAnsfer Natural and Program Language Convolutional Neural Network). Firstly, TRANP-CNN takes bug reports and source files as inputs and learns a common transferable latent feature representation shared by both source and target projects. Next, TRANP-CNN creates a pair of prediction functions that are biased towards the source and target projects, based on the shared feature representation.
+
+TRANP-CNN consists of four layers: input layer, transferable feature extraction layer, project-specific prediction layer and output layer.
+
+** Result
+TRANP-CNN can locate buggy files correctly at top 1, top 5, and top 10 positions for 29.9%, 51.7%, 61.3% of the bugs respectively, which significantly outperform state-of-the-art bug localization solution based on deep learning and several other advanced alternative solutions considering various standard evaluation metrics.
+
+** Future work
+They plan to extend the evaluation of TRANP-CNN by including more bug reports from additional projects. They also plan to develop our solution into a tool that is integrated with an IDE followed by its evaluation from industry partners.
 
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
@@ -239,3 +260,5 @@ They analyzed 450 posts for 18 different programming languages and qualitatively
 9. Ribeiro, M. T., Wu, T., Guestrin, C., & Singh, S. (2020). Beyond Accuracy: Behavioral Testing of NLP Models with CheckList. arXiv preprint arXiv:2005.04118.
 
 10. Shrestha, N., Botta, C., Barik, T., & Parnin, C. (2020, May). Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?. In Proceedings of the 42nd International Conference on Software Engineering, ICSE.
+
+11. Huo, X., Thung, F., Li, M., Lo, D., & Shi, S. T. (2019). Deep transfer bug localization. IEEE Transactions on Software Engineering.
