@@ -13,6 +13,7 @@ From 26 July 2020 to
 10. [[#day-40-se][Day 40: Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?]]
 11. [[#day-41-se][Day 41: Deep Transfer Bug Localization]]
 12. [[#day-42-se][Day 42: Causal Testing: Understanding Defects’ Root Causes]]
+13. [[#day-43-se][Day 43: An Empirical Study on API Parameter Rules Hao]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -260,6 +261,25 @@ Using the Defects4J benchmark, we find that Causal Testing could be applied to 7
 ** Future work
 Future work could extend Causal Testing to include oracle mutation. A fruitful line of research, when specifications, formal or informal, are available, is to extract oracles from those specifications.
 
+* Day 43: SE
+- *Title*: An Empirical Study on API Parameter Rules Hao
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [13]
+** Problem
+API libraries have been widely used, but are often poorly documented. When programmers do not fully understand API usage, they can introduce API-related bugs into their code. To handle this issue, researchers have proposed various approaches to facilitate better API usage. In particular, a popular research area is to mine parameter rules for APIs. To help developers correctly use library APIs, researchers built tools to mine API parameter rules. However, it is still unknown (1) what types of parameter rules there are, and (2) how these rules distribute inside documents and source files.
+
+** Method
+They conducted an empirical study to investigate the above-mentioned questions. To analyze as many parameter rules as possible, they took a hybrid approach that combines automatic localization of constrained parameters with manual inspection.
+
+The automatic approach—PaRu—locates parameters that have constraints either documented in Javadoc (i.e., document rules) or implied by source code (i.e., code rules). Our manual inspection (1) identifies and categorizes rules for the located parameters, and (2) establishes mapping between document and code rules. By applying PaRu to 9 widely used libraries, we located 5,334 parameters with either document or code rules. Interestingly, there are only 187 parameters that have both types of rules, and 79 pairs of these parameter rules are unmatched. Additionally, PaRu extracted 1,688 rule sentences from Javadoc and code. We manually classified these sentences into six categories, two of which are overlooked by prior approaches.
+
+** Result
+We found that 86.2% of parameters have only code rules; 10.3% of parameters have only document rules; and only 3.5% of parameters have both document and code rules.
+
+** Future work
+work towards better mining and recommendation techniques for parameter rules
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -284,3 +304,5 @@ Future work could extend Causal Testing to include oracle mutation. A fruitful l
 11. Huo, X., Thung, F., Li, M., Lo, D., & Shi, S. T. (2019). Deep transfer bug localization. IEEE Transactions on Software Engineering.
 
 12. Johnson, B., Brun, Y., & Meliou, A. (2020). Causal Testing: Understanding Defects’ Root Causes. In Proceedings of the 2020 International Conference on Software Engineering.
+
+13. Zhong, H., Meng, N., Li, Z., & Jia, L. An Empirical Study on API Parameter Rules.
