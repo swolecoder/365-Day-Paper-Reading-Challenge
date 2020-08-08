@@ -14,6 +14,7 @@ From 26 July 2020 to
 11. [[#day-41-se][Day 41: Deep Transfer Bug Localization]]
 12. [[#day-42-se][Day 42: Causal Testing: Understanding Defects’ Root Causes]]
 13. [[#day-43-se][Day 43: An Empirical Study on API Parameter Rules Hao]]
+14. [[#day-44-se][Day 44: Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -280,6 +281,27 @@ We found that 86.2% of parameters have only code rules; 10.3% of parameters have
 
 ** Future work
 work towards better mining and recommendation techniques for parameter rules
+
+* Day 44: SE
+- *Title*: Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning
+- *Year*: 2020
+- *Prco*: ICSE
+
+The following content is referred from [14]
+** Problem
+The prerequisite of using screen readers is that developers have to add natural-language labels to the image-based components when they are developing the app. Unfortunately, more than 77% apps have issues of missing labels, according to their analysis of 10,408 Android apps.
+
+** Method
+To overcome those challenges, they develop a deep learning based
+model to automatically predict the content description.
+
+Inspired by image captioning, they adopt the CNN and transformer
+encoder decoder for predicting the labels based on the large-scale dataset.
+** Result
+The experiments show that our LabelDroid can achieve 60.7% exact match and 0.654 ROUGE-L score which outperforms both state-of-the-art baselines. We also demonstrate that the predictions from our model is of higher quality than that from junior Android developers.
+** Future work
+In the future, they will first improve our model for achieving better quality by taking the app metadata into the consideration. Second, they will also try to test the quality of existing labels by checking if the description is concise and informative.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -306,3 +328,5 @@ work towards better mining and recommendation techniques for parameter rules
 12. Johnson, B., Brun, Y., & Meliou, A. (2020). Causal Testing: Understanding Defects’ Root Causes. In Proceedings of the 2020 International Conference on Software Engineering.
 
 13. Zhong, H., Meng, N., Li, Z., & Jia, L. An Empirical Study on API Parameter Rules.
+
+14. Chen, J., Chen, C., Xing, Z., Xu, X., Zhu, L., Li, G., & Wang, J. (2020). Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning. arXiv preprint arXiv:2003.00380.
