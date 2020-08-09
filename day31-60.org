@@ -15,6 +15,7 @@ From 26 July 2020 to
 12. [[#day-42-se][Day 42: Causal Testing: Understanding Defects’ Root Causes]]
 13. [[#day-43-se][Day 43: An Empirical Study on API Parameter Rules Hao]]
 14. [[#day-44-se][Day 44: Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning]]
+15. [[#day-45-se][Day 45: Wireframe-based UI Design Search through Image Autoencoder]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -302,6 +303,24 @@ The experiments show that our LabelDroid can achieve 60.7% exact match and 0.654
 ** Future work
 In the future, they will first improve our model for achieving better quality by taking the app metadata into the consideration. Second, they will also try to test the quality of existing labels by checking if the description is concise and informative.
 
+* Day 45: SE
+- *Title*: Wireframe-based UI Design Search through Image Autoencoder
+- *Year*: 2020
+- *Journal*: TOSEM
+
+The following content is referred from [15]
+** Problem
+Existing keyword-based, image-similarity-based, and component-matching-based methods cannot reliably find relevant high-fidelity UI designs in a large database alike to the UI wireframe that the developers sketch, in face ofthe great variations in UI designs.
+
+** Method
+The key innovation of their search engine is to train a wireframe image autoencoder using a large database of real-application UI designs, without the need for labeling relevant UI designs.
+
+** Result
+Our experiments confirm the superior performance of our search engine over existing image-similarity or component-matching-based methods and demonstrate the usefulness of their search engine in real-world UI design tasks.
+
+** Future work
+One can extend of the tool to collecting UI elements in WebView components and in specific engine.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -330,3 +349,5 @@ In the future, they will first improve our model for achieving better quality by
 13. Zhong, H., Meng, N., Li, Z., & Jia, L. An Empirical Study on API Parameter Rules.
 
 14. Chen, J., Chen, C., Xing, Z., Xu, X., Zhu, L., Li, G., & Wang, J. (2020). Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning. arXiv preprint arXiv:2003.00380.
+
+15. Chen, J., Chen, C., Xing, Z., Xia, X., Zhu, L., Grundy, J., & Wang, J. (2020). Wireframe-based UI design search through image autoencoder. ACM Transactions on Software Engineering and Methodology (TOSEM), 29(3), 1-31.
