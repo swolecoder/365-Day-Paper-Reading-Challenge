@@ -16,6 +16,7 @@ From 26 July 2020 to
 13. [[#day-43-se][Day 43: An Empirical Study on API Parameter Rules Hao]]
 14. [[#day-44-se][Day 44: Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning]]
 15. [[#day-45-se][Day 45: Wireframe-based UI Design Search through Image Autoencoder]]
+16. [[#day-46-se][Day 46: Repairing Deep Neural Networks: Fix Patterns and Challenges]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -321,6 +322,25 @@ Our experiments confirm the superior performance of our search engine over exist
 ** Future work
 One can extend of the tool to collecting UI elements in WebView components and in specific engine.
 
+* Day 46: SE
+- *Title*: Repairing Deep Neural Networks: Fix Patterns and Challenges
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [16]
+** Problem
+A significant SE problem in the software that uses DNNs is the
+presence of bugs. What are the common bugs in such software? How do they differ? Answering these questions has the potential to fuel SE research on bug detection and repair for DNNs. This work focuses on bug fix patterns.
+
+** Method
+They have studied 415 repairs from Stack Overflow and 555 repairs from GitHub for five popular deep learning libraries Caffe, Keras, Tensorflow, Theano, and Torch to understand challenges in repairs and bug repair patterns.
+
+** Result
+Their key findings reveal that DNN bug fix patterns are distinctive compared to traditional bug fix patterns; the most common bug fix patterns are fixing data dimension and neural network connectivity; DNN bug fixes have the potential to introduce adversarial vulnerabilities; DNN bug fixes frequently introduce new bugs; and DNN bug localization, reuse of trained model, and coping with frequent releases are major challenges faced by developers when fixing bugs. We also contribute a benchmark of 667 DNN (bug, repair) instances.
+
+** Future work
+First and perhaps most immediately, a number of bug fix patterns identified by this work can be automated in repair tools. Such tools for bug repairs can help the developers integrating DNN into their software. Second, an abstract representation of the DNN along with the code that uses it can be developed. We saw several bug fix patterns that rely on analyzing such a representation. Third, there is a critical need to improve bug localization for DNN by addressing unique challenges that arise, and by creating DNN-aware bug localization tools. Fourth, there is an urgent need to detect bugs introduced by dimension mismatch and specially changes that have the potential to introduce vulnerabilities in the DNNs. Fifth, urgent work is needed on upgrade tools that encode the semantics of version changes and keep up with the change in the signature and semantics of DNN libraries.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -351,3 +371,5 @@ One can extend of the tool to collecting UI elements in WebView components and i
 14. Chen, J., Chen, C., Xing, Z., Xu, X., Zhu, L., Li, G., & Wang, J. (2020). Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning. arXiv preprint arXiv:2003.00380.
 
 15. Chen, J., Chen, C., Xing, Z., Xia, X., Zhu, L., Grundy, J., & Wang, J. (2020). Wireframe-based UI design search through image autoencoder. ACM Transactions on Software Engineering and Methodology (TOSEM), 29(3), 1-31.
+
+16. Islam, M. J., Pan, R., Nguyen, G., & Rajan, H. (2020). Repairing Deep Neural Networks: Fix Patterns and Challenges. arXiv preprint arXiv:2005.00972.
