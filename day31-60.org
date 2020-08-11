@@ -17,6 +17,7 @@ From 26 July 2020 to
 14. [[#day-44-se][Day 44: Unblind Your Apps: Predicting Natural-Language Labels for Mobile GUI Components by Deep Learning]]
 15. [[#day-45-se][Day 45: Wireframe-based UI Design Search through Image Autoencoder]]
 16. [[#day-46-se][Day 46: Repairing Deep Neural Networks: Fix Patterns and Challenges]]
+17. [[#day-47-se][Day 47: Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -341,6 +342,25 @@ Their key findings reveal that DNN bug fix patterns are distinctive compared to 
 ** Future work
 First and perhaps most immediately, a number of bug fix patterns identified by this work can be automated in repair tools. Such tools for bug repairs can help the developers integrating DNN into their software. Second, an abstract representation of the DNN along with the code that uses it can be developed. We saw several bug fix patterns that rely on analyzing such a representation. Third, there is a critical need to improve bug localization for DNN by addressing unique challenges that arise, and by creating DNN-aware bug localization tools. Fourth, there is an urgent need to detect bugs introduced by dimension mismatch and specially changes that have the potential to introduce vulnerabilities in the DNNs. Fifth, urgent work is needed on upgrade tools that encode the semantics of version changes and keep up with the change in the signature and semantics of DNN libraries.
 
+* Day 47: SE
+- *Title*: Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [17]
+** Problem
+Deep neural networks (DNN) have been shown to be notoriously brittle to small perturbations in their input data. This problem is analogous to the over-fitting problem in test-based program synthesis and automatic program repair, which is a consequence of the incomplete specification, i.e., the limited tests or training examples, that the program synthesis or repair algorithm has to learn from.
+
+** Method
+They propose a technique that re-purposes software testing methods, specifically mutation-based fuzzing, to augment the training data of DNNs, with the objective of enhancing their robustness. Our technique casts the DNN data augmentation problem as an optimization problem. It uses genetic search to generate the most suitable variant of an input data to use for training the DNN.
+
+They propose a new algorithm that uses guided test generation techniques to address the data aug- mentation problem for robust generalization of DNNs under natural environmental variations. Specifically, we cast data augmentation problem as an optimization problem, and use genetic search on a space of the natural environmental variants of each training input data, to identify the worst variant for augmentation.
+** Result
+Our evaluation shows that Sensei can improve the robust accuracy of the DNN, compared to the state of the art, on each of the 15 models, by upto 11.9% and 5.5% on average. Further, Sensei-SA can reduce the average DNN training time by 25%, while still improving robust accuracy.
+
+** Future work
+Consider combination of two approaches, theirs and others.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -373,3 +393,5 @@ First and perhaps most immediately, a number of bug fix patterns identified by t
 15. Chen, J., Chen, C., Xing, Z., Xia, X., Zhu, L., Grundy, J., & Wang, J. (2020). Wireframe-based UI design search through image autoencoder. ACM Transactions on Software Engineering and Methodology (TOSEM), 29(3), 1-31.
 
 16. Islam, M. J., Pan, R., Nguyen, G., & Rajan, H. (2020). Repairing Deep Neural Networks: Fix Patterns and Challenges. arXiv preprint arXiv:2005.00972.
+
+17. Gao, X., Saha, R. K., Prasad, M. R., & Roychoudhury, A. Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks.
