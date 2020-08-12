@@ -18,6 +18,7 @@ From 26 July 2020 to
 15. [[#day-45-se][Day 45: Wireframe-based UI Design Search through Image Autoencoder]]
 16. [[#day-46-se][Day 46: Repairing Deep Neural Networks: Fix Patterns and Challenges]]
 17. [[#day-47-se][Day 47: Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks]]
+18. [[#day-48-se][Day 48: Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -361,6 +362,28 @@ Our evaluation shows that Sensei can improve the robust accuracy of the DNN, com
 ** Future work
 Consider combination of two approaches, theirs and others.
 
+* Day 48: SE
+- *Title*: Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [18]
+** Problem
+Most CPDP techniques involve two major steps, i.e., transfer learning and classification, each of which has at least one parameter to be tuned to achieve their optimal performance. This practice fits well with the purpose of automated parameter optimization. However, there is a lack of thorough understanding about what are the impacts of automated parameter optimization on various CPDP techniques.
+
+** Method
+They present the first empirical study that looks into such impacts on 62 CPDP techniques, 13 of which are chosen from the existing CPDP literature while the other 49 ones have not been explored before.
+
+** Result
+(1) Automated parameter optimization substantially improves the defect prediction performance of 77% CPDP techniques with a manageable computational cost.
+(2) Transfer learning is of ultimate importance in CPDP.
+(3) The research on CPDP is far from mature where it is 'not difficult' to find a better alternative by making a combination of existing transfer learning and classification techniques.
+
+** Future work
+One can design sophisticated optimizer for CPDP that explicitly searches the parameter space for the transfer learning part. Furthermore, the problem of portfolio optimization for CPDP, which involves both the selection of combination and parameter tuning, is also one of our ongoing research directions.
+
+Future work should target a whole portfolio of optimization, tuning not only the parameters, but also the algorithmic components, i.e., the selection of appropriate transfer learning and classifier pair, of a CPDP model.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -395,3 +418,5 @@ Consider combination of two approaches, theirs and others.
 16. Islam, M. J., Pan, R., Nguyen, G., & Rajan, H. (2020). Repairing Deep Neural Networks: Fix Patterns and Challenges. arXiv preprint arXiv:2005.00972.
 
 17. Gao, X., Saha, R. K., Prasad, M. R., & Roychoudhury, A. Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks.
+
+18. Li, K., Xiang, Z., Chen, T., Wang, S., & Tan, K. C. (2020). Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study. arXiv preprint arXiv:2002.03148.
