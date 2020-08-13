@@ -19,6 +19,7 @@ From 26 July 2020 to
 16. [[#day-46-se][Day 46: Repairing Deep Neural Networks: Fix Patterns and Challenges]]
 17. [[#day-47-se][Day 47: Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks]]
 18. [[#day-48-se][Day 48: Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study]]
+19. [[#day-49-se][Day 49: CPC: Automatically Classifying and Propagating Natural Language Comments via Program Analysis]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -384,6 +385,24 @@ One can design sophisticated optimizer for CPDP that explicitly searches the par
 
 Future work should target a whole portfolio of optimization, tuning not only the parameters, but also the algorithmic components, i.e., the selection of appropriate transfer learning and classifier pair, of a CPDP model.
 
+* Day 49: SE
+- *Title*: CPC: Automatically Classifying and Propagating Natural Language Comments via Program Analysis
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [19]
+** Problem
+Developers are less motivated to write and update comments, making it infeasible and error-prone to leverage comments to facilitate software engineering task
+
+** Method
+They propose to leverage program analysis to systematically derive, refine, and propagate comments
+
+** Result
+They evaluate it on 5 large real-world projects. The evaluation results demonstrate that 41573 new comments can be derived by propagation from other code locations with 88% accuracy.
+
+** Future work
+They will train the classiiers with more labeled comments of other kinds of systems to improve the generalizability.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -420,3 +439,5 @@ Future work should target a whole portfolio of optimization, tuning not only the
 17. Gao, X., Saha, R. K., Prasad, M. R., & Roychoudhury, A. Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks.
 
 18. Li, K., Xiang, Z., Chen, T., Wang, S., & Tan, K. C. (2020). Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study. arXiv preprint arXiv:2002.03148.
+
+19. Zhai, Juan, et al. "CPC: Automatically classifying and propagating natural language comments via program analysis." (2019).
