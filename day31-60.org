@@ -20,6 +20,7 @@ From 26 July 2020 to
 17. [[#day-47-se][Day 47: Fuzz Testing based Data Augmentation to Improve Robustness of Deep Neural Networks]]
 18. [[#day-48-se][Day 48: Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study]]
 19. [[#day-49-se][Day 49: CPC: Automatically Classifying and Propagating Natural Language Comments via Program Analysis]]
+20. [[#day-50-se][Day 50: Gang of Eight: A Defect Taxonomy for Infrastructure as Code Scripts]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -403,6 +404,24 @@ They evaluate it on 5 large real-world projects. The evaluation results demonstr
 ** Future work
 They will train the classiiers with more labeled comments of other kinds of systems to improve the generalizability.
 
+* Day 50: SE
+- *Title*: Gang of Eight: A Defect Taxonomy for Infrastructure as Code Scripts
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [20]
+** Problem
+The goal ofthis paper is to help practitioners improve the quality of infrastructure as code (IaC) scripts by developing a defect taxonomy for IaC scripts through qualitative analysis.
+
+** Method
+We develop a taxonomy of IaC defects by applying qualitative analysis on 1,448 defect-related commits collected from open source software (OSS) repositories of the Openstack organization. We conduct a survey with 66 practitioners to assess if they agree with the identified defect categories included in our taxonomy. We quantify the frequency of identified defect categories by analyzing 80,425 commits collected from 291 OSS repositories spanning across 2005 to 2019.
+
+** Result
+Using our reported defect category frequency results, practitioners can prioritize V&V efforts by fixing configuration data defects that occur in 23.5%∼33.9% of IaC scripts.
+
+** Future work
+Researchers can investigate if above-mentioned recommendations can actually reduce defects in IaC scripts. The coding patterns that ACID use, could be further leveraged in investigating if defect categories for IaC, such as configuration data, can be detected at compile time.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -441,3 +460,5 @@ They will train the classiiers with more labeled comments of other kinds of syst
 18. Li, K., Xiang, Z., Chen, T., Wang, S., & Tan, K. C. (2020). Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study. arXiv preprint arXiv:2002.03148.
 
 19. Zhai, Juan, et al. "CPC: Automatically classifying and propagating natural language comments via program analysis." (2019).
+
+20. Rahman, A., Farhana, E., Parnin, C., & Williams, L. (2020, May). Gang of eight: A defect taxonomy for infrastructure as code scripts. In Proceedings of the 42nd International Conference on Software Engineering, ICSE (Vol. 20).
