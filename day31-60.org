@@ -21,6 +21,7 @@ From 26 July 2020 to
 18. [[#day-48-se][Day 48: Understanding the Automated Parameter Optimization on Transfer Learning for CPDP: An Empirical Study]]
 19. [[#day-49-se][Day 49: CPC: Automatically Classifying and Propagating Natural Language Comments via Program Analysis]]
 20. [[#day-50-se][Day 50: Gang of Eight: A Defect Taxonomy for Infrastructure as Code Scripts]]
+21. [[#day-51-se][Day 51: Predictive Models in Software Engineering: Challenges and Opportunities]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -422,6 +423,27 @@ Using our reported defect category frequency results, practitioners can prioriti
 ** Future work
 Researchers can investigate if above-mentioned recommendations can actually reduce defects in IaC scripts. The coding patterns that ACID use, could be further leveraged in investigating if defect categories for IaC, such as configuration data, can be detected at compile time.
 
+* Day 51: SE
+- *Title*: Predictive Models in Software Engineering: Challenges and Opportunities
+- *Year*: 2020
+
+The following content is referred from [21]
+** Problem
+They describe the key models and approaches used, classify the different models, summarize the range of key application areas, and analyze research results. Based on their findings, they also propose a set of current challenges that still need to be addressed in future work and provide a proposed research road map for these opportunities.
+
+** Method
+Following previous survey study approaches, they first collected the titles of all papers published at ICSE, ASE, FSE, TSE, TOSEM, and EMSE between 2009 and 2019 from DBLP computer science bibliography.
+** Result
+- The cumulative number of predictive model related studies shows an increasing trend over the last decade, and most of the selected primary studies focus on proposing novel approaches.
+- We found 52 different predictive models were employed in software engineering tasks. These models can be classified into three categories – base learners, ensemble learners and deep learners.
+- Logistic Regression and Naive Bayes are the most widely used learning techniques to build predictive models for SE tasks to date. Several machine learning models are also popular models for addressing specific problems, including SVM and decision trees.
+- Recall, precision, and F-measure are the most frequently used performance metrics for evaluating the effectiveness of predictive models.
+** Future work
+1. Leveraging the power of big data.
+2. Neural network based predictive models.
+3. Assessment and selection of predictive models
+4. predictive models in specific research domains
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -462,3 +484,5 @@ Researchers can investigate if above-mentioned recommendations can actually redu
 19. Zhai, Juan, et al. "CPC: Automatically classifying and propagating natural language comments via program analysis." (2019).
 
 20. Rahman, A., Farhana, E., Parnin, C., & Williams, L. (2020, May). Gang of eight: A defect taxonomy for infrastructure as code scripts. In Proceedings of the 42nd International Conference on Software Engineering, ICSE (Vol. 20).
+
+21. Yang, Y., Xia, X., Lo, D., Bi, T., Grundy, J., & Yang, X. (2020). Predictive Models in Software Engineering: Challenges and Opportunities. arXiv preprint arXiv:2008.03656.
