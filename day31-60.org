@@ -22,6 +22,7 @@ From 26 July 2020 to
 19. [[#day-49-se][Day 49: CPC: Automatically Classifying and Propagating Natural Language Comments via Program Analysis]]
 20. [[#day-50-se][Day 50: Gang of Eight: A Defect Taxonomy for Infrastructure as Code Scripts]]
 21. [[#day-51-se][Day 51: Predictive Models in Software Engineering: Challenges and Opportunities]]
+22. [[#day-52-se][Day 52: Where should I comment my code? A dataset and model for predicting locations that need comments]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -444,6 +445,27 @@ Following previous survey study approaches, they first collected the titles of a
 3. Assessment and selection of predictive models
 4. predictive models in specific research domains
 
+* Day 52: SE
+- *Title*: Where should I comment my code? A dataset and model for predicting locations that need comments
+- *Year*: 2020
+- *Proc*: ICSE-NIER
+
+The following content is referred from [22]
+** Problem
+They have created a machine learning model that suggests locations where a programmer should write a code comment.
+** Method
+They present a corpus of C code where comment locations are identified.
+
+Their goal is to produce a binary label for each snippet indicating whether it should be commented or not. The comment might be needed on the snippet as a whole or on some LOC within it. They evaluated several models for this task
+
+To create their dataset, they divided the source code into snippets, labeled each snippet depending on whether it contains a comment, and removed all comments from the snippets.
+
+** Result
+Their models achieved precision of 74% and recall of 13% in identifying comment-worthy locations.
+
+** Future work
+Future work could evaluate ways to combine the techniques, as well as other modelling improvements to increase performance. It would be interesting to evaluate whether code that needs comments is worse code, or code that requires refactoring. Are their models also code smell detectors?
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -486,3 +508,5 @@ Following previous survey study approaches, they first collected the titles of a
 20. Rahman, A., Farhana, E., Parnin, C., & Williams, L. (2020, May). Gang of eight: A defect taxonomy for infrastructure as code scripts. In Proceedings of the 42nd International Conference on Software Engineering, ICSE (Vol. 20).
 
 21. Yang, Y., Xia, X., Lo, D., Bi, T., Grundy, J., & Yang, X. (2020). Predictive Models in Software Engineering: Challenges and Opportunities. arXiv preprint arXiv:2008.03656.
+
+22. Louis, A., Dash, S. K., Barr, E. T., Ernst, M. D., & Sutton, C. (2020). Where should I comment my code? A dataset and model for predicting locations that need comments. In Proceedings of the 42nd International Conference on Software Engineering (New Ideas and Emerging Results)(ICSE NIER 2020). Association for Computing Machinery (ACM).
