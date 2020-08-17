@@ -23,6 +23,7 @@ From 26 July 2020 to
 20. [[#day-50-se][Day 50: Gang of Eight: A Defect Taxonomy for Infrastructure as Code Scripts]]
 21. [[#day-51-se][Day 51: Predictive Models in Software Engineering: Challenges and Opportunities]]
 22. [[#day-52-se][Day 52: Where should I comment my code? A dataset and model for predicting locations that need comments]]
+23. [[#day-53-se][Day 53: Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -466,6 +467,24 @@ Their models achieved precision of 74% and recall of 13% in identifying comment-
 ** Future work
 Future work could evaluate ways to combine the techniques, as well as other modelling improvements to increase performance. It would be interesting to evaluate whether code that needs comments is worse code, or code that requires refactoring. Are their models also code smell detectors?
 
+* Day 53: SE
+- *Title*: Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks
+- *Year*: 2020
+- *Proc*: ICSE-NIER
+
+The following content is referred from [23]
+** Problem
+As many of the notebook authors are experts in their scientific fields, but laymen with respect to software engineering, one may ask questions on the quality of notebooks and their code.
+
+** Method
+In a preliminary study, they experimentally demonstrate that Jupyter notebooks are inundated with poor quality code, e.g., not respecting recommended coding practices, or containing unused variables and deprecated functions.
+
+** Result
+Their experimental results reveal that Jupyter notebooks are indeed inundated with poor coding practices.
+
+** Future work
+They argue that the community needs to propose promising approaches to (1) enforce good coding styles, (2) improve the quality and reliability of the code, (3) apply best practices for software quality, and (4) ensure a good balance between text and code in Jupyter notebooks—the more given how many published scientific results depend on calculations made in notebooks.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -510,3 +529,5 @@ Future work could evaluate ways to combine the techniques, as well as other mode
 21. Yang, Y., Xia, X., Lo, D., Bi, T., Grundy, J., & Yang, X. (2020). Predictive Models in Software Engineering: Challenges and Opportunities. arXiv preprint arXiv:2008.03656.
 
 22. Louis, A., Dash, S. K., Barr, E. T., Ernst, M. D., & Sutton, C. (2020). Where should I comment my code? A dataset and model for predicting locations that need comments. In Proceedings of the 42nd International Conference on Software Engineering (New Ideas and Emerging Results)(ICSE NIER 2020). Association for Computing Machinery (ACM).
+
+23. Wang, J., Li, L., & Zeller, A. (2019). Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks. arXiv preprint arXiv:1906.05234.
