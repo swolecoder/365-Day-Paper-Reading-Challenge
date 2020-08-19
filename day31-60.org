@@ -24,6 +24,7 @@ From 26 July 2020 to
 21. [[#day-51-se][Day 51: Predictive Models in Software Engineering: Challenges and Opportunities]]
 22. [[#day-52-se][Day 52: Where should I comment my code? A dataset and model for predicting locations that need comments]]
 23. [[#day-53-se][Day 53: Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks]]
+24. [[#day-54-se][Day 54: Assessing Practitioner Beliefs about Software Defect Prediction]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -485,6 +486,24 @@ Their experimental results reveal that Jupyter notebooks are indeed inundated wi
 ** Future work
 They argue that the community needs to propose promising approaches to (1) enforce good coding styles, (2) improve the quality and reliability of the code, (3) apply best practices for software quality, and (4) ensure a good balance between text and code in Jupyter notebooks—the more given how many published scientific results depend on calculations made in notebooks.
 
+* Day 54: SE
+- *Title*: Assessing Practitioner Beliefs about Software Defect Prediction
+- *Year*: 2020
+- *Proc*: ICSE-SEIP
+
+The following content is referred from [24]
+** Problem
+If we do not understand what factors lead to software defects, then that has detrimental effects for quality assurance, trust, insight, training, and tool development.
+
+** Method
+They analyze 3 times more changes (commits) than recent defect prediction work [11, 19] and the volume of our dataset is 8 times larger as we expand those changes (commits) that results in 301,627 source code file entries filtered from 524,851 in total.
+
+** Result
+Their conclusion will be that we need to change the nature of the debate with Software Engineering. Specifically, while it is important to report the effects that hold right now, it is also important to report on what effects change over time.
+
+** Future work
+- They advise focusing on factors that help to answer when & where support for beliefs holds for their future work.
+- Other researchers endorse their call for more reasoning about the context in SE.
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -531,3 +550,5 @@ They argue that the community needs to propose promising approaches to (1) enfor
 22. Louis, A., Dash, S. K., Barr, E. T., Ernst, M. D., & Sutton, C. (2020). Where should I comment my code? A dataset and model for predicting locations that need comments. In Proceedings of the 42nd International Conference on Software Engineering (New Ideas and Emerging Results)(ICSE NIER 2020). Association for Computing Machinery (ACM).
 
 23. Wang, J., Li, L., & Zeller, A. (2019). Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks. arXiv preprint arXiv:1906.05234.
+
+24. Shrikanth, N. C., & Menzies, T. (2019). Assessing Practitioner Beliefs about Software Defect Prediction. arXiv, arXiv-1912.
