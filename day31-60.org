@@ -24,7 +24,11 @@ From 26 July 2020 to
 21. [[#day-51-se][Day 51: Predictive Models in Software Engineering: Challenges and Opportunities]]
 22. [[#day-52-se][Day 52: Where should I comment my code? A dataset and model for predicting locations that need comments]]
 23. [[#day-53-se][Day 53: Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks]]
+<<<<<<< HEAD
 24. [[#day-54-se][Day 54: Assessing Practitioner Beliefs about Software Defect Prediction]]
+=======
+24. [[#day-54-se][Day 54: Skyline: Interactive In-Editor Computational Performance Profiling for Deep Neural Network Training]]
+>>>>>>> bb3d5b4d695f71ea56dbdfa0608ed5538580ec48
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -487,6 +491,7 @@ Their experimental results reveal that Jupyter notebooks are indeed inundated wi
 They argue that the community needs to propose promising approaches to (1) enforce good coding styles, (2) improve the quality and reliability of the code, (3) apply best practices for software quality, and (4) ensure a good balance between text and code in Jupyter notebooks—the more given how many published scientific results depend on calculations made in notebooks.
 
 * Day 54: SE
+<<<<<<< HEAD
 - *Title*: Assessing Practitioner Beliefs about Software Defect Prediction
 - *Year*: 2020
 - *Proc*: ICSE-SEIP
@@ -504,6 +509,30 @@ Their conclusion will be that we need to change the nature of the debate with So
 ** Future work
 - They advise focusing on factors that help to answer when & where support for beliefs holds for their future work.
 - Other researchers endorse their call for more reasoning about the context in SE.
+=======
+- *Title*: Skyline: Interactive In-Editor Computational Performance Profiling for Deep Neural Network Training
+- *Year*: 2020
+- *Proc*: UIST
+
+The following content is referred from [24]
+** Problem
+However, effectively performing this debugging requires intimate knowledge about the underlying software and hardware systems—something that the typical deep learning developer may not have.
+
+** Method
+They present SKYLINE: a new interactive tool for DNN training that supports in-editor computational performance profiling, visualization, and debugging. SKYLINE’s key contribution is that it leverages special computational properties of DNN training to provide (i) interactive performance
+predictions and visualizations, and (ii) directly manipulatable
+visualizations that, when dragged, mutate the batch size in the code.
+
+** Result
+An exploratory qualitative user study of SKYLINE produced promising results; all the participants found SKYLINE to be useful and easy to use.
+
+** Future work
+Extensibility
+- Supporting other frameworks
+- Supporting other editors
+- Mutating other model parameters
+
+>>>>>>> bb3d5b4d695f71ea56dbdfa0608ed5538580ec48
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -551,4 +580,8 @@ Their conclusion will be that we need to change the nature of the debate with So
 
 23. Wang, J., Li, L., & Zeller, A. (2019). Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks. arXiv preprint arXiv:1906.05234.
 
+<<<<<<< HEAD
 24. Shrikanth, N. C., & Menzies, T. (2019). Assessing Practitioner Beliefs about Software Defect Prediction. arXiv, arXiv-1912.
+=======
+24. APA is unavailable
+>>>>>>> bb3d5b4d695f71ea56dbdfa0608ed5538580ec48
