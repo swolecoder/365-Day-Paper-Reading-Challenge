@@ -509,6 +509,45 @@ Extensibility
 - Supporting other editors
 - Mutating other model parameters
 
+* Day 55: SE
+- *Title*: Suggesting Natural Method Names to Check Name Consistencies
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [25]
+** Problem
+Misleading names of the methods in a project or the APIs in a
+software library confuse developers about program functionality
+and API usages, leading to API misuses and defects.
+** Method
+They introduce MNire, a machine learning approach to check the
+consistency between the name of a given method and its implementation.
+
+The workflow is as follows:
+1. MNIRE first generate a candidate name
+2. compare the candidate name wth the current name
+- if the two names are sufficiently simiar, they consider the method as consistent
+
+
+three contexts of a method:
+1. its body
+2. the interface(the method's parameter types and return type)
+3. the enclosing class's name
+
+unique idea: treat the name generation as an abstract summarization on tokens collected from the names of the program entities in the three contexts of a method
+
+*** Related work
+1. suggest method names
+2. recover/predict the names or types of program entities
+3. code representations
+
+** Result
+- In detecting inconsistency method names, MNire improves the state-of-the-art approach by 10.4% and 11% relatively in recall and precision, respectively. 
+
+- In method name recommendation, MNire improves relatively over the state-of-the-art technique, code2vec, in both recall (18.2% higher) and precision (11.1% higher).
+** Future work
+work on other program languages other Java
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -557,3 +596,5 @@ Extensibility
 23. Wang, J., Li, L., & Zeller, A. (2019). Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks. arXiv preprint arXiv:1906.05234.
 
 24. APA is unavailable
+
+25. 
