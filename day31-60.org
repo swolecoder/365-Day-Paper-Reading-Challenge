@@ -24,11 +24,10 @@ From 26 July 2020 to
 21. [[#day-51-se][Day 51: Predictive Models in Software Engineering: Challenges and Opportunities]]
 22. [[#day-52-se][Day 52: Where should I comment my code? A dataset and model for predicting locations that need comments]]
 23. [[#day-53-se][Day 53: Better Code, Better Sharing: On the Need of Analyzing Jupyter Notebooks]]
-<<<<<<< HEAD
 24. [[#day-54-se][Day 54: Assessing Practitioner Beliefs about Software Defect Prediction]]
-=======
-24. [[#day-54-se][Day 54: Skyline: Interactive In-Editor Computational Performance Profiling for Deep Neural Network Training]]
->>>>>>> bb3d5b4d695f71ea56dbdfa0608ed5538580ec48
+25. [[#day-55-se][Day 55: Skyline: Interactive In-Editor Computational Performance Profiling for Deep Neural Network Training]]
+26. [[#day-56-se][Day 56: Suggesting Natural Method Names to Check Name Consistencies]]
+27. [[#day-57-se][Day 57: Is Your Quantum Program Bug-Free?]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -572,6 +571,24 @@ unique idea: treat the name generation as an abstract summarization on tokens co
 ** Future work
 work on other program languages other Java
 
+* Day 57: SE
+- *Title*:
+- *Year*: 2020
+- *Proc*: ICSE NIER
+
+The following content is referred from [26]
+** Problem
+As more programmers are starting to look at writing quantum programs, they face an inevitable task of debugging their code. How should the programs for quantum computers be debugged?
+
+** Method
+They discuss existing debugging tactics, used in developing programs for classic computers, and show which ones can be readily adopted. They also highlight quantum-computer-specific debugging issues and list novel techniques that are needed to address these issues.
+
+** Result
+QC field is rapidly evolving, and the Software Engineering (SE) community should start bringing SE practices into the QC world.
+
+** Future work
+This work would be of interest to practitioners, creating quantum programs, as well as researchers, developing the next generations of tooling for QC.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -624,3 +641,5 @@ work on other program languages other Java
 25. APA unavailable
 
 26. Nguyen, S., Phan, H., Le, T., & Nguyen, T. N. Suggesting Natural Method Names to Check Name Consistencies.
+
+27. Miranskyy, A., Zhang, L., & Doliskani, J. (2020). Is Your Quantum Program Bug-Free?. arXiv preprint arXiv:2001.10870.
