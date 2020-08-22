@@ -28,6 +28,8 @@ From 26 July 2020 to
 25. [[#day-55-se][Day 55: Skyline: Interactive In-Editor Computational Performance Profiling for Deep Neural Network Training]]
 26. [[#day-56-se][Day 56: Suggesting Natural Method Names to Check Name Consistencies]]
 27. [[#day-57-se][Day 57: Is Your Quantum Program Bug-Free?]]
+28. [[#day-58-se][Day 58: Efficient Generation of Error-Inducing Floating-Point Inputs via Symbolic Execution]]
+
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -513,7 +515,7 @@ Their conclusion will be that we need to change the nature of the debate with So
 - *Year*: 2020
 - *Proc*: UIST
 
-The following content is referred from [24]
+The following content is referred from [25]
 ** Problem
 However, effectively performing this debugging requires intimate knowledge about the underlying software and hardware systems—something that the typical deep learning developer may not have.
 
@@ -536,7 +538,7 @@ Extensibility
 - *Year*: 2020
 - *Proc*: ICSE
 
-The following content is referred from [25]
+The following content is referred from [26]
 ** Problem
 Misleading names of the methods in a project or the APIs in a
 software library confuse developers about program functionality
@@ -572,11 +574,11 @@ unique idea: treat the name generation as an abstract summarization on tokens co
 work on other program languages other Java
 
 * Day 57: SE
-- *Title*:
+- *Title*: Is Your Quantum Program Bug-Free?
 - *Year*: 2020
 - *Proc*: ICSE NIER
 
-The following content is referred from [26]
+The following content is referred from [27]
 ** Problem
 As more programmers are starting to look at writing quantum programs, they face an inevitable task of debugging their code. How should the programs for quantum computers be debugged?
 
@@ -589,6 +591,26 @@ QC field is rapidly evolving, and the Software Engineering (SE) community should
 ** Future work
 This work would be of interest to practitioners, creating quantum programs, as well as researchers, developing the next generations of tooling for QC.
 
+* Day 58: SE
+- *Title*: Efficient Generation of Error-Inducing Floating-Point Inputs via Symbolic Execution
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [28]
+** Problem
+Floating point is widely used in software to emulate arithmetic over reals. Unfortunately, floating point leads to rounding errors that propagate and accumulate during execution.
+
+** Method
+They formulate the problem of generating high error-inducing floating-point inputs as a code coverage maximization problem solved using symbolic execution.
+
+First, they formulated two inaccuracy checks for large precision loss and cancellation. The injection of in-accuracy checks after floating-point computation enables symbolic execution to explore specialized branches that cause numerical in-accuracy, which can lead to large errors in the final result. Second, they proposed optimizations to alleviate path explosion. In partic- ular, this was achieved by strategically reducing the number of symbolic variables via concretization. They implemented our algorithm in a tool named FPGen, and presented an evaluation on 21 numerical programs including matrix computation and statistics libraries.
+
+** Result
+The results show that FPGen is able to expose errors for 20 of the evaluated programs while the state-of-the-art error-inducing input generator S3FP only triggers errors for 13 out of 21 programs. Moreover, FPGen triggered an error as large as 10−6on average while the maximum error S3FP triggered is about 10−8on average.
+
+** Future work
+1. identify other code areas to inject inaccuracy checks
+2. It would be interesting to complement their work using techniques to speedup symbolic execution.
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -643,3 +665,5 @@ This work would be of interest to practitioners, creating quantum programs, as w
 26. Nguyen, S., Phan, H., Le, T., & Nguyen, T. N. Suggesting Natural Method Names to Check Name Consistencies.
 
 27. Miranskyy, A., Zhang, L., & Doliskani, J. (2020). Is Your Quantum Program Bug-Free?. arXiv preprint arXiv:2001.10870.
+
+28. Guo, Hui, and Cindy Rubio-González. "Efficient Generation of Error-Inducing Floating-Point Inputs via Symbolic Execution." (2019).
