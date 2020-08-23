@@ -29,7 +29,7 @@ From 26 July 2020 to
 26. [[#day-56-se][Day 56: Suggesting Natural Method Names to Check Name Consistencies]]
 27. [[#day-57-se][Day 57: Is Your Quantum Program Bug-Free?]]
 28. [[#day-58-se][Day 58: Efficient Generation of Error-Inducing Floating-Point Inputs via Symbolic Execution]]
-
+29. [[#day-59-se][Day 59: A Study on the Prevalence of Human Values in Software Engineering Publications, 2015 – 2018]]
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -611,6 +611,29 @@ The results show that FPGen is able to expose errors for 20 of the evaluated pro
 ** Future work
 1. identify other code areas to inject inaccuracy checks
 2. It would be interesting to complement their work using techniques to speedup symbolic execution.
+
+* Day 59: SE
+- *Title*: A Study on the Prevalence of Human Values in Software Engineering Publications, 2015 – 2018
+- *Year*: 2020
+- *Proc*: ICSE
+
+The following content is referred from [29]
+** Problem
+Failure to account for human values in software (e.g., equality and fairness) can result in user dissatisfaction and negative socioeconomic impact. Engineering these values in software, however, requires technical and methodological support throughout the development life cycle.
+
+** Method
+To investigate the prevalence of human values in SE research, they manually classified publications from top-tier SE conferences and journals based on their relevance to different values.
+
+** Result
+(a) only a small proportion of the publications directly consider values, classified as relevant publications; (b) for the majority of the values, very few or no relevant publications were found; and (c) The prevalence of the relevant publications was higher in SE conferences compared to SE journals.
+
+(a) only 16% of publications were directly relevant to human values, referred to, henceforth, as relevant publications; (b) for 60% of human values, there were no relevant publications; (c) on average, 2 relevant papers were found per value, while for 79% of values, the number of relevant publications was ≤ 2; and (d) 88% of relevant papers were published in SE conferences rather than journals.
+
+** Future work
+1. They would like to extend this study using a machine learning approach. Manually labelled data from this study could be used for training machine learning algorithms to classify larger sets of publications with the aim to better visualize how SE research addresses human values.
+2. Theyt also plan to utilise their manually labelled data captured from various SE contexts to develop definitions of human values that are relatively easy for practitioners to understand and implement.
+3. Finally, they plan to carry out case studies in software organizations to investigate whether SE research related to human values has actually made an impact on SE practice.
+
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -667,3 +690,5 @@ The results show that FPGen is able to expose errors for 20 of the evaluated pro
 27. Miranskyy, A., Zhang, L., & Doliskani, J. (2020). Is Your Quantum Program Bug-Free?. arXiv preprint arXiv:2001.10870.
 
 28. Guo, Hui, and Cindy Rubio-González. "Efficient Generation of Error-Inducing Floating-Point Inputs via Symbolic Execution." (2019).
+
+29. Perera, H., Nurwidyantoro, A., Hussain, W., Mougouei, D., Whittle, J., Shams, R. A., & Oliver, G. (2019). A study on the prevalence of human values in software engineering publications, 2015-2018. arXiv preprint arXiv:1907.07874.
