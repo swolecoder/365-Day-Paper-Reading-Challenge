@@ -30,6 +30,8 @@ From 26 July 2020 to
 27. [[#day-57-se][Day 57: Is Your Quantum Program Bug-Free?]]
 28. [[#day-58-se][Day 58: Efficient Generation of Error-Inducing Floating-Point Inputs via Symbolic Execution]]
 29. [[#day-59-se][Day 59: A Study on the Prevalence of Human Values in Software Engineering Publications, 2015 – 2018]]
+30. [[#day-60-se][Day 60: Pre-trained Models for Natural Language Processing: A Survey]]
+
 
 * Day 31: DM
 - *Title*: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding
@@ -634,6 +636,38 @@ To investigate the prevalence of human values in SE research, they manually clas
 2. Theyt also plan to utilise their manually labelled data captured from various SE contexts to develop definitions of human values that are relatively easy for practitioners to understand and implement.
 3. Finally, they plan to carry out case studies in software organizations to investigate whether SE research related to human values has actually made an impact on SE practice.
 
+* Day 60: NLP
+- *Title*: Pre-trained Models for Natural Language Processing: A Survey
+- *Year*: 2020
+
+The following content is referred from [30]
+
+** Two generations
+*** word embeddings
+*** contextual word embeddings
+
+Two kinds of word embeddings:
+1. non-contextual embeddings
+2. contextual embeddings
+
+The difference between them is whether the embedding for a word dynamically changes according to the context it appears in.
+
+
+In NLP, the datasets of most supervised tasks are not large enough to train a good PTM
+
+** Pre-training tasks
+1. language modeling
+2. mask language modeling
+3. permutated language modeling
+4. denoising autoencoder
+5. contrastive learning
+- Deep InfoMax (DIM)
+- Replaced Token Detection (RTD)
+- Next Sentence Prediction (NSP)
+- Sentence Order Prediction (SOP)
+
+
+RoBERTa improves BERT by dynamic masking
 * Reference
 1. Meng, Y., Zhang, Y., Huang, J., Zhang, Y., Zhang, C., & Han, J. (2020). Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding. arXiv preprint arXiv:2007.09536.
 
@@ -692,3 +726,5 @@ To investigate the prevalence of human values in SE research, they manually clas
 28. Guo, Hui, and Cindy Rubio-González. "Efficient Generation of Error-Inducing Floating-Point Inputs via Symbolic Execution." (2019).
 
 29. Perera, H., Nurwidyantoro, A., Hussain, W., Mougouei, D., Whittle, J., Shams, R. A., & Oliver, G. (2019). A study on the prevalence of human values in software engineering publications, 2015-2018. arXiv preprint arXiv:1907.07874.
+
+30. Qiu, X., Sun, T., Xu, Y., Shao, Y., Dai, N., & Huang, X. (2020). Pre-trained models for natural language processing: A survey. arXiv preprint arXiv:2003.08271.
