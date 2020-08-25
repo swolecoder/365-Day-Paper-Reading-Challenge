@@ -1,5 +1,6 @@
 * Duration
-From 26 July 2020 to 
+From 26 July 2020 to 24 August 2020
+
 * Content
 1. [[#day-31-dm][Day 31: Hierarchical Topic Mining via Joint Spherical Tree and Text Embedding]]
 2. [[#day-32-se][Day 32: Simulee: Detecting CUDA Synchronization Bugs via Memory-Access Modeling]]

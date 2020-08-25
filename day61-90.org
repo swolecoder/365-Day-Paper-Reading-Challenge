@@ -1,0 +1,39 @@
+* Duration
+From 25 Aug 2020 to
+
+* Content
+1. [[#day-61-nlp][Day 61: Contextual Word Representations: A Contextual Introduction]]
+
+* Day 61: NLP
+- *Title*: Contextual Word Representations: A Contextual Introduction
+- *Year*: 2020
+- *Proc*: 
+
+The following content is referred from [1]
+
+** Discrete words
+a sequence of characters
+
+each word type was given a unique (and more or less arbitrary) nonnegative inter value
+
+*** Advantages
+1. every word type was stored in the same amount of memory
+2. array-based data structures could be used to index other information by word types
+
+*** Disadvantages
+the integers did not mean anything
+
+The assignment might be arbitrary, alphabetical, or in the order word tokens
+
+** Words vs Distributional Vectors: Context as Meaning
+It's useful to first map each input word token to its vector, and then "feed" the word vectors into the neural network model, which performs a task like translation.
+
+** Contextual word vectors
+ELMo, which stands for "embeddings from language models" (Peters et al., 2018a), brought a powerful advance in the form ofword token vectors—i.e., vectors for words in context, or contextual word vectors—that are pretrained on large corpora.
+
+A longstanding data-fitting problem in NLP is language modeling, which refers to predicting the next word given a sequence of “history” words (briefly alluded to in our filling-in- the-blank example in Section 3). Many of word (type) vector alogorithms already in use were based on a notion fixed-size context.
+
+A full explanation of the differences in the learning algorithms, particularly the neural network architectures, is out of scope for this introduction, but it’s fair to say that the space of possible learners for contextual word vectors has not yet been fully explored;
+
+* Reference
+1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
