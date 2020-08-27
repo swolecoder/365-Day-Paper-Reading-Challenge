@@ -4,6 +4,8 @@ From 25 Aug 2020 to
 * Content
 1. [[#day-61-nlp][Day 61: Contextual Word Representations: A Contextual Introduction]]
 2. [[#day-62-se][Day 62: Neurological Divide: An fMRI Study of Prose and CodeWriting]]
+3. [[#day-63-se][Day 63: Is Static Analysis Able to Identify Unnecessary Source Code?]]
+
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -58,7 +60,29 @@ the first evidence suggesting that code and prose writing are quite dissimilar a
 ** Future work
 This unexpected result — that the production of code and prose rely on highly distinct cognitive substrates — though quite preliminary, paves the way forfuture investigations analogous to those based on medical imaging for prose writing. In addition to developing a foundational understanding of code writing, this empirical distinction may be leveraged to develop tools and pedagogies (e.g., transfer training), subsequently affecting large scale workforce retraining and educational reform. Moreover, neurological evidence that code and prose writing are not as intertwined as conventionally thought may encourage more diverse participation in computer science.
 
+* Day 63: SE
+- *Title*: Is Static Analysis Able to Identify Unnecessary Source Code?
+- *Year*: 2020
+- *Journal*: TOSEM
+
+The following content is referred from [3]
+** Problem
+Grown software systems often contain code that is not necessary anymore. Such unnecessary code wastes resources during development and maintenance, for example, when preparing code for migration or certification. Running a profiler may reveal code that is not used in production, but it is often time-consuming to obtain representative data in this way.
+
+** Method
+We investigate to what extent a static analysis approach, which is based on code stability and code centrality, is able to identify unnecessary code and whether its recommendations are relevant in practice. To study the feasibility and usefulness of our approach, we conducted a study involving 14 open-source and closedsource software systems. As there is no perfect oracle for unnecessary code, we compared recommendations for unnecessary code with historical cleanups, runtime usage data, and feedback from 25 developers of five software projects
+
+They implemented their approach as a recommender system to evaluate our work on 14 opensource and closed-source software systems.
+
+** Result
+The results suggest that static analysis can provide quick feedback on unnecessary code and is useful in practice.
+
+** Future work
+In thiswork, they focused on unnecessary code from a development andmaintenance perspective. It would be interesting to see whether similar approaches help test developers to focus their test effort on relevant parts of the software system.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
 2. Krueger, R., Huang, Y., Liu, X., Santander, T., Weimer, W., & Leach, K. (2020). Neurological Divide: An fMRI Study of Prose and Code Writing. In 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE) (Vol. 13).
+
+3. HAAS, R., NIEDERMAYR, R., ROEHM, T., & APEL, S. (2019). Is Static Analysis Able to Identify Unnecessary Source Code?. Transactions on Software Engineering and Methodology (TOSEM), 178.
