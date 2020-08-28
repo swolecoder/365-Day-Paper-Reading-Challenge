@@ -5,7 +5,7 @@ From 25 Aug 2020 to
 1. [[#day-61-nlp][Day 61: Contextual Word Representations: A Contextual Introduction]]
 2. [[#day-62-se][Day 62: Neurological Divide: An fMRI Study of Prose and CodeWriting]]
 3. [[#day-63-se][Day 63: Is Static Analysis Able to Identify Unnecessary Source Code?]]
-
+4. [[#day-64-nlp][Day 64: ALBERT: A Lite BERT for Self-supervised Learning of Language Representations]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -79,6 +79,29 @@ The results suggest that static analysis can provide quick feedback on unnecessa
 
 ** Future work
 In thiswork, they focused on unnecessary code from a development andmaintenance perspective. It would be interesting to see whether similar approaches help test developers to focus their test effort on relevant parts of the software system.
+
+* day 63
+- *Title*: ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS
+
+- *Year*: 2019
+- *Proc*: ICLR 2020
+** Problem
+Increasing model size when pretraining natural language representations often results in improved performance on downstream tasks. However, at some point further model increases become harder due to GPU/TPU memory limitations and longer training times.
+
+** Method
+To address these problems, they present two parameter-reduction techniques to lower memory consumption and increase the training speed of BERT.
+
+ALBERT incorporates two parameter reduction techniques that lift the major obstacles in scaling pre-trained models.
+- The first one is a factorized embedding parameterization.
+- The second technique is cross-layer parameter sharing.
+
+They also introduce a self-supervised loss for sentence-order prediction (SOP). SOP primary focuses on inter-sentence coherence and is designed to address the ineffectiveness.
+
+** Result
+Comprehensive empirical evidence shows that their proposed methods lead to models that scale much better compared to the original BERT.
+
+** Future Work
+An important next step is thus to speed up the training and inference speed of ALBERT through methods like sparse attention and block attention.
 
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
