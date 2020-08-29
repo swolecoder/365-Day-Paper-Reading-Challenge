@@ -6,14 +6,14 @@ From 25 Aug 2020 to
 2. [[#day-62-se][Day 62: Neurological Divide: An fMRI Study of Prose and CodeWriting]]
 3. [[#day-63-se][Day 63: Is Static Analysis Able to Identify Unnecessary Source Code?]]
 4. [[#day-64-nlp][Day 64: ALBERT: A Lite BERT for Self-supervised Learning of Language Representations]]
+5. [[#day-65-se][Day 65: A Large Scale Study of Long-Time Contributor Prediction for GitHub Projects]]
+
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
 - *Year*: 2020
-- *Proc*: 
 
 The following content is referred from [1]
-
 ** Discrete words
 a sequence of characters
 
@@ -44,7 +44,6 @@ A full explanation of the differences in the learning algorithms, particularly t
 - *Proc*: ICSE
 
 The following content is referred from [2]
-
 ** Problem
 Recent efforts have investigated the neural processes associated with reading and comprehending code — however, we lack a thorough understanding of the human cognitive processes underlying code writing.
 
@@ -80,11 +79,12 @@ The results suggest that static analysis can provide quick feedback on unnecessa
 ** Future work
 In thiswork, they focused on unnecessary code from a development andmaintenance perspective. It would be interesting to see whether similar approaches help test developers to focus their test effort on relevant parts of the software system.
 
-* day 63
-- *Title*: ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS
+* day 64
+- *Title*: Albert: A lite bert for self-supervised learning of language representations
 
 - *Year*: 2019
 - *Proc*: ICLR 2020
+
 ** Problem
 Increasing model size when pretraining natural language representations often results in improved performance on downstream tasks. However, at some point further model increases become harder due to GPU/TPU memory limitations and longer training times.
 
@@ -103,9 +103,33 @@ Comprehensive empirical evidence shows that their proposed methods lead to model
 ** Future Work
 An important next step is thus to speed up the training and inference speed of ALBERT through methods like sparse attention and block attention.
 
+* Day 65
+- *Title*: A Large Scale Study of Long-Time Contributor Prediction for GitHub Projects
+- *Year*: 2020
+- *Proc*: TSE
+
+** Problem
+The continuous contributions made by long time contributors (LTCs) are a key factor enabling open source software (OSS) projects to be successful and survival. We study GITHUB as it has a large number of OSS projects and millions of contributors, which enables the study of the transition from newcomers to LTCs. They investigate whether they can effectively predict newcomers in OSS projects to be LTCs based on their activity data that is collected from GITHUB.
+
+** Method
+They collect GITHUB data from GHTorrent, a mirror of GITHUB data. They select the most popular 917 projects, which contain 75,046 contributors. We determine a developer as a LTC of a project if the time interval between his/her ﬁrst and last commit in the project is larger than a certain time T. In the experiment, they use three different settings on the time interval: 1, 2, and 3 years. There are 9,238, 3,968, and 1,577 contributors who become LTCs of a project in three settings of time interval, respectively.
+
+*** Evaluation metric
+They use AUC, namely Area Under the receiver operating characteristic (ROC) Curve, to evaluate the effectiveness of the proposed prediction models. The ROC curve is created by plotting the true positive rate (TPR) against the false positive rate (FPR) across all thresholds.
+
+** Result
+To build a prediction model, they extract many features from the activities of developers on GITHUB, which group into ﬁve dimensions: developer proﬁle, repository proﬁle, developer monthly activity, repository monthly activity, and collaboration network. They apply several classiﬁers including naive Bayes, SVM, decision tree, kNN and random forest. They ﬁnd that random forest classiﬁer achieves the best performance with AUCs of more than 0.75 in all three settings of time interval for LTCs. They also investigate the most important features that differentiate newcomers who become LTCs from newcomers who stay in the projects for a short time.
+
+** Future work
+In the future, they want to collect more developers’ activities in OSS projects and further validate the effectiveness of our approach using more developers and projects.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
 2. Krueger, R., Huang, Y., Liu, X., Santander, T., Weimer, W., & Leach, K. (2020). Neurological Divide: An fMRI Study of Prose and Code Writing. In 2020 IEEE/ACM 42nd International Conference on Software Engineering (ICSE) (Vol. 13).
 
 3. HAAS, R., NIEDERMAYR, R., ROEHM, T., & APEL, S. (2019). Is Static Analysis Able to Identify Unnecessary Source Code?. Transactions on Software Engineering and Methodology (TOSEM), 178.
+
+4. Lan, Z., Chen, M., Goodman, S., Gimpel, K., Sharma, P., & Soricut, R. (2019). Albert: A lite bert for self-supervised learning of language representations. arXiv preprint arXiv:1909.11942.
+
+5. Bao, L., Xia, X., Lo, D., & Murphy, G. C. (2019). A large scale study of long-time contributor prediction for GitHub projects. IEEE Transactions on Software Engineering.
