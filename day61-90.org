@@ -7,7 +7,7 @@ From 25 Aug 2020 to
 3. [[#day-63-se][Day 63: Is Static Analysis Able to Identify Unnecessary Source Code?]]
 4. [[#day-64-nlp][Day 64: ALBERT: A Lite BERT for Self-supervised Learning of Language Representations]]
 5. [[#day-65-se][Day 65: A Large Scale Study of Long-Time Contributor Prediction for GitHub Projects]]
-
+6. [[#day-66-se][Day 66: On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -79,7 +79,7 @@ The results suggest that static analysis can provide quick feedback on unnecessa
 ** Future work
 In thiswork, they focused on unnecessary code from a development andmaintenance perspective. It would be interesting to see whether similar approaches help test developers to focus their test effort on relevant parts of the software system.
 
-* day 64
+* Day 64
 - *Title*: Albert: A lite bert for self-supervised learning of language representations
 
 - *Year*: 2019
@@ -123,6 +123,29 @@ To build a prediction model, they extract many features from the activities of d
 ** Future work
 In the future, they want to collect more developers’ activities in OSS projects and further validate the effectiveness of our approach using more developers and projects.
 
+* Day 66
+- *Title*: On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations
+- *Year*: 2020
+
+The following content is referred from [66]
+
+** Problem
+With the prevalence of publicly available source code repositories to train deep neural network models, neural program analyzers can do well in source code analysis tasks such as predicting method names in given programs that cannot be easily done by traditional program analyzers. lthough such analyzers have been tested on various existing datasets, the extent in which they generalize to unforeseen source code is largely unknown.
+
+** Method
+They propose to evaluate the generalizability of neural program analyzers with respect to semantic-preserving transformations: a generalizable neural program analyzer should perform equally well on programs that are of the same semantics but of different lexical appearances and syntactical structures.
+
+- 3 Java datasets
+- 3 neural network models for code: code2vec, code2seq, Gated Graph Neural Networks (GGNN)
+
+nine neural program analyzers for Evaluation
+
+** Result
+Their results show that even with small semantically preserving changes to the programs, these neural program analyzers often fail to generalize their performance. Their results also suggest that neural program analyzers based on data and control dependencies in programs generalize better than neural program analyzers based only on abstract syntax trees. On the positive side, they observe that as the size of training dataset grows and diversifies the generalizability of correct predictions produced by the analyzers can be improved too.
+
+** Future work
+Future work that includes more semantic-preserving and even some semi-semantic-preserving transformations in the approach and adapts more fine-grained predication change metrics may further extend the applicability of their approach to various neural program analyzers designed for different tasks.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -133,3 +156,5 @@ In the future, they want to collect more developers’ activities in OSS project
 4. Lan, Z., Chen, M., Goodman, S., Gimpel, K., Sharma, P., & Soricut, R. (2019). Albert: A lite bert for self-supervised learning of language representations. arXiv preprint arXiv:1909.11942.
 
 5. Bao, L., Xia, X., Lo, D., & Murphy, G. C. (2019). A large scale study of long-time contributor prediction for GitHub projects. IEEE Transactions on Software Engineering.
+
+6. Rabin, M., Islam, R., Bui, N. D., Yu, Y., Jiang, L., & Alipour, M. A. (2020). On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations. arXiv preprint arXiv:2008.01566.
