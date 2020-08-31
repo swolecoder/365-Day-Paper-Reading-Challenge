@@ -8,6 +8,7 @@ From 25 Aug 2020 to
 4. [[#day-64-nlp][Day 64: ALBERT: A Lite BERT for Self-supervised Learning of Language Representations]]
 5. [[#day-65-se][Day 65: A Large Scale Study of Long-Time Contributor Prediction for GitHub Projects]]
 6. [[#day-66-se][Day 66: On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations]]
+7. [[#day-67-se][Day 67: Reformulating Queries for Duplicate Bug Report Detection]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -146,6 +147,35 @@ Their results show that even with small semantically preserving changes to the p
 ** Future work
 Future work that includes more semantic-preserving and even some semi-semantic-preserving transformations in the approach and adapts more fine-grained predication change metrics may further extend the applicability of their approach to various neural program analyzers designed for different tasks.
 
+* Day 67: SE
+- *Title*: Reformulating Queries for Duplicate Bug Report Detection
+- *Year*: 2019
+- *Proc*: SANER
+
+The following content is referred from [7]
+** Problem
+When the number of bug reports is large, finding duplicates can be a time-consuming and error-prone activity.
+
+** Method
+The tools use the new bug report as a query and then the user inspects the ranked list of retrieved bug reports to check if any are duplicates of the new bug report. At some point, if a duplicate is not found, the user chooses to stop and mark the bug as new or tries some other approach.
+
+
+The paper rethinks tool-supported duplicate bug report detection as a two-step process, using the entire new bug report as a query in the first step, for retrieving N bug reports, and a reformulated query in the second step, for retrieving additional N bug reports.
+
+
+most bug reports have an inherent structure, consisting of the bug title (BT), the observed behavior (OB), the expected behavior (EB), and the steps to reproduce the noted bug (S2R)
+
+They evaluated the three reformulation strategies using a duplicate bug report retrieval approach based on Lucene.
+
+
+They argue that duplicate bug report detection approaches, based on text retrieval, should be viewed as a two-step process.
+
+** Result
+They found that using the observed behavior description, together with the title, leads to the best retrieval performance. Using only the title or only the observed behavior for reformulation is also better than retrieval with the initial query. The reformulation strategies lead to 56.6%-78% average retrieval improvement, over using the initial query only.
+
+** Future work
+focus on automatically reducing queries based on specific bug descriptions
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -158,3 +188,5 @@ Future work that includes more semantic-preserving and even some semi-semantic-p
 5. Bao, L., Xia, X., Lo, D., & Murphy, G. C. (2019). A large scale study of long-time contributor prediction for GitHub projects. IEEE Transactions on Software Engineering.
 
 6. Rabin, M., Islam, R., Bui, N. D., Yu, Y., Jiang, L., & Alipour, M. A. (2020). On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations. arXiv preprint arXiv:2008.01566.
+
+7. Chaparro, O., Florez, J. M., Singh, U., & Marcus, A. (2019, February). Reformulating queries for duplicate bug report detection. In 2019 IEEE 26th International Conference on Software Analysis, Evolution and Reengineering (SANER) (pp. 218-229). IEEE.
