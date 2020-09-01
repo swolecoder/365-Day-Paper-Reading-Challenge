@@ -9,6 +9,8 @@ From 25 Aug 2020 to
 5. [[#day-65-se][Day 65: A Large Scale Study of Long-Time Contributor Prediction for GitHub Projects]]
 6. [[#day-66-se][Day 66: On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations]]
 7. [[#day-67-se][Day 67: Reformulating Queries for Duplicate Bug Report Detection]]
+8. [[#day-68-se][Day 68: Automatic Duplicate Bug Report Detection using Information Retrieval-based versus Machine Learning-based Approaches]]
+
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -176,6 +178,24 @@ They found that using the observed behavior description, together with the title
 ** Future work
 focus on automatically reducing queries based on specific bug descriptions
 
+* Day 68: SE
+- *Title*: Automatic Duplicate Bug Report Detection using Information Retrieval-based versus Machine Learning-based Approaches
+- *Year*: 2020
+
+The following content is referred from [68]
+
+** Problem
+There are two main approaches for automatic DBRD, including information retrieval (IR)-based and machine learning (ML)-based.
+
+** Method
+The Android dataset is used for evaluation, and about 2 million pairs of bug reports are analyzed for 59 bug reports, which were duplicate.
+
+** Result
+The results show that the MLbased approach has better validation performance, incredibly about 40%. Besides, the ML-based approach has a more reliable criterion for evaluation like accuracy, precision, and recall versus an IR-based approach, which has just mean average precision (MAP) or rank metrics.
+
+** Future work
+There is a question for future works which how can reduce the number of comparisons to find the duplicates as soon as possible; otherwise, we have to check all bug reports (like IR-based approach) to find out a new bug report is duplicate or not.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -190,3 +210,5 @@ focus on automatically reducing queries based on specific bug descriptions
 6. Rabin, M., Islam, R., Bui, N. D., Yu, Y., Jiang, L., & Alipour, M. A. (2020). On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations. arXiv preprint arXiv:2008.01566.
 
 7. Chaparro, O., Florez, J. M., Singh, U., & Marcus, A. (2019, February). Reformulating queries for duplicate bug report detection. In 2019 IEEE 26th International Conference on Software Analysis, Evolution and Reengineering (SANER) (pp. 218-229). IEEE.
+
+8. Neysiani, B. S., & Babamir, S. M. (2020). Automatic Duplicate Bug Report Detection using Information Retrieval-based versus Machine Learning-based Approaches. In IEEE 6th International Conference on Web Research (ICWR).
