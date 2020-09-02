@@ -10,7 +10,7 @@ From 25 Aug 2020 to
 6. [[#day-66-se][Day 66: On the Generalizability of Neural Program Analyzers with respect to Semantic-Preserving Program Transformations]]
 7. [[#day-67-se][Day 67: Reformulating Queries for Duplicate Bug Report Detection]]
 8. [[#day-68-se][Day 68: Automatic Duplicate Bug Report Detection using Information Retrieval-based versus Machine Learning-based Approaches]]
-
+9. [[#day-69-se][Day 69: Train One Get One Free: Partially Supervised Neural Network for Bug Report Duplicate Detection and Clustering]]s
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -196,6 +196,26 @@ The results show that the MLbased approach has better validation performance, in
 ** Future work
 There is a question for future works which how can reduce the number of comparisons to find the duplicates as soon as possible; otherwise, we have to check all bug reports (like IR-based approach) to find out a new bug report is duplicate or not.
 
+* Day 69: SE
+- *Title*:
+- *Year*: 2019
+
+The following content is referred from [69]
+** Problem
+Tracking user reported bugs requires considerable engineering effort in going through many repetitive reports and assigning them to the correct teams.
+
+(1) detect if two bug reports are duplicates, and (2) aggregate them into latent topics.
+
+** Method
+Leveraging the assumption that learning the topic of a bug is a sub-task for detecting duplicates, we design a loss function that can jointly perform both tasks but needs supervision for only duplicate classiﬁcation, achieving topic clustering in an unsupervised fashion. They use a two-step attention module that uses self-attention for topic clustering and conditional attention for duplicate detection. They study the characteristics of two types of real world datasets that have been marked for duplicate bugs by engineers and by nontechnical annotators.
+
+** Result
+The results demonstrate that our model not only can outperform stateof-the-art methods for duplicate classiﬁcation on both cases, but can also learn meaningful latent clusters without additional supervision.
+
+** Future work
+1. the challenges of annotating a user reported bug dataset with non-technical annotators, as opposed to using annotations from engineers
+2. the same underlying problem from the engineering side
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -212,3 +232,5 @@ There is a question for future works which how can reduce the number of comparis
 7. Chaparro, O., Florez, J. M., Singh, U., & Marcus, A. (2019, February). Reformulating queries for duplicate bug report detection. In 2019 IEEE 26th International Conference on Software Analysis, Evolution and Reengineering (SANER) (pp. 218-229). IEEE.
 
 8. Neysiani, B. S., & Babamir, S. M. (2020). Automatic Duplicate Bug Report Detection using Information Retrieval-based versus Machine Learning-based Approaches. In IEEE 6th International Conference on Web Research (ICWR).
+
+9. Poddar, L., Neves, L., Brendel, W., Marujo, L., Tulyakov, S., & Karuturi, P. (2019). Train one get one free: Partially supervised neural network for bug report duplicate detection and clustering. arXiv preprint arXiv:1903.12431.
