@@ -1,0 +1,836 @@
+* Duration
+From 26 Jun 2020 - 25 Jul 2020
+
+* Content
+1. [[#day-1-se][Day 1: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform]]
+2. [[#day-2-se][Day 2: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs]]
+3. [[#day-3-se][Day 3: Is deep learning better than traditional approaches in tag recommendation for software information sites?]]
+4. [[#day-4-nlp][Day 4: CodeBERT: A Pre-Trained Model for Programming and Natural Languages]]
+5. [[#day-5-se][Day 5: Examining the Impact of Self-admitted Technical Debt on Software Quality]]
+6. [[#day-6-se][Day 6: Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary]]
+7. [[#day-7-se][Day 7: How Do Companies Collaborate in Open Source Ecosystems? An Empirical Study of OpenStack]]
+8. [[#day-8-se][Day 8: Companies' Participation in OSS Development - An Empirical Study of OpenStack]]
+9. [[#day-9-se][Day 9: Detecting and Quantifying Different Types of Self-Admitted Technical Debt]]
+10. [[#day-10-se][Day 10: What do Programmers Discuss about Deep Learning Frameworks]]
+11. [[#day-11-se][Day 11: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems]]
+12. [[#day-12-se][Day 12: Software Engineering Challenges of Deep Learning]]
+13. [[#day-13-pl][Day 13: code2vec: Learning Distributed Representations of Code]]
+14. [[#day-14-se][Day 14: What Do Programmers Discuss about Blockchain?]]
+15. [[#day-15-se][Day 15: Assessing the generalizability of code2vec token embeddings]]
+16. [[#day-16-se][Day 16: The impact factors on the performance of machine learning-based vulnerability detection: A comparative study]]
+17. [[#day-17-se][Day 17: Going Big: A Large-Scale Study on What Big Data Developers Ask]]
+18. [[#day-18-se][Day 18: What are developers talking about? An analysis of topics and trends in Stack Overflow]]
+19. [[#day-19-nlp][Day 19: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping]]
+20. [[#day-20-nlp][Day 20: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection]]
+21. [[#day-21-nlp][Day 21: Neural Topic Modeling with Bidirectional Adversarial Training]]
+22. [[#day-22-nlp][Day 22: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization]]
+23. [[#day-23-nlp][Day 23: Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis]]
+24. [[#day-24-nlp][Day 24: A Primer in BERTology: What we know about how BERT works]]
+25. [[#day-25-nlp][Day 25: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study]]
+26. [[#day-26-nlp][Day 26: A Transformer-based Approach for Source Code Summarization]]
+27. [[#day-27-nlp][Day 27: A Survey on Contextual Embeddings]]
+28. [[#day-28-se][Day 28: TranS3: A Transformer-based Framework for Unifying Code Summarization and Code Search]]
+29. [[#day-29-se][Day 29: An Empirical Study on TensorFlow Program Bugs]]
+30. [[#day-30-ai][Day 30: Graph Few-shot Learning via Knowledge Transfer]]
+
+* Record
+** Day 1: SE
+- *Title*: How Bad Can a Bug Get? An Empirical Analysis of Software Failures in the OpenStack Cloud Computing Platform
+- Tags: bug analysis, fault injection, OpenStack
+- Proc.: ESEC/FSE 2019
+The following content is referred from [1]
+- Roadmap: Cloud management systems (CMS) are important and usually have residual software bugs. -> Many high-severity failures have been occurring in cloud infrastructures and caused bad results. -> Software developers invest effort in mitigating the consequences of residual bugs. -> They aim to empirically analyze the impact of high-severity failures in the context of a large-scale, industry-applied case study, to pave the way for failure mitigation strategies in CMS. -> OpenStack is widely used and is representative. -> They adopt *software fault injection* to accelerate the occurrence of failures caused by software bugs.
+*** Problem
+This paper investigated the impact of failures in the context widespread OpenStack CMS. Mainly related to *analyssi of bugs and failures* of cloud systems and *fault injection* in cloud systems.
+*** Method
+Performing *fault injection* and analyzing the impact of the resulting failures in terms of fail-stop behavior, failure detection through logging, and failure propagation across components.
+
++ They based fault injection on info on software bugs reported by OpenStack developers and users => characterize frequent bug patterns occurring in the project.
+
++ They performed a large fault injection campaign on the three subsystems of OpenStack (i.e., Nova, Cinder, and Neutron), a total of 911 experiments.
+
+**** Bug analysis
+They went through the problem reports and inspected the related source code. They figured out five most frequent bug types: (1) Wrong parameters value (2) Missing parameters (3) Missing function call (4) Wrong return value (5) Missing exception handlers.
+**** Fault injection
+They developed a tool to automate this task. The tool uses /ast/ module to generate an /abstract syntax tree (AST)/ representation of the source code. Then, it scans the AST to replace the node with a bug. Finally, it rewrites the modified AST into Python code, using the /astunparse/ Python module.
+
+**** Failure data collection
+Use workload generator to record the outcomes of both the API calls and of the assertion checks. They also collect all the log files generated by the CMS.
+
+**** Failure analysis
+Two perspectives.
+- The first perspective
+1. API error
+2. Assertion failure
+3. Assertion failure(s), followed by an API Error
+4. No failure
+- The second perspective
+1. Failure in the faulty round only
+2. Failure in the fault-free round (despite the faulty round)
+
+*** Result
+1. In the majority of the experiments, OpenStack failures were not mitigated by a fail-stop behavior. 31.3% of the failures was never notified to the user through exceptions. The others were only notified after a long delay.
+2. In 8.5% of the experiments, there was no indication of the failure in the logs. -> high rish for system operators
+3. 37.5% of the failures, the injected bugs propagated across several OpenStack components. 68.3% of these failures were notified by a different component from the injected one.
+In summary, there is a risk that failures are not timely detected and notified, and they can sliently propagate through the system.
+- *Dataset*
+1. bug reports from OpenStack: highest severe bugs and have been fixed. ('Critical', 'Fix Committed' or 'Fix Released')
+*** Future work
+1. Deeper run-time verification of virtual resources
+2. Increasing the logging coverage.
+Current logging mechanisms in OpenStack only reports high-severity error messages for many of the failures. Some failures with late or no API errors that would benefit from logs to diagnose the failure, but they are missing.
+3. Preventing corruptions of persistent data and shared state.
+
+** Day 2: SE
+- *Title*: Towards understanding bugs in an open source cloud management stack: An empirical study of OpenStack software bugs.
+
+
+The following content is referred from [2]
+- *Keywords*: Cloud management stack, Bug reports, OpenStack
+*** Problem
+Conduct an in-depth study to help developers to detect and fix the bugs in CMS.
+
+An empirical study of several key characteristics of bugs in OpenStack.
+
+*** Method
+Their study computes general statistics of *50k* OpenStack bugs, including the evolution of bugs, the distribution of bugs, and the duration of bugs. Then, they selected 579 bugs for an in-depth study. They study the input factors for triggering the bugs, the consequences of the bugs, and how the bugs are fixed.
+
+**** Data collection
+They collected bug reports from Launchpad version control system of OpenStack.
+
+There are 6 important levels, e.g., undecided, critical, high, medium, low and wishlist in OpenStack bugs. They focus on Critial, High and Medium bugs that are often more interesting to developers. In addition, they focus on /complete/ and /fixed/ bugs.
+**** Basic text parsing
+code removal, stop-word removal, stemming and lemmatization
+**** Discourse pattern matching
+Discourse patterns are rules that caputure the syntax and semantics of the text summarize a family of discourse patterns.
+
+*** Bug triggering factors
+From two perspectives: input factors and timing factors
+*** Bug consequences
+They study the scope of the impact and categorize the symptoms of the failures
+*** Bug fixing
+They categorize the bug fixes into four types: code fix, configuration fix, environment fix, and test case fix.
+*** Contribution
+1. The first comprehensive study on OpenStack bugs.
+2. The first large-scale CMS-bug benchmark.
+
+*** Result
+1. The result indicate a large portion of bugs are related to incorrect configurations.
+2. They report the consequences of the manifested bugs and incorrect output is the dominant majority (66.14%).
+3. Most of the code fixing involive a small number of lines.
+
+*** Future work
+Further research on testing and diagnosis for cloud management stack bugs. It would be promising to investigate techniques that can
+direct bug fixing based on the focused code locations, such as using machine learning classifiers to predict error-prone code regions and leveraging fault localization to pinpoint the faults.
+
+** Day 3: SE
+- *Title*: Is deep learning better than traditional approaches in tag recommendation for software information sites?
+
+- *Journal*: Information and Software Technology
+- *Keywords*: Deep learning, Data analysis, Tag recommendation
+
+The following content is referred from [3]
+*** Problem
+Whether deep learning is better than traditional approaches in tag recommendation task for software information sites.
+**** Formulation
+They assume that any software object contains a description and a set of tags. These tags in a software information site and the tags associated with an object is a subset of these tags.
+
+Given a large set of existing software objects that are attached with tags, how to automatically recommend a set of appropriate tags for a new software object.
+
+This is a multi-label classification task.
+*** Method
+- 4 DL methods: TagCNN, TagRNN, TagHAN (Hierarchical Attention Networks) and TagRCNN (Recurrent Convolutional Neural Networks)
+- 3 advanced traditional methods: EnTagRec, TagMulRec, and FastTagRec
+
+A ten-round validation
+**** Dataset
+One large-scale software information site StackOverflow , 3 medium-scale software information sites Askubuntu, Serverfault, Unix and 6 small-scale sites Codereview, Freecode, Database Administrator, Wordpress, AskDifferent and Software Engineering
+**** Evalution metrics
+top-k prediction recall, the top-k prediction precision, and the top-k prediction f1-score
+
+*** Result
+The performance of TagRNN and TagHAN approaches are worse than traditional approaches in tag recommendation tasks. The performance of TagCNN and TagRCNN approaches are better than traditional approaches in tag recommendation tasks.
+*** Future work
+How to best represent the software object or artifact with a high quality vector is still a major challenge.
+
+** Day 4: NLP
+- *Title*: CodeBERT: A Pre-Trained Model for Programming and Natural Languages
+
+The following context is referred from [4]
+*** Problem
+CodeBERT is a /bimodal/ pre-trained model for natural language (NL) and programming lan- guage (PL).
+
+modality (n. 形式,形态,特征)
+
+/bimodal/ datapoint is an individual function with paired documentation, and each /unimodal/ code is a function without paired documentation
+
+*** Method
+CodeBERT captures the semantic connection between natural language and programming language, and produces general-purpose representations that can broadly support NL-PL understanding tasks (e.g. natural language code search) and generation tasks (e.g. code documentation generation)
+
+CodeBERT is trained on Github code repositories in 6 programming languages.
+
+CodeBERT has exactly the same model architecture as RoBERTa-base.
+
+They regard a piece of code as a sequence of tokens. (WordPiece)
+*** Result
+CodeBERT achieves state-of-the-art performance on both *natural language code search* and *code documentation generation*
+
+CodeBERT is the first large NL-PL pre-trained model.
+*** Future work
+A potential direction to improve CodeBERT by incorporating AST.
+1. One could learn better generators with bimodal evidence or more complicated neural architecture to improve the replaced token detection objective.
+2. The CodeBERT itself could be further improved by generation-related learning objectives.
+3. We can apply CodeBERT to more NL-PL related tasks, and extend it to more programming languages
+
+** Day 5: SE
+- *Title*: Examining the Impact of Self-admitted Technical Debt on Software Quality
+- *Venue*: SANER-2016
+The following context is referred from [5]
+
+*** Problem
+Understand the impact of self-admitted technical debt on software quality
+
+*** Method
+They focus on self-admitted technical debt that refers to errors that might be introduced due to intentional quick or temporary fixed.
+
+They empirically investigate the relation between SATD and software quality in five open-source projects. They examine whether (i) files with SATD have more defects compared to files without SATD, (ii) whether SATD changes introduce future defects, and (iii) whether SATD-related changes tend to be more difficult.
+
+software-quality: defects in a file and defect-inducing changes
+
+use the comment patterns to identify SATD
+
+SATD has 2 levels: (1) file-level (2) change-level
+
+Source code as the input, extract the comments. They stor all of the processed data in a PostgreSQL database and query them to answer the research questions.
+
+*** Result
+The findings show that there is no clear trend when it comes to defects and self-admitted technical debt.
+
+Their study indicates that although technical debt may have negative effects, its impact is not related to defects, rather making the system more difficult to change in the future.
+
+*** Future work
+Further study the nature of the SATD files after they became defective
+
+** Day 6: SE
+- *Title*: Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary
+- *Journal*: Information and Software Technology
+
+The following context is referred from [6]
+
+*** Problem
+Current detection strategies still return a large number of false positives items when detect SATD using a contextualized vocabulary. Moreover, those strategies do not allow the automatic identification of the type of debt of the identified items.
+
+*** Method
+They proposed a contextualized vocabulary model to identify self-admitted technical debt.
+
+They consider decisive patterns as those that bring cues that make it easier to identify a situation of technical debt.
+
+They conduct three empirical studies that: (i) investigated to what extent a pattern is decisive to point to a self-admitted technical debt; (ii) related patterns to TD types; and (iii) investigated the feasibility of using those patterns in practice.
+
+*** Result
+The results from the empirical studies show that over half of the ana-
+lyzed patterns were considered decisive or very decisive to identify self- admitted technical debt. We also found that composed patterns seem to be more contextualized and decisive than isolated patterns to identify SATD items. Some patterns only make sense when they are combined with other patterns.
+
+*** Future work
+We intend to better assess the vocabulary and its accuracy to identify and classify SATD items by comparing the results provided by our approach (vocabulary and eXcomment) with data sourced from manual identification of technical debt by software engineers. We also intend to apply the vocabulary to other repositories, including comments from configuration and version control systems, to investigate how it performs over different types of text comments. Lastly, we want to investi- gate how to combine static source code analysis, software metrics, and code comments analysis to improve the automatic detection of technical debt items.
+
+** Day 7: SE
+- *Title*: How Do Companies Collaborate in Open Source Ecosystems? An Empirical Study of OpenStack
+- *Proc*: ICSE'20
+
+The following content is referred from [7]
+*** Problem
+They try to understand how large OSS ecosystems work, and in particular on the patterns of collaboration within one such large ecosystem (i.e. OpenStack)
+
+Previous work has primarily focused on collaboration at the individual level rather than the company level
+
+OpenStack represents a high-potential arena for these companies to play a role in the rapidly evolving cloud computing technology
+
+They adopt a mixed-method research approach (i.e., using both quantitative and qualitative methods)
+*** Method
+They conducted an empirical study of the OpenStack ecosystem, in which hundreds of companies collaborate on thousands of project repositories to deliver cloud distributions.
+
+They adopted a mixed-method approach that combines an analysis of the version control history with an examination of the peer-reviewed literature and other online documents.
+
+They used OpenStack’s version control data to quantify company collaboration.
+
+*** Result
+They find statistically significant evidence that a company’s collaboration position within the network correlates positively with its productivity in terms of the average number of commits its developers make to the OpenStack projects.
+
+*** Future work
+- The definitive reason for a strong relationship between companies’ collaboration and productivity remains unclear—developing a better theory that explains this link is an avenue for future work. For example, additional factors for a regression model or conduct qualitative studies at companies that participate in OSS ecosystems.
+
+- Future work could consider other types of contributions, such as participation in online discussions, and reviewing code changes.
+
+- Furthermore, the collaboration between companies could also be explored by studying other interaction channels, such as IRC, mailing list, and issue trackers, in addition to submitting commits to the same projects.
+
+- Future studies could consider a more precise measurement of productivity
+
+** Day 8: SE
+- *Title*: Companies' Participation in OSS Development - An Empirical Study of OpenStack
+- *Journal*: TSE'19
+
+The following content is referred from [8]
+*** Problem
+The goal is to investigate how companies contributed developers and commits to OpenStack.
+*** Method
+They mined the code commit history of OpenStack and analyzed the abundant online records about OpenStack, and its participating companies and individual developers.
+
+This study combined the analysis of code commit history with an examination of the published literature and online documents.
+
+*** Result
+volunteer participation is affected by the diversity of companies
+
+*** Future work
+How to decide a developer's contribution: future work may be needed to include other activities, e.g., bug fixes, email discussions, and code review changes, to investigate commercial participation in more detail.
+
+** Day 9: SE
+- *Title*: Detecting and Quantifying Different Types of Self-Admitted Technical Debt
+- *Proc*: 2015 IEEE 7th International Workshop on Managing Technical Debt, MTD 2015
+
+The following content is referred from [9]
+*** Problem
+Figure out what types of technical debt can be detected using source code comments
+*** Method
+1. Extract source code comments from 5 well commented open source projects that belongs to different application domains
+2. They applied a set of 4 simple filtering heuristics to remove comments that are not likely to contain self-admitted technical debt
+
+Their work is different from the aforementioned work that uses code smells to detect design technical debt since we use code comments to detect technical debt.
+
+*** Result
+They found 5 types of self-admitted technical debt which are: design debt, defect debt, documentation debt, requirement debt and test debt
+
+*** Future work
+improve the current classification adding more projects to it, increasing the dataset
+
+an advanced technique of natural language processing, which may lead to more automated ways to identify self-admitted technical debt.
+
+** Day 10: SE
+- *Title*: What do Programmers Discuss about Deep Learning Frameworks
+- *Journal*: EMSE
+
+The following content is referred from [10]
+*** Problem
+To understand different deep learning frameworks and compare the insights from two platforms, i.e., StackOverflow and GitHub. 
+*** Method
+latent dirichlet allocation (LDA) topic modeling techniques to derive the discussion topics related to three deep learning frameworks, namely, Tensorflow, PyTorch and Theano
+**** Research methodology
+1. Data preprocessing
+2. Determining Deep Learning workflow
+3. Topic Modeling
+*** Result
+Their observations include 1) a wide range of topics that are discussed about the three deep learning frameworks on both platforms, and the most popular workflow stages are Model Training and Preliminary Preparation. 2) the topic distributions at the workflow level and topic category level on Tensorflow and PyTorch are always similar while the topic distri- bution pattern on Theano is quite different. In addition, the topic trends at the workflow level and topic category level of the three deep learning frameworks are quite different. 3) the topics at the workflow level show different trends across the two platforms. e.g., the trend of the Preliminary Preparation stage topic on Stack Overflow comes to be rela- tively stable after 2016, while the trend of it on GitHub shows a stronger upward trend after 2016.
+
+*** Future work
+We tend to analyze how the impact trends of topics at different topic levels
+vary with respect to the number of newcomers and the number of unique users and gain some key insights. Moreover, we can also incorporate more deep learning frameworks to make the analysis more common and generalized.
+
+** Day 11: SE
+- *Title*: Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems
+- *Proc*: MSR'20
+
+The following content is referred from [11]
+*** Problem
+Previous studies mine SATD by searching for specific TD-related terms in source code comments. By contrast, in this paper we argue that developers can admit technical debt by other means, e.g., by creating issues in tracking systems and labelling them as referring to TD.
+
+*** Method
+They refer the SATD found in issue tracking systems as issue-based SATD or just SATD-I.
+
+Their intention is to study SATD-I instances that had a practical and positive impact on the projects.
+
+They study SATD-I instances from five open-source systems: GitLab and four GitHub-based systems.
+
+To perform the classification, the tool applies a Naive Bayes Multi-nomial (NBM) technique.
+
+*** Result
+Only 29% of the issues that pay TD can be traced to SATD-C. In other words, 71% of the studied issues document and pay TD that would not be possible to identify by considering only source code documentation.
+
+*** Future work
+They first intend to enlarge our dataset of SATD-I by mining other tags that may denote TD-related issues. After that, they envision an in-depth analysis of the code transformations performed to pay these debts. Based on this dataset of transformations, they may develop tools and techniques to guide developers on TD payment (e.g., by recommending how to perform changes that contribute to the actual removal of the debt).
+
+** Day 12: SE
+- *Title*: Software Engineering Challenges of Deep Learning
+- *Year*: 2018
+- *Proc*: SEAA 2018
+
+The following content is referred from [12]
+*** Problem
+The focus of this study is limited to identifying challenges specifically related to the intersection of SE practices and DL applications.
+
+The main focus of this paper is not to provide solutions, but rather to outline problem areas and, in that way, help guide future research.
+*** Method
+A diverse set of real-world ML projects has been selected for this research and are described in this section. The projects have been selected to collectively represent and exemplify different aspects of challenges.
+
+*** Result
+Although the DL technology has achieved very promising results, there is still a significant need for further research into and development in how to easily and efficiently build high-quality production-ready DL systems.
+
+*** Future work
+SE community, together with the DL community, could make an effort in finding solutions to these challenges for building production-ready systems containing DL components.
+
+** Day 13: PL
+- *Title*: code2vec: Learning Distributed Representations of Code
+- *Year*: 2018
+- *Proc*: Proceedings of the ACM on Programming Languages
+
+The following content is referred from [13]
+*** Problem
+The main idea is to represent a code snippet as a single fixed-length code vector, which can be used to predict semantic properties of the snippet.
+
+learn code embeddings, continuous vectors for representing snippets of code
+
+*** Method
+This is performed by decomposing code to a collection of paths in its abstract syntax tree, and learning the atomic representation of each path simultaneously with learning how to aggregate a set of them.
+
+They present a novel framework for predicting program properties using neural
+networks.
+
+They use a novel *attention* network architecture.
+
+The main idea of their approach is to extract syntactic paths from within a code snippet, represent them as a bag of distributed vector representations, and use an attention mechanism to compute a learned weighted average of the path vectors in order to produce a single code vector.
+
+The core idea is to use soft-attention mechanism over syntactic paths that are derived from the Abstract Syntax Tree of the snippet, and aggregate all of their vector representations into a single vector.
+**** Evaluation
+They demonstrate the effectiveness of our approach for the task of predicting a method’s name given its body.
+
+*** Result
+The code vectors trained on this dataset can predict method names from files that were completely unobserved during training.
+
+The main contribution of their method is in its ability to aggregate an arbitrary sized snippet of code into a fixed-size vector in a way that captures its semantics.
+
+*** Future work
+- Closed labels vocabulary
+- Sparsity and Data-hunger
+- Dependency on variable names
+When given uninformative, obfuscated or adversarial variable names, the prediction of the label is usually less accurate.
+
+** Day 14: SE
+- *Title*: What Do Programmers Discuss about Blockchain?
+- *Year*: 2019
+- *Journal*: TSE
+
+The following content is referred from [14]
+*** Problem
+Prior studies propose the use of LDA to study the Stack Exchange discussions. However, a simplistic use of LDA would capture the topics in discussions blindly without keeping in mind the variety of the dataset and domain-specific concepts.
+
+*** Method
+They propose an approach that combines balanced LDA (which ensures that the topics are balanced across a domain) with the reference architecture of a domain to capture and compare the popularity and impact of discussion topics across the Stack Exchange communities.
+*** Result
+They conducted a quantitative and comparative analysis on blockchain-related posts across the architectural layers and across studied blockchain platforms where appropriate, characterized the breakdown and evolution of topics.
+
+*** Future work
+Future in-depth studies are needed to determine if Stack Exchange discussions in other communities are impacted by such non-technical aspect as well or if our observations are specific to the blockchain communities.
+
+Future research could be conducted on security analysis, vulnerability detection and security hardening for blockchain platforms.
+
+Future research should take into consideration the techniques that are related to bug detection and localization for smart contract oriented programming languages
+
+** Day 15: SE
+- *Title*: Assessing the generalizability of code2vec token embeddings
+- *Year*: 2019
+- *Proc*: ASE
+
+The following content is referred from [15]
+*** Problem
+They want to prove the generalizability of code2vec in 3 downstream tasks, i.e., code comments generation, code authorship identification, and code clones detection.
+
+*** Method
++ Code comments generation
+The granularity is *method*. The task involves the automatic generation of method-level comment from the body of a method.
+- Related work: Several recent work has used neural networks to synthesize natural language from source code
+
+The metric BLEU is used to measure the quality of generated comments.
+
+BLEU takes the generated translation and reference translations as input and outputs a percentage value between 0 and 100, with scores closer to 100 indicating higher quality.
+
+- Approach: They trained a Recurrent Neural Network-based Seq2Seq language model using OpenNMT
+
++ Code authorship identification
+To identify authors successfully, approaches must be able to distinguish between the coding styles of programmers in their code.
+
+The dataset is constructed such that each author has the same number of programs in it. Thus, as a classification task, the classes are balanced and accuracy is a sufficient evaluation metric.
+
++ Code clones detection
+Code clones detection is the task of determining if a pair of code fragments are similar to each other.
+
+For tokens in the code fragments that not in the embeddings’ vocabulary, we use the zero vector. The Cosine Similarity of two code fragments is computed based on averaging all the vectors of tokens contained in the two code fragments.
+
+*** Result
+Eventually, the results show that source code token embeddings cannot be readily leveraged for the downstream tasks. The experiments even show that their attempts to use them do not result in any improvements over less sophisticated methods.
+
+*** Future work
+A more comprehensive evaluation of existing source code token embeddings can be done on the three tasks we identified in this work.
+
+Beyond token embeddings, an evaluation of distributed representations of other granularities, e.g. function embeddings, in downstream tasks is a natural next step for future work.
+
+** Day 16: SE
+- *Title*: The impact factors on the performance ofmachine learning-based vulnerability detection: A comparative study
+- *Year*: 2020
+- *Journal*: Journal of Systems and Software
+- *Keyword*: Vulnerability detection, Machine learning, Comparative study, Deep learning, Feature extraction
+
+The following content is referred from [16]
+
+*** Problem
+To identify four impact factors and conduct a comparative study to investigate the performance influence of these factors
+
+*** Method
+They collect three different vulnerability code datasets from two various sources (i.e., NVD and SARD).
+
+*** Result
+the quality of datasets, classification models and vectorization methods can directly affect the detection performance, in contrast function/variable name replacement can affect the features of vulnerability detection and indirectly affect the performance
+
+*** Future work
+- First, we only focus on three types of vulnerabilities. Future research should be conducted by considering more vulnerabilities and more datasets because different types of vulnerabilities have different analysis methods and characteristics. 
+
+- Second, from the experiment result, we find that codes from NVD and SARD show different characteristics and experimental results. Each dataset itself still has many factors worth exploring. How to fairly evaluate the performance of vulnerability detection is also a topic worth discussing
+
+- Third, future research will use some more accurate and stable evaluation models. 
+
+** Day 17: SE
+- *Title*: Going Big : A Large-Scale Study on What Big Data Developers Ask
+- *Proc*: ESEC/FSE
+- *Year*: 2019
+- *Keywords*: Big data topics, Big data topic hierarchy, Big data topic difficulty, Big data topic popularity, Stackoverflow
+
+The following content is referred from [17]
+
+*** Problem
+They conduct a large-scale study on Stackoverflow to understand the interest and difficulties of big data developers.
+
+*** Method
+They develop a set of big data tags to extract big data posts from Stackoverflow; use topic modeling to group these posts into big data topics; group similar topics into categories to construct a topic hierarchy; analyze popularity and difficulty oftopics and their correlations; and discuss implications of our findings for practice, research and education of big data software development and investigate their coincidence with the findings of previous work.
+
+*** Result
+In this work they extract, topic model and categorize 157,525 big data questions and answers on Stackoverflow to understand big data topics that developers are interested in, the hierarchy of these topics, their popularity, difficulty and their correlations and implications of such understanding for practice, research and education of big data software development.
+
+*** Future work
+One avenue of future work is to conduct similar large-scale studies using *commit logs* and *bug reports* to triangulate with our results.
+
+** Day 18: SE
+- *Title*: What are developers talking about? An analysis of topics and trends in Stack Overflow
+- *Journal*: EMSE
+- *Year*: 2014
+- *Keywords*: Q&A websites · Knowledge repository · Topic models · Trend analysis · Mining software repositories · Latent Dirichlet allocation
+
+The following content is referred from [18]
+*** Problem
+Analyzing the actual textual content of Q&A websites can help the software engineering community to better understand the thoughts and needs of developers. In the article, they present a methodology to analyze the textual content of Stack Overflow discussions.
+
+*** Method
+They use latent Dirichlet allocation (LDA), a statistical topic modeling technique, to automatically discover the main topics present in developer discussions. They analyze these discovered topics, as well as their relationships and trends over time, to gain insights into the development community.
+
+*** Result
+The analysis provides an approximation of the wants and needs of the contemporary developer.
+- Mobile application development is on the rise, faster than web development
+- Git has surpassed SVN in the VCS popularity contest
+etc.
+
+*** Future work
+The methodology can also be applied to other developer resources, such as web portals, blogs, and forums; we can cross-reference these resources with Stack Overflow to determine whether similar trends hold in those mediums.
+
+** Day 19: NLP
+- *Title*: Fine-Tuning Pretrained Language Models: Weight Initializations, Data Orders, and Early Stopping
+- *Year*: 2020
+
+The following content is referred from [19]
+*** Problem
+It is often brittle to fine-tune pre-trained contextual word embedding models to supervised downstream tasks. To better understand the process, they experiment with four datasets from the GLUE benchmark, fine-tuning BERT hundreds of times on each while varying only the random seeds.
+*** Method
+They conducted a series of fine-tuning experiments on four tasks in the GLUE benchmark. Changing only training data order and the weight initialization of the fine-tuning layer—which contains only 0.0006% of the total number of parameters in the model.
+
+It is worth highlighting that in their experiments only random seeds are changed—never the fine-tuning regime, hyperparameter values, or pretrained weights.
+
+They also examine two factors influenced by the choice of random seed: weight initialization and training data order.
+
+*** Result
+They find substantial performance increases compared to previously reported results, and they quantify how the performance of the best-found model varies as a function of the number of fine-tuning trials.
+*** Future work
+They hope future work which introduces new initialization schemes will provide a similar analysis.
+
+They leave it to future work to analyze the variance from random seeds on these other models, and note that running analogous experiments would likely also lead to performance improvements.
+
+** Day 20: NLP
+- *Title*: tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [20]
+*** Problem
+There is currently no standard way of combining topics with pretrained contex- tual representations such as BERT.
+
+*** Method
+They propose tBERT — a simple architecture combining topics with BERT for semantic similarity prediction.
+
+While other topic models can be used, they experiment with two popular topic models: LDA and GSDMM
+
+They encode two sentences S1 (with length N) and S2 (with length M) with the uncased version of BERTBASE, using the C vector from BERT’s final layer corresponding to the CLS token in the input as sentence pair representation.
+
+*** Result
+They demonstrated that adding LDA topics to BERT consistently improved performance across a range of semantic similarity prediction datasets.
+
+*** Future work
+Future work may focus on how to directly induce topic information into BERT without corrupting pretrained information and whether combining topics with other pretrained contextual models can lead to similar gains.
+
+** Day 21: NLP
+- *Title*: Neural Topic Modeling with Bidirectional Adversarial Training
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [21]
+
+*** Problem
+These approximate approaches have the drawback that small changes to the modeling assumptions result in a re-derivation of the inference algorithm, which can be mathematically arduous.
+
+*** Method
+They propose a novel *Bidirectional Adversarial Topic (BAT)* model, which is based on bidirectional adversarial training and aims to learn the two-way non-linear projection between two high-dimensional distributions.
+
+The proposed BAT employs a generator network to learn the projection function from randomly-sampled document-topic distribution to document-word distribution. Moreover, an encoder network is used to learn the inverse projection, transforming a document-word distribution into a document-topic distribution.
+
+*** Result
+Compared with LDA, BAT achieves a comparable result in accuracy since both models have the same Dirichlet prior assumption over topics and only employ the word co-occurrence information. Gaussian-BAT outperforms the second best model, BAT, by nearly 6% in accuracy.
+
+**** Evaluation
+topic coherence values
+
+They also compare the average topic coherence values (all topics taken into account) numerically to show the effectiveness of proposed BAT and Gaussian-BAT.
+
+*** Future work
+They would like to devise a nonparametric neural topic model based on adversarial training. Besides, developing correlated topic modelsis another promising direction.
+
+** Day 22: NLP
+- *Title*: SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [22]
+*** Problem
+Due to limited data resources from downstream tasks and the extremely high complexity of pre-trained models, aggressive fine-tuning often causes the fine-tuned model to overfit the training data of downstream tasks and fail to generalize to unseen data.
+
+*** Method
+To fully harness the power of fine-tuning in a more principled manner, we propose a new learning framework for robust and efficient fine-tuning on the pre-trained language models through regularized optimization techniques.
+
+They introduce the smoothness-inducing adversarial regularization and proximal point optimization into large scale language model fine-tuning.
+
+*** Result
+They achieve state-of-the-art results on several popular NLP benchmarks (e.g., GLUE, SNLI, SciTail, and ANLI).
+
+*** Future work
+They also demonstrate that the proposed framework is applicable to domain adaptation and results in a significant performance improvement. The proposed fine-tuning framework can be generalized to solve other transfer learning problems.
+
+** Day 23: NLP
+- *Title*: Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [23]
+*** Problem
+In this paper, they investigate how to efficiently apply the pre-training language model BERT on the unsupervised domain adaptation.
+
+*** Method
+They design a post-training procedure, which contains the target domain masked language model task and a novel domain-distinguish pre-training task. The post-training procedure will encourage BERT to be domain-aware and distill the domain-specific features in a self-supervised way. Based on this, we could then conduct the adversarial training to derive the enhanced domain-invariant features.
+
+*** Result
+Experiments on Amazon reviews benchmark dataset show that the model gets the average result 90.12% in accuracy, 4.22% absolute improvement compared with state-of-the-art methods.
+
+*** Future work
+In the future, they would like to investigate the application of their theory in these domain adaptation tasks.
+
+** Day 24: NLP
+- *Title*: A Primer in BERTology: What we know about how BERT works
+- *Year*: 2020
+
+The following content is referred from [24]
+*** Problem
+Transformer-based models are now widely used in NLP, but we still do not understand a lot about their inner workings.
+
+*** Content
+This is a survey about BERT related research.
+
+- Overview of BERT architecture
+- BERT embeddings
+- Localizing linguistic knowledge
+- Training BERT
+  + pre-training
+  + fine-tuning
+- Compression
+
+*** Future work
+- Benchmarks that require verbal reasoning
+- Developing methods to “teach” reasoning
+- Learning what happens at inference time
+
+** Day 25: NLP
+- *Title*: What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study
+- *Year*: 2020
+
+The following content is referred from [25]
+*** Problem
+While RL algorithms are often conceptually simple, their state-of-the-art implementations take numerous low- and high-level design decisions that strongly affect the performance of the resulting agents.
+
+The primary goal of this paper is to understand how the different choices affect the final performance of an agent and to derive recommendations for these choices.
+
+*** Method
+As a step towards filling that gap, they implement >50 such “choices” in a unified on-policy RL framework, allowing them to investigate their impact in a large-scale empirical study. They train over 250’000 agents in five continuous control environments of different complexity and provide insights and practical recommendations for on-policy training of RL agents.
+
+*** Result
+While many of their experimental findings confirm common RL practices, some of them are quite surprising, e.g. the policy initialization scheme significantly influences the performance while it is rarely even mentioned in RL publications.
+
+** Day 26: NLP
+- *Title*: A Transformer-based Approach for Source Code Summarization
+- *Year*: 2020
+- *Proc*: ACL
+
+The following content is referred from [26]
+*** Problem
+Learning code representation by modeling the pairwise relationship between code tokens to capture their long-range dependencies is crucial. To learn code representation for summarization, they explore the Transformer model that uses a self-attention mechanism and has shown to be effective in capturing long-range dependencies.
+
+*** Method
+The Transformer consists of stacked multi-head attention and parameterized linear transformation layers for both the encoder and decoder. At each layer, the multi-head attention employs h attention heads and performs the self-attention mechanism.
+
+*** Result
+In this work, they show that, by modeling the pairwise relationship between source code tokens using relative position representation, they can achieve significant improvements over learning sequence information of code tokens using absolute position representation.
+
+*** Future work
+They want to study the effective incorporation of code structure into the Transformer and apply the techniques in other software engineering sequence generation tasks (e.g., commit message generation for source code changes).
+
+** Day 27: NLP
+- *Title*: A Survey on Contextual Embeddings
+- *Year*: 2020
+
+The following content is referred from [27]
+
+This survey reviews existing contextual embedding models, cross-lingual polyglot pre-training, the application of contextual embeddings in downstream tasks, model compression, and model analyses.
+
+** Pre-training methods for contextual embeddings
+1. Unsupervised pre-training via language modeling
+2. Supervised objectives
+
+** Cross-lingual polyglot pre-training for contextual embeddings
+1. Joint training & shared vocabulary
+2. Joint training & separate vocabularies
+3. Separate training & separate vocabularies
+
+** Downstream learning
+There are three main ways to use pre-trained contextual embeddings in downstream tasks: (1) Feature-based methods, (2) Fine-tuning methods, and (3) Adapter methods.
+
+** Model compression
+Work on compressing language models utilizes (1) Low-rank approximation, (2) Knowledge distillation, and (3) Weight quantization, to make them usable in embedded systems and edge devices.
+** Current challenges
+1. Better pre-training objectives
+2. Understanding the knowledge encoded in pre-trained models
+3. Model robustness
+4. Controlled generation of sequences
+
+** Day 28: SE
+- *Title*: TranS3: A Transformer-based Framework for Unifying Code Summarization and Code Search
+- *Year*: 2020
+
+The following content is referred from [28]
+
+*** Problem
+Code summarization and code search have been widely adopted in soſtware development and maintenance. However, few studies have explored the efficacy of unifying them.
+
+*** Method
+In this paper, they propose TranS3, a transformer-based framework to integrate code summarization with code search. Specifically, for code summarization, TranS3 enables an actorcritic network, where in the actor network, we encode the collected code snippets via transformer- and tree-transformer-based encoder and decode the given code snippet to generate its comment.
+
+*** Result
+They conduct a set of extensive experiments on the effectiveness and efficiency of TranS3 in terms of both the code summarization and code search components compared with state-of-the-art approaches. The experimental results suggest that TranS3 can significantly outperform multiple state-of-the-art approaches in both code summarization and code search and the study results further strengthen the efficacy ofTranS3 from the developers’ points of view.
+
+
+** Day 29: SE
+- *Title*: An Empirical Study on TensorFlow Program Bugs
+- *Year*: 2018
+
+The following content is referred from [29]
+*** Problem
+Although recent research efforts were made on testing and debugging deep learning applications, the characteristics of deep learning defects have never been studied.
+
+*** Method
+They studied deep learning applications built on top of TensorFlow and collected program bugs related to TensorFlow from StackOverflow QA pages and Github projects. We extracted information from QA pages, commit messages, pull request messages, and issue discussions to examine the root causes and symptoms of these bugs. We also studied the strategies deployed by TensorFlow users for bug detection and localization.
+
+The study collected 175 TensorFlow coding bugs from GitHub issues and StackOverflow questions. They analyzed these bugs quantitatively and qualitatively, and reported (1) their symptoms and root causes, (2) the challenges in their detection, and (3) the challenges in their localization.
+
+*** Result
+In general, they found the fixing patterns are strongly correlated to the root causes ofthe bug.
+
+This finding suggests that analyzing the root causes could be useful for further developing automated repair approaches.
+
+*** Future work
+Others can conduct analysis on bug repair or fixing patterns of the Tensorflow bugs.
+
+
+** Day 30: AI
+- *Title*: Graph Few-shot Learning via Knowledge Transfer
+- *Year*: 2019
+
+The following content is referred from [30]
+*** Problem
+Most GNNs have shallow layers with a limited receptive field and may not achieve satisfactory performance especially when the number of labeled nodes is quite small.
+
+*** Method
+They proposed a graph few-shot learning (GFL) algorithm that incorporates prior knowledge learned from auxiliary graphs to improve classification accuracy on the target graph.
+
+*** Result
+Extensive experiments and ablation studies on four real-world graph datasets demonstrate the effectiveness of their proposed model and the contribution of each component.
+
+*** Future work
+* Reference
+1. Cotroneo, D., De Simone, L., Liguori, P., Natella, R., & Bidokhti, N. (2019, August). How bad can a bug get? an empirical analysis of software failures in the OpenStack cloud computing platform. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 200-211).
+
+2. Zheng, W., Feng, C., Yu, T., Yang, X., & Wu, X. (2019). Towards understanding bugs in an open source cloud management stack: An empirical study of openstack software bugs. Journal of Systems and Software, 151, 210-223.
+
+3. Zhou, P., Liu, J., Liu, X., Yang, Z., & Grundy, J. (2019). Is deep learning better than traditional approaches in tag recommendation for software information sites?. Information and software technology, 109, 1-13.
+
+4. Feng, Z., Guo, D., Tang, D., Duan, N., Feng, X., Gong, M., ... & Zhou, M. (2020). Codebert: A pre-trained model for programming and natural languages. arXiv preprint arXiv:2002.08155.
+
+5. Wehaibi, S., Shihab, E., & Guerrouj, L. (2016, March). Examining the impact of self-admitted technical debt on software quality. In 2016 IEEE 23rd International Conference on Software Analysis, Evolution, and Reengineering (SANER) (Vol. 1, pp. 179-188). IEEE.
+
+6. de Freitas Farias, M. A., de Mendonça Neto, M. G., Kalinowski, M., & Spínola, R. O. (2020). Identifying self-admitted technical debt through code comment analysis with a contextualized vocabulary. Information and Software Technology, 121, 106270.
+
+7. Zhang, Y., Zhou, M., Stol, K. J., Wu, J., & Jin, Z. (2020). How do companies collaborate in open source ecosystems? An empirical study of OpenStack.
+
+8. Zhang, Y., Zhou, M., Mockus, A., & Jin, Z. (2019). Companies' Participation in OSS Development-An Empirical Study of OpenStack. IEEE Transactions on Software Engineering.
+
+9. Maldonado, E. D. S., & Shihab, E. (2015, October). Detecting and quantifying different types of self-admitted technical debt. In 2015 IEEE 7th International Workshop on Managing Technical Debt (MTD) (pp. 9-15). IEEE.
+
+10. Han, J., Shihab, E., Wan, Z., Deng, S., & Xia, X. (2020). What do Programmers Discuss about Deep Learning Frameworks. EMPIRICAL SOFTWARE ENGINEERING.
+
+11. Xavier, L., Ferreira, F., Brito, R., & Valente, M. T. (2020). Beyond the Code: Mining Self-Admitted Technical Debt in Issue Tracker Systems. arXiv preprint arXiv:2003.09418.
+
+12. Arpteg, A., Brinne, B., Crnkovic-Friis, L., & Bosch, J. (2018, August). Software engineering challenges of deep learning. In 2018 44th Euromicro Conference on Software Engineering and Advanced Applications (SEAA) (pp. 50-59). IEEE.
+
+13. Alon, U., Zilberstein, M., Levy, O., & Yahav, E. (2019). code2vec: Learning distributed representations of code. Proceedings of the ACM on Programming Languages, 3(POPL), 1-29.
+
+14. Wan, Z., Xia, X., & Hassan, A. E. (2019). What is Discussed about Blockchain? A Case Study on the Use of Balanced LDA and the Reference Architecture of a Domain to Capture Online Discussions about Blockchain platforms across the Stack Exchange Communities. IEEE Transactions on Software Engineering.
+
+15. Kang, H. J., Bissyandé, T. F., & Lo, D. (2019, November). Assessing the generalizability of code2vec token embeddings. In 2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE) (pp. 1-12). IEEE.
+
+16. Zheng, W., Gao, J., Wu, X., Liu, F., Xun, Y., Liu, G., & Chen, X. (2020). The impact factors on the performance of machine learning-based vulnerability detection: A comparative study. Journal of Systems and Software, 110659.
+
+17. Bagherzadeh, M., & Khatchadourian, R. (2019, August). Going big: a large-scale study on what big data developers ask. In Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (pp. 432-442).
+
+18. Barua, A., Thomas, S. W., & Hassan, A. E. (2014). What are developers talking about? an analysis of topics and trends in stack overflow. Empirical Software Engineering, 19(3), 619-654.
+
+19. Dodge, J., Ilharco, G., Schwartz, R., Farhadi, A., Hajishirzi, H., & Smith, N. (2020). Fine-tuning pretrained language models: Weight initializations, data orders, and early stopping. arXiv preprint arXiv:2002.06305.
+
+20. Peinelt, N., Nguyen, D., & Liakata, M. (2020, July). tBERT: Topic Models and BERT Joining Forces for Semantic Similarity Detection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 7047-7055).
+
+21. Wang, R., Hu, X., Zhou, D., He, Y., Xiong, Y., Ye, C., & Xu, H. (2020). Neural Topic Modeling with Bidirectional Adversarial Training. arXiv preprint arXiv:2004.12331.
+
+22. Jiang, H., He, P., Chen, W., Liu, X., Gao, J., & Zhao, T. (2019). Smart: Robust and efficient fine-tuning for pre-trained natural language models through principled regularized optimization. arXiv preprint arXiv:1911.03437.
+
+23. Du, C., Sun, H., Wang, J., Qi, Q., & Liao, J. (2020, July). Adversarial and Domain-Aware BERT for Cross-Domain Sentiment Analysis. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (pp. 4019-4028).
+
+24. Rogers, A., Kovaleva, O., & Rumshisky, A. (2020). A primer in bertology: What we know about how bert works. arXiv preprint arXiv:2002.12327.
+
+25. Andrychowicz, M., Raichuk, A., Stańczyk, P., Orsini, M., Girgin, S., Marinier, R., ... & Gelly, S. (2020). What Matters In On-Policy Reinforcement Learning? A Large-Scale Empirical Study. arXiv preprint arXiv:2006.05990.
+
+26. Ahmad, W. U., Chakraborty, S., Ray, B., & Chang, K. W. (2020). A Transformer-based Approach for Source Code Summarization. arXiv preprint arXiv:2005.00653.
+
+27. Liu, Q., Kusner, M. J., & Blunsom, P. (2020). A Survey on Contextual Embeddings. arXiv preprint arXiv:2003.07278.
+
+28. Wang, W., Zhang, Y., Zeng, Z., & Xu, G. (2020). TranS^ 3: A Transformer-based Framework for Unifying Code Summarization and Code Search. arXiv preprint arXiv:2003.03238.
+
+29. Zhang, Y., Chen, Y., Cheung, S. C., Xiong, Y., & Zhang, L. (2018, July). An empirical study on TensorFlow program bugs. In Proceedings of the 27th ACM SIGSOFT International Symposium on Software Testing and Analysis (pp. 129-140).
+
+30. Yao, H., Zhang, C., Wei, Y., Jiang, M., Wang, S., Huang, J., ... & Li, Z. (2019). Graph few-shot learning via knowledge transfer. arXiv preprint arXiv:1910.03053.
