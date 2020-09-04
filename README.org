@@ -87,3 +87,4 @@ I hope I could keep it work up and improve my ability to read and write.
 68. Day 68: Automatic Duplicate Bug Report Detection using Information Retrieval-based versus Machine Learning-based Approaches
 69. Day 69: Train One Get One Free: Partially Supervised Neural Network for Bug Report Duplicate Detection and Clustering
 70. Day 70: An HMM-Based Approach for Automatic Detection and Classification of Duplicate Bug Reports
+71. Day 71: Towards Word Embeddings for Improved Duplicate Bug Report Retrieval in Software Repositories

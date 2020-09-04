@@ -12,6 +12,7 @@ From 25 Aug 2020 to
 8. [[#day-68-se][Day 68: Automatic Duplicate Bug Report Detection using Information Retrieval-based versus Machine Learning-based Approaches]]
 9. [[#day-69-se][Day 69: Train One Get One Free: Partially Supervised Neural Network for Bug Report Duplicate Detection and Clustering]]
 10. [[#day-70-se][Day 70: An HMM-Based Approach for Automatic Detection and Classification of Duplicate Bug Reports]]
+11. [[#day-71-se][Day 71: Towards Word Embeddings for Improved Duplicate Bug Report Retrieval in Software Repositories]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -258,6 +259,61 @@ a list of rank-1 bug reports, recall values of 80% and 63% have been achieved on
 - study how to combine stack traces with other BR fields such as BR descriptions and comments
 - A combined approach should not treat stack traces as documents, as it is done in the literature, but model the temporal order of sequences of function calls, just as it is done in this paper
 
+* Day 71: SE
+- *Title*: Towards Word Embeddings for Improved Duplicate Bug Report Retrieval in Software Repositories
+- *Year*: 2018
+- *Proc*: International Conference on the Theory of Information Retrieval
+
+The following content is referred from [11]
+** Problem
+retrieval of top-k similar bug reports for a new bug report by employing word embeddings
+
+** Method
+1. consider each bug report as a text document and use it for training word embedding models
+2. using the trained word embedding model, they convert bug reports into vectors and retrieve the top-k most similar bug reports
+
+*** Datasets
+Mozilla and Open Office
+
+*** Details
+Only use two textual components from each bug report: title (or summary), and description. Both title and description are combined and a word embedding model of demension D is learnt
+
+
+After learning the model, all the bug reports present in the database are transformed into vectors by averaging the individual vectors of the words in the bug reports
+
+In order to find duplicates of a new bug report, the most similar k bug reports are retrieved by means of cosine similarity between a new report and the existing bug reports.
+
+The major steps:
+1. Tokenization
+2. Training
+3. Vectorization of Bug Reports
+4. Compute Distances
+
+** Result
+*** Approaches
+word embedding models:
+1. Skipgram
+2. CBOW
+3. Fast-Skipgram
+4. Fast-CBOW
+5. DBOW
+6. PV-DM
+
+baseline approaches:
+1. BM25F
+2. LDA
+3. An approach from previous work
+
+*** Performance Metrics
+Recall rate: it measures the accuracy of the duplicate retrieval system in terms of counting the percentage of duplicates (a query which is a duplicate) for which the master bug-report is found within the top-K search results
+
+AUC-ROC (Area Under Curve of Receiver Operating Characteristic)
+
+It can be seen that the proposed approach with DBOW model performs the best compared to the BM25F and LDA baselines and the approach proposed in previous work.
+
+** Future work
+investigate other available word embedding approaches and induce supervision during training using tagged duplicate bug reports
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -278,3 +334,5 @@ a list of rank-1 bug reports, recall values of 80% and 63% have been achieved on
 9. Poddar, L., Neves, L., Brendel, W., Marujo, L., Tulyakov, S., & Karuturi, P. (2019). Train one get one free: Partially supervised neural network for bug report duplicate detection and clustering. arXiv preprint arXiv:1903.12431.
 
 10. Ebrahimi, N., Trabelsi, A., Islam, M. S., Hamou-Lhadj, A., & Khanmohammadi, K. (2019). An HMM-based approach for automatic detection and classification of duplicate bug reports. Information and Software Technology, 113, 98-109.
+
+11. Budhiraja, A., Dutta, K., Shrivastava, M., & Reddy, R. (2018, September). Towards word embeddings for improved duplicate bug report retrieval in software repositories. In Proceedings of the 2018 ACM SIGIR International Conference on Theory of Information Retrieval (pp. 167-170).
