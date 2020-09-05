@@ -13,6 +13,7 @@ From 25 Aug 2020 to
 9. [[#day-69-se][Day 69: Train One Get One Free: Partially Supervised Neural Network for Bug Report Duplicate Detection and Clustering]]
 10. [[#day-70-se][Day 70: An HMM-Based Approach for Automatic Detection and Classification of Duplicate Bug Reports]]
 11. [[#day-71-se][Day 71: Towards Word Embeddings for Improved Duplicate Bug Report Retrieval in Software Repositories]]
+12. [[#day-72-se][Day 72: Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -313,6 +314,24 @@ It can be seen that the proposed approach with DBOW model performs the best comp
 
 ** Future work
 investigate other available word embedding approaches and induce supervision during training using tagged duplicate bug reports
+
+* Day 72: SE
+- *Title*: Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks
+- *Year*: 2020
+- *Proc*: ICPC
+
+The following content is referred from [12]
+** Problem
+duplicate bug report detection
+
+** Method
+They propose a duplicate bug report detection approach based on Dual-Channel Convolutional Neural Networks (DC-CNN). They present a novel bug report pair representation, i.e., dual-channel matrix through concatenating two single-channel matrices representing bug reports. Such bug report pairs are fed to a CNN model to capture the correlated semantic relationships between bug reports. Then, their approach uses the association features to classify whether a pair of bug reports are duplicate or not.
+
+** Result
+They evaluate their approach on three large datasets from three open-source projects, including Open Office, Eclipse, Net Beans and a larger combined dataset, and the accuracy of classification reaches 0.9429, 0.9685, 0.9534, 0.9552 respectively. Such performance outperforms the two state-of-the-art approaches which also use deep-learning techniques. The results indicate that their dual-channel matrix representation is effective for duplicate bug report detection.
+
+** Future work
+In the future, one can investigate how to make use of more structured information to improve their approach. Additionally, more empirical studies can be performed to validate our approach on both open source and industrial projects.
 
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
