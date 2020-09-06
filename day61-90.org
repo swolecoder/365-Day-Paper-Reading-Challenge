@@ -14,6 +14,7 @@ From 25 Aug 2020 to
 10. [[#day-70-se][Day 70: An HMM-Based Approach for Automatic Detection and Classification of Duplicate Bug Reports]]
 11. [[#day-71-se][Day 71: Towards Word Embeddings for Improved Duplicate Bug Report Retrieval in Software Repositories]]
 12. [[#day-72-se][Day 72: Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks]]
+13. [[#day-73-se][Day 73: LWE: LDA refined Word Embeddings for duplicate bug report detection | DWEN: Deep Word Embedding Network for Duplicate Bug Report Detection in Software Repositories]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -333,6 +334,58 @@ They evaluate their approach on three large datasets from three open-source proj
 ** Future work
 In the future, one can investigate how to make use of more structured information to improve their approach. Additionally, more empirical studies can be performed to validate our approach on both open source and industrial projects.
 
+* Day 73: SE
+- *Title*: LWE: LDA refined Word Embeddings for duplicate bug report detection
+- *Year*: 2018
+- *Proc*: ICSE
+
+The following content is referred from [13]
+** Problem
+Detecting duplicate bug reports is an important task in order to avoid the assignment of a same bug to different developers.
+
+** Method
+combine LDA and word embeddings to leverage the strengths of both approaches for the task
+
+While word embeddings have a high precision (i.e. two reports which are reported as similar will have very high chances of being similar), LDA has a high recall (i.e. two reports which are reported as non-similar will have very high chances of being non-similar).
+
+They proposed a 'LDA refined Word Embeddings' (LWE)
+
+*** Steps
+1. They use an LDA model to extract top-n most similar bug reports, thereby pruning the rest.
+2. From the extracted top-n reports, they extract the final top-k most similar reports (k < n) by means of a word embedding model which are shown to the Triager.
+** Result
+*** Performance metric
+recall rate measures the accuracy of the duplicate detection system in terms of counting the percentage of duplicates (a query which is a duplicate) for which the master bug-report is found within the top-k search results
+
+
+This indicates that the Skipgram models gives high probability for duplicate reports (i.e. high precision) and LDA is giving low probability for non-duplicate reports (i.e. high recall)
+** Future work
+They plan on carrying out an in-depth investigation on why LDA has a high recall and word embeddings have high precision for this task. They plan on building a model through which we can train both LDA and word embeddings together.
+
+They plan on investigating if we can use these signals to improve the results such as using supervised LDA and/or supervised word embeddings.
+
+
+- *Title*: DWEN: Deep Word Embedding Network for Duplicate Bug Report Detection in Software Repositories
+- *Year*: 2018
+- *Proc*: ICSE
+
+The following content is referred from [13]
+** Problem
+Capturing and tagging duplicate bug reports is scurcial in order to avoid assignment of the same bug to different developers. Efforts have been made in the past to detect duplicate bug reports by using topic modelling, discriminative methods, meta-attributes.
+
+** Method
+they train a deep neural network on top of bug reports vectors created from a word embedding model
+
+1. Word embedding training
+2. Transformantion into Document Vectors of size
+3. Training of the deep neural network
+
+** Result
+They compare BM25F as an information retrieval baseline, LDA as a topic modelling baseline.
+
+** Future work
+They aim at investigating different word embedding models for DWEN. They also aim to reduce the training to a single step compared the two step training process of training embeddings and deep neuralnetwork.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -355,3 +408,7 @@ In the future, one can investigate how to make use of more structured informatio
 10. Ebrahimi, N., Trabelsi, A., Islam, M. S., Hamou-Lhadj, A., & Khanmohammadi, K. (2019). An HMM-based approach for automatic detection and classification of duplicate bug reports. Information and Software Technology, 113, 98-109.
 
 11. Budhiraja, A., Dutta, K., Shrivastava, M., & Reddy, R. (2018, September). Towards word embeddings for improved duplicate bug report retrieval in software repositories. In Proceedings of the 2018 ACM SIGIR International Conference on Theory of Information Retrieval (pp. 167-170).
+
+12. He, J., Xu, L., Yan, M., Xia, X., & Lei, Y. Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks.
+
+13. Budhiraja, A., Reddy, R., & Shrivastava, M. (2018, May). Lwe: Lda refined word embeddings for duplicate bug report detection. In Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings (pp. 165-166). | Budhiraja, A., Dutta, K., Reddy, R., & Shrivastava, M. (2018, May). DWEN: deep word embedding network for duplicate bug report detection in software repositories. In Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings (pp. 193-194).
