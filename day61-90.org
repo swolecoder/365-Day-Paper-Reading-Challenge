@@ -15,6 +15,8 @@ From 25 Aug 2020 to
 11. [[#day-71-se][Day 71: Towards Word Embeddings for Improved Duplicate Bug Report Retrieval in Software Repositories]]
 12. [[#day-72-se][Day 72: Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks]]
 13. [[#day-73-se][Day 73: LWE: LDA refined Word Embeddings for duplicate bug report detection | DWEN: Deep Word Embedding Network for Duplicate Bug Report Detection in Software Repositories]]
+14. [[#day-74-se][Day 74: On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners]]
+
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -386,6 +388,25 @@ They compare BM25F as an information retrieval baseline, LDA as a topic modellin
 ** Future work
 They aim at investigating different word embedding models for DWEN. They also aim to reduce the training to a single step compared the two step training process of training embeddings and deep neuralnetwork.
 
+* day 74: SE
+- *Title*: On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners
+- *Year*: 2019
+
+The following content is referred from [74]
+** Problem
+The practitioners, on the other hand, expect a bug localization tool to meet certain criteria, such as trustworthiness, scalability, and efficiency.
+
+They would like to investigate whether deep learning models meet the expectations of practitioners or not.
+
+** Method
+They constructed a Convolution Neural Network and a Simple Logistic model to examine their effectiveness in localizing bugs. They train these models on ﬁve open source projects written in Java and compare their performance with the performance of other state-of-the-art models trained on these datasets.
+
+** Result
+The experiments show that although the deep learning models perform better than classic machine learning models, they meet the adoption criteria set by the practitioners only partially.
+
+** Future work
+It also highlights the need for standardization of performance benchmarks to ensure that bug localization models are assessed equitably and realistically.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -412,3 +433,5 @@ They aim at investigating different word embedding models for DWEN. They also ai
 12. He, J., Xu, L., Yan, M., Xia, X., & Lei, Y. Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks.
 
 13. Budhiraja, A., Reddy, R., & Shrivastava, M. (2018, May). Lwe: Lda refined word embeddings for duplicate bug report detection. In Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings (pp. 165-166). | Budhiraja, A., Dutta, K., Reddy, R., & Shrivastava, M. (2018, May). DWEN: deep word embedding network for duplicate bug report detection in software repositories. In Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings (pp. 193-194).
+
+14. 
