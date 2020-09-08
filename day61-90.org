@@ -16,6 +16,7 @@ From 25 Aug 2020 to
 12. [[#day-72-se][Day 72: Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks]]
 13. [[#day-73-se][Day 73: LWE: LDA refined Word Embeddings for duplicate bug report detection | DWEN: Deep Word Embedding Network for Duplicate Bug Report Detection in Software Repositories]]
 14. [[#day-74-se][Day 74: On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners]]
+15. [[#day-75-se][Day 75: On the Relationship between Bug Reports and Queries for Text Retrieval-based Bug Localization]]
 
 
 * Day 61: NLP
@@ -407,6 +408,32 @@ The experiments show that although the deep learning models perform better than 
 ** Future work
 It also highlights the need for standardization of performance benchmarks to ensure that bug localization models are assessed equitably and realistically.
 
+* day 75: SE
+- *Title*: On the Relationship between Bug Reports and Queries for Text Retrieval-based Bug Localization
+- *Year*: 2020
+- *Jounral*: EMSE
+
+The following content is referred from [75]
+** Problem
+Bug localization is the process by which a developer identifies buggy code that needs to be fixed to make a system safer and more reliable.
+
+** Method
+Text retrieval (TR): a software developer trying to localize the bug formulates a natural language query describing the observed bug. The query is then run through a TR engine, which returns a ranked list of code components (e.g., classes or methods, depending on the desired granularity), containing the most relevant results in the top-most positions.
+
+This is an empirical study providing new evidence on the true potential of TR bug localization approaches and the significant impact that optimizing queries can have on their effectiveness.
+
+
+used 803 bug repost from 15 open source systems used in previous bug localization experiments
+
+** Result
+highly performing queries can be extracted from the bug report text, in order to make TR eﬀective even without the aforementioned positive biases
+
+given a bug report, they can often obtain an optimal query using only words selected from its vocabulary, even when localization hints are not present
+
+** Future work
+1. The ﬁrst is to extend the analysis to a larger set of bugs, particularly from more modern systems. Additionally, we should consider method-level golden sets.
+2. The second research direction is to find a way of generating sufficient training datato attempt the construction of automatic models for formulating near-optimalqueries. The most intuitive way to do so is to log query metrics for each stepin the evolution of a query from an initial vocabulary to a near-optimal query.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -434,4 +461,6 @@ It also highlights the need for standardization of performance benchmarks to ens
 
 13. Budhiraja, A., Reddy, R., & Shrivastava, M. (2018, May). Lwe: Lda refined word embeddings for duplicate bug report detection. In Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings (pp. 165-166). | Budhiraja, A., Dutta, K., Reddy, R., & Shrivastava, M. (2018, May). DWEN: deep word embedding network for duplicate bug report detection in software repositories. In Proceedings of the 40th International Conference on Software Engineering: Companion Proceeedings (pp. 193-194).
 
-14. 
+14. Polisetty, S., Miranskyy, A., & Başar, A. (2019, September). On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners. In Proceedings of the Fifteenth International Conference on Predictive Models and Data Analytics in Software Engineering (pp. 16-25).
+
+15. Mills, C., Parra, E., Pantiuchina, J., Bavota, G., & Haiduc, S. (2020). On the relationship between bug reports and queries for text retrieval-based bug localization. Empirical Software Engineering, 1-42.

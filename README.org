@@ -91,3 +91,4 @@ I hope I could keep it work up and improve my ability to read and write.
 72. Duplicate Bug Report Detection Using Dual-Channel Convolutional Neural Networks
 73. LWE: LDA refined Word Embeddings for duplicate bug report detection | DWEN: Deep Word Embedding Network for Duplicate Bug Report Detection in Software Repositories
 74. On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners
+75. On the Relationship between Bug Reports and Queries for Text Retrieval-based Bug Localization
