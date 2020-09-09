@@ -17,7 +17,7 @@ From 25 Aug 2020 to
 13. [[#day-73-se][Day 73: LWE: LDA refined Word Embeddings for duplicate bug report detection | DWEN: Deep Word Embedding Network for Duplicate Bug Report Detection in Software Repositories]]
 14. [[#day-74-se][Day 74: On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners]]
 15. [[#day-75-se][Day 75: On the Relationship between Bug Reports and Queries for Text Retrieval-based Bug Localization]]
-
+16. [[#day-76-se][Day 76: A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -434,6 +434,36 @@ given a bug report, they can often obtain an optimal query using only words sele
 1. The ﬁrst is to extend the analysis to a larger set of bugs, particularly from more modern systems. Additionally, we should consider method-level golden sets.
 2. The second research direction is to find a way of generating sufficient training datato attempt the construction of automatic models for formulating near-optimalqueries. The most intuitive way to do so is to log query metrics for each stepin the evolution of a query from an initial vocabulary to a near-optimal query.
 
+* day 76: SE
+- *Title*: A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization
+- *Year*: 2020
+- *Proc*: MSR
+
+The following content is referred from [16]
+
+This paper is an empirical study on a large-scale comparative evaluation of IR-based tools for automatic bug localization.
+
+They divide the tools into three generations:
+1. The first-generation tools: purely on the Bag-of-Words (BoW) modeling of software libraries
+2. The second-generation tools: augment BoW-based modeling with two additional pieces of information: historical data, and structured information
+3. The third-generation tools: exploit proximity, order, and semantic relationships between the terms
+
+Retrieving relevant source code files from software libraries in response to a bug report query plays an important role in the maintenance of a software project.
+
+** Design
+over 20,000 bug reports drawn from a diverse collection of Java, C/C++, and Python projects
+
+*** Evaluation Metrics
+Mean Average Precision (MAP), this metric is the mean of the Average Precisions (AP) calculated for each of the bug report queries.
+
+The MAP values are subject to statistical significance testing using the Student's Paired t-Test.
+
+** Result
+The third-generation tools are significantly superior to the older tools. The word embeddings generated using code files writted in one language are effective for retrieval from code libraries in other languages.
+
+** Future work
+For future they intend to evaluate more retrieval algorithms from each generation on open-source as well industry projects.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -464,3 +494,5 @@ given a bug report, they can often obtain an optimal query using only words sele
 14. Polisetty, S., Miranskyy, A., & Başar, A. (2019, September). On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners. In Proceedings of the Fifteenth International Conference on Predictive Models and Data Analytics in Software Engineering (pp. 16-25).
 
 15. Mills, C., Parra, E., Pantiuchina, J., Bavota, G., & Haiduc, S. (2020). On the relationship between bug reports and queries for text retrieval-based bug localization. Empirical Software Engineering, 1-42.
+
+16. AKBAR, S., & Kak, A. C. (2020, October). A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization. In Conference on Mining Software Repositories (MSR’20).
