@@ -18,6 +18,7 @@ From 25 Aug 2020 to
 14. [[#day-74-se][Day 74: On Usefulness of the Deep-Learning-Based Bug Localization Models to Practitioners]]
 15. [[#day-75-se][Day 75: On the Relationship between Bug Reports and Queries for Text Retrieval-based Bug Localization]]
 16. [[#day-76-se][Day 76: A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization]]
+17. [[#day-77-se][Day 77: BuGL - A Cross-Language Dataset for Bug Localization]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -464,6 +465,24 @@ The third-generation tools are significantly superior to the older tools. The wo
 ** Future work
 For future they intend to evaluate more retrieval algorithms from each generation on open-source as well industry projects.
 
+* Day 77: SE
+- *Title*: BuGL - A Cross-Language Dataset for Bug Localization
+- *Year*: 2020
+
+The following content is referred from [17]
+** Problem
+The existing dataset do not comprise projects of other programming languages, despite of the need to investigate specific and cross project bug localization.
+
+** Method
+They present BuGL, a large-scale cross-language dataset. BuGL constitutes of more than 10,000 bug reports drawn from opensource projects written in four programming languages, namely C, C++, Java, and Python. The dataset consists of information which includes Bug Reports and Pull-Requests.
+
+** Future work
+- To extend this dataset, they plan to include repositories from various domains and programming languages. The aim is to include a diverse range of bugs that can help to formulate new sets of bug localization techniques.
+
+- More emphasis will be given towards adding new features in the dataset for more in-depth analysis of bug reports.
+
+- They are also planning to create an automatic tool that could deal with duplicate bug reports and pull requests.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -496,3 +515,5 @@ For future they intend to evaluate more retrieval algorithms from each generatio
 15. Mills, C., Parra, E., Pantiuchina, J., Bavota, G., & Haiduc, S. (2020). On the relationship between bug reports and queries for text retrieval-based bug localization. Empirical Software Engineering, 1-42.
 
 16. AKBAR, S., & Kak, A. C. (2020, October). A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization. In Conference on Mining Software Repositories (MSR’20).
+
+17. Muvva, S., Rao, A. E., & Chimalakonda, S. (2020). BuGL--A Cross-Language Dataset for Bug Localization. arXiv preprint arXiv:2004.08846.
