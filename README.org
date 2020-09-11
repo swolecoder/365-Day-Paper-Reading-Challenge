@@ -94,3 +94,4 @@ I hope I could keep it work up and improve my ability to read and write.
 75. On the Relationship between Bug Reports and Queries for Text Retrieval-based Bug Localization
 76. A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization
 77. BuGL - A Cross-Language Dataset for Bug Localization
+78. Bench4BL: Reproducibility Study on the Performance of IR-Based Bug Localization

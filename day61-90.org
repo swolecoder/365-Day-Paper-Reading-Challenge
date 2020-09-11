@@ -19,6 +19,7 @@ From 25 Aug 2020 to
 15. [[#day-75-se][Day 75: On the Relationship between Bug Reports and Queries for Text Retrieval-based Bug Localization]]
 16. [[#day-76-se][Day 76: A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization]]
 17. [[#day-77-se][Day 77: BuGL - A Cross-Language Dataset for Bug Localization]]
+18. [[#day-78-se][Day 78: Bench4BL: Reproducibility Study on the Performance of IR-Based Bug Localization]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -483,6 +484,42 @@ They present BuGL, a large-scale cross-language dataset. BuGL constitutes of mor
 
 - They are also planning to create an automatic tool that could deal with duplicate bug reports and pull requests.
 
+* day 78: SE
+- *Title*: Bench4BL: Reproducibility Study on the Performance of IR-Based Bug Localization
+- *Year*: 2018
+- *Proc*: ISSTA
+
+The following content is referred from [18]
+** Problem
+information retrieval (IR) techniques to automate the localization of buggy files
+
+They report on a comprehensive reproduction study of six state-of-the-art IR-based bug localization (IRBL) techniques. This study applies not only subjects used in existing studies (old subjects) but also 46 new subjects (61,431 Java files and 9,459 bug reports) to the IRBL techniques.
+
+** Method
+*** Performance Metrics
+1. Precision
+Precision@k, this metric presents an estimation of how many files are correctly recommended within given top k files
+2. Recall
+Recall@k, this metric estimates how many files are correctly recommended within given top k files over the actually fixed files by a developer for a given bug report
+3. Average Precision (AP)
+4. Mean Average Precision (MAP)
+5. Mean Reciprocal Rank (MRR)
+*** IRBL Techniques
+- (2012) - BugLocator [53] leverages similar bug reports that have been previously fixed and relies on revised Vector Space Model (rVSM) for the recommendation. 
+- (2013) - BLUiR [37] extracts code entities such as classes, methods, and variable names from bug reports and leverages them to localize files. 
+- (2014) - BRTracer [46] analyzes stack traces shown in bug reports to improve bug localization accuracy. 
+- (2014) - AmaLgam [44] utilizes revision history in addition to similar reports and code entities. 
+- (2015) - BLIA [52] combines information such as similar reports, revision history, code entities, and stack trace information all together to improve the performance of IRBL. 
+- (2016) - Locus [45], the most recent technique, leverages code change information.
+
+** Result
+1. IRBL techniques generally yield better performance on recent subjects. To estimate the actual performance that is reached by state-of-the-art approaches, they recommend that researchers should use up-to-date subjects.
+
+2. Their experiments have shown that when matching the bug report with its code version, IRBL techniques are most effective. IRBL techniques should consider exploiting version metadata from bug report and select appropriate code base for attempting to localize the bug.
+
+** Future work
+(1) Investigating relationships between project/report/file characteristics and the performance of different IRBL techniques (cf. D&C approach [19]), (2) building a decision model that predicts which IRBL technique performs better than others for a given project of file, and (3) improving preprocessing steps of IRBL techniques to reduce noise.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -517,3 +554,5 @@ They present BuGL, a large-scale cross-language dataset. BuGL constitutes of mor
 16. AKBAR, S., & Kak, A. C. (2020, October). A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization. In Conference on Mining Software Repositories (MSR’20).
 
 17. Muvva, S., Rao, A. E., & Chimalakonda, S. (2020). BuGL--A Cross-Language Dataset for Bug Localization. arXiv preprint arXiv:2004.08846.
+
+18. Lee, J., Kim, D., Bissyandé, T. F., Jung, W., & Le Traon, Y. (2018, July). Bench4bl: reproducibility study on the performance of ir-based bug localization. In Proceedings of the 27th ACM SIGSOFT international symposium on software testing and analysis (pp. 61-72).
