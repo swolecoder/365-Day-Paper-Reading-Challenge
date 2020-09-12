@@ -20,6 +20,7 @@ From 25 Aug 2020 to
 16. [[#day-76-se][Day 76: A Large-Scale Comparative Evaluation of IR-Based Tools for Bug Localization]]
 17. [[#day-77-se][Day 77: BuGL - A Cross-Language Dataset for Bug Localization]]
 18. [[#day-78-se][Day 78: Bench4BL: Reproducibility Study on the Performance of IR-Based Bug Localization]]
+19. [[#day-79-se][Day 79: Using Observed Behavior to Reformulate Queries during Text Retrieval-based Bug Localization]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -520,6 +521,24 @@ Recall@k, this metric estimates how many files are correctly recommended within 
 ** Future work
 (1) Investigating relationships between project/report/file characteristics and the performance of different IRBL techniques (cf. D&C approach [19]), (2) building a decision model that predicts which IRBL technique performs better than others for a given project of file, and (3) improving preprocessing steps of IRBL techniques to reduce noise.
 
+* day 79: SE
+- *Title*: Using Observed Behavior to Reformulate Queries during Text Retrieval-based Bug Localization
+- *Year*: 2017
+- *Proc*: ICSME
+
+The following content is referred from [19]
+** Problem
+The problem with such low quality queries is the presence of irrelevant terms (i.e., noise) and previous research has shown that removing such terms from the queries leads to substantial improvement in code retrieval.
+
+** Method
+They conducted an empirical study using bug data from 21 open source systems to reformulate 451 low-quality queries. They compare the accuracy achieved by four TR-based bug localization approaches at three code granularities (i.e., ﬁles, classes, and methods), when using the complete bug reports as queries versus a reduced version corresponding to the OB only.
+
+** Result
+The results show that the reformulated queries improve TR-based bug localization for all approaches by 147.4% and 116.6% on average, in terms of MRR and MAP, respectively. They conclude that using the OB descriptions is a simple and effective technique to reformulate low-quality queries during TR-based bug localization.
+
+** Future work
+As for future work, they will investigate ways to further improve our query reformulation technique. Speciﬁcally, they will investigate boosting OB query terms that occur frequently in other parts of the bug report and including terms found in code snippets. They also plan to closely investigate other natural language descriptions contained in bug reports (e.g., the expected behavior and the steps to reproduce the bug), and ways to automatically detect such contents to reformulate low-quality queries. Finally, expanding the evaluation on more data sets, using more TRBL approaches, and conducting studies with end users is also planned.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -556,3 +575,5 @@ Recall@k, this metric estimates how many files are correctly recommended within 
 17. Muvva, S., Rao, A. E., & Chimalakonda, S. (2020). BuGL--A Cross-Language Dataset for Bug Localization. arXiv preprint arXiv:2004.08846.
 
 18. Lee, J., Kim, D., Bissyandé, T. F., Jung, W., & Le Traon, Y. (2018, July). Bench4bl: reproducibility study on the performance of ir-based bug localization. In Proceedings of the 27th ACM SIGSOFT international symposium on software testing and analysis (pp. 61-72).
+
+19. Chaparro, O., Florez, J. M., & Marcus, A. (2017, September). Using observed behavior to reformulate queries during text retrieval-based bug localization. In 2017 IEEE International Conference on Software Maintenance and Evolution (ICSME) (pp. 376-387). IEEE.
