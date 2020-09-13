@@ -21,6 +21,8 @@ From 25 Aug 2020 to
 17. [[#day-77-se][Day 77: BuGL - A Cross-Language Dataset for Bug Localization]]
 18. [[#day-78-se][Day 78: Bench4BL: Reproducibility Study on the Performance of IR-Based Bug Localization]]
 19. [[#day-79-se][Day 79: Using Observed Behavior to Reformulate Queries during Text Retrieval-based Bug Localization]]
+20. [[#day-80-se][Day 80: From Word Embeddings To Document Similarities for
+Improved Information Retrieval in Software Engineering]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -539,6 +541,24 @@ The results show that the reformulated queries improve TR-based bug localization
 ** Future work
 As for future work, they will investigate ways to further improve our query reformulation technique. Speciﬁcally, they will investigate boosting OB query terms that occur frequently in other parts of the bug report and including terms found in code snippets. They also plan to closely investigate other natural language descriptions contained in bug reports (e.g., the expected behavior and the steps to reproduce the bug), and ways to automatically detect such contents to reformulate low-quality queries. Finally, expanding the evaluation on more data sets, using more TRBL approaches, and conducting studies with end users is also planned.
 
+* day 80: SE
+- *Title*: From Word Embeddings To Document Similarities for Improved Information Retrieval in Software Engineering
+- *Year*: 2016
+- *Proc*: ICSE
+
+The following content is referred from [20]
+** Problem
+The application of information retrieval techniques to searchtasks in software engineering is made difficult by the lexical gap between search queries, usually expressed in naturallanguage  (e.g., English), and retrieved documents, usually expressed in code (e.g., programming languages).
+
+** Method
+They propose bridging the lexical gap by projecting natural language statements and code snippets as meaning vectors in a shared representation space. In the proposed architecture, word embeddings are ﬁrst trained on API documents, tutorials, and reference documents, and then aggregated in order to estimate semantic similarities between documents.
+
+** Result
+Empirical evaluations show that the learned vector space embeddings lead to improvements in a previously explored bug localization task and a newly deﬁned task of linking API documents to computer programming questions.
+
+** Future work
+They plan to explore alternative methods for aggregating word-level similarities into a document-level similarity function, such as the Word Mover’s Distance recently proposed. In parallel, they will explore methods that train document embeddings directly, such as the Paragraph Vectors of Le and Mikolov, and investigate their generalization from shallow bags-of-words inputs to higher level structures, such as sequences and (abstract) syntax trees.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -577,3 +597,5 @@ As for future work, they will investigate ways to further improve our query refo
 18. Lee, J., Kim, D., Bissyandé, T. F., Jung, W., & Le Traon, Y. (2018, July). Bench4bl: reproducibility study on the performance of ir-based bug localization. In Proceedings of the 27th ACM SIGSOFT international symposium on software testing and analysis (pp. 61-72).
 
 19. Chaparro, O., Florez, J. M., & Marcus, A. (2017, September). Using observed behavior to reformulate queries during text retrieval-based bug localization. In 2017 IEEE International Conference on Software Maintenance and Evolution (ICSME) (pp. 376-387). IEEE.
+
+20. Ye, X., Shen, H., Ma, X., Bunescu, R., & Liu, C. (2016, May). From word embeddings to document similarities for improved information retrieval in software engineering. In Proceedings of the 38th international conference on software engineering (pp. 404-415).
