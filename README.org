@@ -98,3 +98,4 @@ I hope I could keep it work up and improve my ability to read and write.
 79. Using Observed Behavior to Reformulate Queries during Text Retrieval-based Bug Localization
 80. From Word Embeddings To Document Similarities for Improved Information Retrieval in Software Engineering
 81. Are Bug Reports Enough for Text Retrieval-based Bug Localization?
+82. Network-Clustered Multi-Modal Bug Localization

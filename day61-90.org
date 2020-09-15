@@ -24,6 +24,7 @@ From 25 Aug 2020 to
 20. [[#day-80-se][Day 80: From Word Embeddings To Document Similarities for
 Improved Information Retrieval in Software Engineering]]
 21. [[#day-81-se][Day 81: Are Bug Reports Enough for Text Retrieval-based Bug Localization?]]
+22. [[#day-82-se][Day 82: Network-Clustered Multi-Modal Bug Localization]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -577,6 +578,26 @@ Through this analysis they show that in most cases the bug report vocabulary (i.
 ** Future work
 Their results suggest that the next major step in improving TR-based bug localization is the ability to formulate these near-optimal queries.
 
+* day 82: SE
+- *Title*: Network-Clustered Multi-Modal Bug Localization
+- *Year*: 2018
+- *Journal*: TSE
+
+The following content is referred from [22]
+** Problem
+While both techniques ultimately generate a ranked list of program elements that likely contain a bug, they only consider one source of information — either bug reports or program spectra — which is not optimal.
+
+** Method
+In light of this deﬁciency, this paper presents a new approach dubbed Network-clustered Multi-modal Bug Localization (NetML), which utilizes multi-modal information from both bug reports and program spectra to localize bugs. NetML facilitates an effective bug localization by carrying out a joint optimization of bug localization error and clustering of both bug reports and program elements (i.e., methods). The clustering is achieved through the incorporation of network Lasso regularization, which incentivizes the model parameters of similar bug reports and similar program elements to be close together.
+
+** Result
+Extensive experiments on 355 real bugs from seven software systems have been conducted to benchmark NetML against various state-of-the-art localization methods. The results show that NetML surpasses the best-performing baseline by 31.82%, 22.35%, 19.72%, and 19.24%, in terms of the number of bugs successfully localized when a developer inspects the top 1, 5, and 10 methods and Mean Average Precision (MAP), respectively.
+
+** Future work
+They plan to reduce the threats to external validity by investigating more real bugs from additional software systems, written in various programming languages.
+
+They wish to consider a richer set of structural information within a program element, which carries additional semantics beyond the lexical terms. In particular, they would like to leverage both program structure information and lexical source code to localize potential bugs. They also plan to develop a more sophisticated technique, e.g., based on deep learning, to automatically learn the feature representation of bug reports and program elements.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -619,3 +640,5 @@ Their results suggest that the next major step in improving TR-based bug localiz
 20. Ye, X., Shen, H., Ma, X., Bunescu, R., & Liu, C. (2016, May). From word embeddings to document similarities for improved information retrieval in software engineering. In Proceedings of the 38th international conference on software engineering (pp. 404-415).
 
 21. Mills, C., Pantiuchina, J., Parra, E., Bavota, G., & Haiduc, S. (2018, September). Are bug reports enough for text retrieval-based bug localization?. In 2018 IEEE International Conference on Software Maintenance and Evolution (ICSME) (pp. 381-392). IEEE.
+
+22. Hoang, T., Oentaryo, R. J., Le, T. D. B., & Lo, D. (2018). Network-clustered multi-modal bug localization. IEEE Transactions on Software Engineering, 45(10), 1002-1023.
