@@ -25,6 +25,7 @@ From 25 Aug 2020 to
 Improved Information Retrieval in Software Engineering]]
 21. [[#day-81-se][Day 81: Are Bug Reports Enough for Text Retrieval-based Bug Localization?]]
 22. [[#day-82-se][Day 82: Network-Clustered Multi-Modal Bug Localization]]
+23. [[#day-83-se][Day 83: Potential Biases in Bug Localization: Do They Matter?]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -598,6 +599,30 @@ They plan to reduce the threats to external validity by investigating more real 
 
 They wish to consider a richer set of structural information within a program element, which carries additional semantics beyond the lexical terms. In particular, they would like to leverage both program structure information and lexical source code to localize potential bugs. They also plan to develop a more sophisticated technique, e.g., based on deep learning, to automatically learn the feature representation of bug reports and program elements.
 
+* day 83: SE
+- *Title*: Potential Biases in Bug Localization: Do They Matter?
+- *Year*: 2014
+- *Proc*: ASE
+
+The following content is referred from [83]
+
+** Problem
+Many projects receive many reports of bugs and it is challenging for developers to manually debug and ﬁx them. To mitigate this problem, past studies have proposed information retrieval (IR)-based bug localization techniques, which takes as input a textual description of a bug stored in an issue tracking system, and returns a list of potentially buggy source code ﬁles.
+
+** Method
+This study investigates the extent these potential biases affect the results of a bug localization technique and whether bug localization researchers need to consider these potential biases when evaluating their solutions. In this paper, they analyse issue reports from three diﬀerent projects: HTTPClient, Jackrabbit, and Lucene-Java to examine the impact of above three biases on bug localization.
+
+In this work, they focus on investigating three potential biases:
+- Wrongly Classiﬁed Reports
+- Already Localized Reports
+- Incorrect Ground Truth Files
+
+** Result
+Their results show that one of these biases signiﬁcantly and substantially impacts bug localization results, while the other two biases have negligible or minor impact.
+
+** Future work
+They plan to investigate more bug reports from additional systems to reduce the threats to external validity. They also plan to investigate additional biases that might affect bug localization studies.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -642,3 +667,5 @@ They wish to consider a richer set of structural information within a program el
 21. Mills, C., Pantiuchina, J., Parra, E., Bavota, G., & Haiduc, S. (2018, September). Are bug reports enough for text retrieval-based bug localization?. In 2018 IEEE International Conference on Software Maintenance and Evolution (ICSME) (pp. 381-392). IEEE.
 
 22. Hoang, T., Oentaryo, R. J., Le, T. D. B., & Lo, D. (2018). Network-clustered multi-modal bug localization. IEEE Transactions on Software Engineering, 45(10), 1002-1023.
+
+23. Kochhar, P. S., Tian, Y., & Lo, D. (2014, September). Potential biases in bug localization: Do they matter?. In Proceedings of the 29th ACM/IEEE international conference on Automated software engineering (pp. 803-814).
