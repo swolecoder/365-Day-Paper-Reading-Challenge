@@ -26,6 +26,7 @@ Improved Information Retrieval in Software Engineering]]
 21. [[#day-81-se][Day 81: Are Bug Reports Enough for Text Retrieval-based Bug Localization?]]
 22. [[#day-82-se][Day 82: Network-Clustered Multi-Modal Bug Localization]]
 23. [[#day-83-se][Day 83: Potential Biases in Bug Localization: Do They Matter?]]
+24. [[#day-84-nlp][Day 84: Efficient Transformers: A Survey]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -623,6 +624,18 @@ Their results show that one of these biases signiﬁcantly and substantially imp
 ** Future work
 They plan to investigate more bug reports from additional systems to reduce the threats to external validity. They also plan to investigate additional biases that might affect bug localization studies.
 
+* day 84: NLP
+- *Title*: Efficient Transformers: A Survey
+- *Year*: 2020
+
+The following content is referred from [84]
+
+This survey sets out to provide a comprehensive overview of the recent advances made in this class of models.
+
+Transformers are multi-layered architectures formed by stacking Transformer blocks on top of one another.
+
+It is important to note the diﬀerences in the mode of usage of the Transformer block. Transformers can primarily be used in three ways, namely: (1) encoder-only (e.g., for classiﬁcation), (2) decoder-only (e.g., for language modeling), and (3) encoder-decoder (e.g., for machine translation).
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -669,3 +682,5 @@ They plan to investigate more bug reports from additional systems to reduce the 
 22. Hoang, T., Oentaryo, R. J., Le, T. D. B., & Lo, D. (2018). Network-clustered multi-modal bug localization. IEEE Transactions on Software Engineering, 45(10), 1002-1023.
 
 23. Kochhar, P. S., Tian, Y., & Lo, D. (2014, September). Potential biases in bug localization: Do they matter?. In Proceedings of the 29th ACM/IEEE international conference on Automated software engineering (pp. 803-814).
+
+24. No APA avaliable
