@@ -27,6 +27,8 @@ Improved Information Retrieval in Software Engineering]]
 22. [[#day-82-se][Day 82: Network-Clustered Multi-Modal Bug Localization]]
 23. [[#day-83-se][Day 83: Potential Biases in Bug Localization: Do They Matter?]]
 24. [[#day-84-nlp][Day 84: Efficient Transformers: A Survey]]
+25. [[#day-85-nlp][Day 85: GraphCodeBERT: pre-training code representations with data flow]]
+
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -491,7 +493,7 @@ They present BuGL, a large-scale cross-language dataset. BuGL constitutes of mor
 
 - They are also planning to create an automatic tool that could deal with duplicate bug reports and pull requests.
 
-* day 78: SE
+* Day 78: SE
 - *Title*: Bench4BL: Reproducibility Study on the Performance of IR-Based Bug Localization
 - *Year*: 2018
 - *Proc*: ISSTA
@@ -527,7 +529,7 @@ Recall@k, this metric estimates how many files are correctly recommended within 
 ** Future work
 (1) Investigating relationships between project/report/file characteristics and the performance of different IRBL techniques (cf. D&C approach [19]), (2) building a decision model that predicts which IRBL technique performs better than others for a given project of file, and (3) improving preprocessing steps of IRBL techniques to reduce noise.
 
-* day 79: SE
+* Day 79: SE
 - *Title*: Using Observed Behavior to Reformulate Queries during Text Retrieval-based Bug Localization
 - *Year*: 2017
 - *Proc*: ICSME
@@ -545,7 +547,7 @@ The results show that the reformulated queries improve TR-based bug localization
 ** Future work
 As for future work, they will investigate ways to further improve our query reformulation technique. Speciﬁcally, they will investigate boosting OB query terms that occur frequently in other parts of the bug report and including terms found in code snippets. They also plan to closely investigate other natural language descriptions contained in bug reports (e.g., the expected behavior and the steps to reproduce the bug), and ways to automatically detect such contents to reformulate low-quality queries. Finally, expanding the evaluation on more data sets, using more TRBL approaches, and conducting studies with end users is also planned.
 
-* day 80: SE
+* Day 80: SE
 - *Title*: From Word Embeddings To Document Similarities for Improved Information Retrieval in Software Engineering
 - *Year*: 2016
 - *Proc*: ICSE
@@ -563,7 +565,7 @@ Empirical evaluations show that the learned vector space embeddings lead to impr
 ** Future work
 They plan to explore alternative methods for aggregating word-level similarities into a document-level similarity function, such as the Word Mover’s Distance recently proposed. In parallel, they will explore methods that train document embeddings directly, such as the Paragraph Vectors of Le and Mikolov, and investigate their generalization from shallow bags-of-words inputs to higher level structures, such as sequences and (abstract) syntax trees.
 
-* day 81: SE
+* Day 81: SE
 - *Title*: Are Bug Reports Enough for Text Retrieval-based Bug Localization?
 - *Year*: 2018
 
@@ -580,7 +582,7 @@ Through this analysis they show that in most cases the bug report vocabulary (i.
 ** Future work
 Their results suggest that the next major step in improving TR-based bug localization is the ability to formulate these near-optimal queries.
 
-* day 82: SE
+* Day 82: SE
 - *Title*: Network-Clustered Multi-Modal Bug Localization
 - *Year*: 2018
 - *Journal*: TSE
@@ -600,7 +602,7 @@ They plan to reduce the threats to external validity by investigating more real 
 
 They wish to consider a richer set of structural information within a program element, which carries additional semantics beyond the lexical terms. In particular, they would like to leverage both program structure information and lexical source code to localize potential bugs. They also plan to develop a more sophisticated technique, e.g., based on deep learning, to automatically learn the feature representation of bug reports and program elements.
 
-* day 83: SE
+* Day 83: SE
 - *Title*: Potential Biases in Bug Localization: Do They Matter?
 - *Year*: 2014
 - *Proc*: ASE
@@ -624,7 +626,7 @@ Their results show that one of these biases signiﬁcantly and substantially imp
 ** Future work
 They plan to investigate more bug reports from additional systems to reduce the threats to external validity. They also plan to investigate additional biases that might affect bug localization studies.
 
-* day 84: NLP
+* Day 84: NLP
 - *Title*: Efficient Transformers: A Survey
 - *Year*: 2020
 
@@ -635,6 +637,30 @@ This survey sets out to provide a comprehensive overview of the recent advances 
 Transformers are multi-layered architectures formed by stacking Transformer blocks on top of one another.
 
 It is important to note the diﬀerences in the mode of usage of the Transformer block. Transformers can primarily be used in three ways, namely: (1) encoder-only (e.g., for classiﬁcation), (2) decoder-only (e.g., for language modeling), and (3) encoder-decoder (e.g., for machine translation).
+
+* Day 85: NLP
+- *Title*: GraphCodeBERT: pre-training code representations with data flow
+- *Year*: 2020
+
+The following content is referred from [25]
+** Problem
+However, existing pre-trained models regard a code snippet as a sequence of tokens, while ignoring the inherent structure of code, which provides crucial code semantics and would enhance the code understanding process.
+
+Existing methods regard a source code as a sequence of tokens and pre-train models on source code to support code-related tasks such as code search, code completion, code summarization.
+
+** Method
+Data flow is a graph, in which nodes represent variables and edges represent the relation of“where-the-value-comes-from” between variables. Compared with AST, data flow is neat and doesnot bring an unnecessarily deep hierarchy, the property of which makes the model more efficient.
+
+They present GraphCodeBERT, a pre-trained model for programminglanguage that considers the inherent structure of code. Instead of taking syntactic-level structure of code like abstract syntax tree (AST), they use data flow in the pre-training stage, which is a semantic-level structure of code that encodes the relation of "where-the-value-comes-from" between variables. Such a semantic-level structure is neat and does not bring an unnecessarily deep hierarchy of AST, the property of which makes the model more efficient. We develop GraphCodeBERT based on Transformer.
+
+*** Pre-training tasks
+1. masked language modeling
+2. data flow edge prediction for learning representation from data flow
+3. variable-alignment across source code and data flow for aligning representation between source code and data flow
+
+** Result
+They evaluate the model on four tasks, including code search, clone detection, code translation, and code reﬁnement. Results show that code structure and newly introduced pre-training tasks can improve GraphCodeBERT and achieves state-of-the-art performance on the four downstream tasks. They further show that the model prefers structure-level attentions over token-level attentions in the task of code search.
+
 
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
@@ -683,4 +709,6 @@ It is important to note the diﬀerences in the mode of usage of the Transformer
 
 23. Kochhar, P. S., Tian, Y., & Lo, D. (2014, September). Potential biases in bug localization: Do they matter?. In Proceedings of the 29th ACM/IEEE international conference on Automated software engineering (pp. 803-814).
 
-24. No APA avaliable
+24. No APA available
+
+25. APA is unavailable
