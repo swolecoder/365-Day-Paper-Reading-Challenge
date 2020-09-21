@@ -28,7 +28,8 @@ Improved Information Retrieval in Software Engineering]]
 23. [[#day-83-se][Day 83: Potential Biases in Bug Localization: Do They Matter?]]
 24. [[#day-84-nlp][Day 84: Efficient Transformers: A Survey]]
 25. [[#day-85-nlp][Day 85: GraphCodeBERT: pre-training code representations with data flow]]
-
+26. [[#day-86-nlp][Day 86: Improve Document Embedding for Text Categorization Through Deep Siamese Neural Network]]
+27. [[#day-87-nlp][Day 87: ]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -661,6 +662,68 @@ They present GraphCodeBERT, a pre-trained model for programminglanguage that con
 ** Result
 They evaluate the model on four tasks, including code search, clone detection, code translation, and code reﬁnement. Results show that code structure and newly introduced pre-training tasks can improve GraphCodeBERT and achieves state-of-the-art performance on the four downstream tasks. They further show that the model prefers structure-level attentions over token-level attentions in the task of code search.
 
+* Day 86: NLP
+- *Title*: Improve Document Embedding for Text Categorization Through Deep Siamese Neural Network
+- *Year*: 2020
+
+The following content is referred from [26]
+** Problem
+Due to the increasing amount of data on the internet, finding a highly-informative, low-dimensional representation for text is one of the main challenges for efficient natural language processing tasks including text classification.
+
+** Method
+This approach map the documents with similar topics to a similar space in vector space representation. To obtain representation for large text, we propose the utilization of deep Siamese neural networks. To embed document relevance in topics in the distributed representation, we use a Siamese neural network to jointly learn document representations. Our Siamese network consists of two sub-network of multi-layer perceptron.
+
+Deep Siamese neural networks can be used to jointly learn similar document representations for documents with the same topic.
+
+Siamese neural networks are composed of two sub-networks. If the type of input for each sub-network is the same, the sub-networks could have the similar structure. The outputs of these sub-networks are concatenated and input into the joint layer. This architecture makes it possible for the network to extract features from two similar inputs and assign a similarity score using the extracted feature vectors.
+
+This paper proposes a method for creating a semantic representation that contains information about the relevance of a document to other documents in a topic using deep Siamese neural network. This method can be used to train a dense embedding for each document in the corpus. Documents’ relevance to a common topic can be assessed using these embeddings. The deep Siamese neural network is composed of two multi-layer perceptron networks as sub-networks. The deepest layer of each MLP network is used as the document representation. Our network is trained to maximize the relevance score for a pair of documents with the same topic and minimize the relevance score for documents with different topics.
+
+** Result
+We examine our representation for the text categorization task on BBC news dataset. The results show that the proposed representations outperform the conventional and state-of-the-art representations in the text classification task on this dataset.
+
+** Future work
+Using T-SNE plots, we also show that this improved representation results in better topic separation. Other tasks that use large document datasets could benefit from document representations created using deep Siamese neural networks. Performance could be improved by further optimization of hyper-parameters.
+
+* Day 87: NLP
+- *Title*: Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
+- *Year*: 2019
+- *Proc*: EMNLP 2019
+
+The following content is referred from [27]
+** Problem
+sentence-pair regression tasks like semantic textual similarity (STS)
+
+BERT requires that both sentences are fed into the network, which causes a massive computational overhead.
+** Method
+They present Sentence-BERT (SBERT), a modification of the pretrained BERT network that use siamese and triplet network structures to derive semantically meaningful sentennce embeddings that can be compared using cosine-similarity.
+
+
+The siamese network architecture enables that fixed-sized vectors for input sentences can be de-rived. Using a similarity measure like cosine-similarity or Manhatten / Euclidean distance, semantically similar sentences can be found. These similarity measures can be performed extremely efficient on modern hardware, allowing  SBERTto be used for semantic similarity search as wellas for clustering.
+
+** Result
+We evaluate SBERT and SRoBERTa on common STS tasks and transfer learning tasks, where it outperforms other state-of-the-art sentence embeddings methods.
+
+
+* Day 88: NLP
+- *Title*: Lessons Learned from Applying off-the-shelf BERT: There is no Silver Bullet
+- *Year*: 2020
+
+The following content is referred from [28]
+** Problem
+The same year Bahdanau et al. presented the attention mechanism aimed at focusing on speciﬁc words within the preﬁx, in order to make the most accurate prediction of the next word while mapping one sequence to another.
+
+We explore the use of off-the-shelf BERT models and share the results of our experiments and compare their results to those of LSTM networks and more simple baselines.
+
+** Method
+We conducted a series of experiments with pre-trained off-the-shelf models which were down-loaded as modules and used with Keras wrappingand TensorFlow Hub. Weused one model as is, we fine-tuned the second one for the downstream task.
+
+** Result
+We show that the complexity and computational cost of BERT is not a guarantee for enhanced predictive performance in the classiﬁcation tasks at hand.
+
+Both off-the-shelf models, even a ﬁne-tuned BERT model, were outperformed by the baselines. Not only was the performance inferior to an LSTM model that also captures long term linguistic regularities; the performance of the BERT model was also outperformed by a classic SVM classiﬁer that used tf-idf bag-of-words text representation in the Israeli perspective recall metric.
+** Future work
+delve deeply into a model’s details in order to excel at predictive performance
 
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
@@ -712,3 +775,9 @@ They evaluate the model on four tasks, including code search, clone detection, c
 24. No APA available
 
 25. APA is unavailable
+
+26. 
+
+27. Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. ArXiv.
+
+28. 
