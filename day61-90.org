@@ -29,7 +29,8 @@ Improved Information Retrieval in Software Engineering]]
 24. [[#day-84-nlp][Day 84: Efficient Transformers: A Survey]]
 25. [[#day-85-nlp][Day 85: GraphCodeBERT: pre-training code representations with data flow]]
 26. [[#day-86-nlp][Day 86: Improve Document Embedding for Text Categorization Through Deep Siamese Neural Network]]
-27. [[#day-87-nlp][Day 87: ]]
+27. [[#day-87-nlp][Day 87: Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks]]
+28. [[#day-88-ml][Day 88: Fast Logistic Regression for Text Categorization with Variable-Length N-grams]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -725,6 +726,26 @@ Both off-the-shelf models, even a ﬁne-tuned BERT model, were outperformed by t
 ** Future work
 delve deeply into a model’s details in order to excel at predictive performance
 
+* Day 89: ML
+- *Title*: Fast Logistic Regression for Text Categorization with Variable-Length N-grams
+- *Year*: 2008
+- *Proc*: KDD
+
+The following content is referred from [29]
+** Problem
+With the method presented in this paper they study the problem of learning the tokenization of the input text, rather than explicitly fixing it in advance (as in the bag of words model).
+
+** Method
+They present a coordinate-wise gradient ascent technique for learning logistic regression in the space of all (word or character) n-gram sequences in the training data. Our method exploits the inherent structure of the n-gram feature space in order to automatically provide a compact set of highly discriminative n-gram features.
+
+** Result
+They demonstrate the efficiency of their approach compared to state-of-the-art classifiers used for text categorization such as cyclic coordinate descent logistic regression and support vector machines.
+
+** Future work
+1. adding regularization
+
+2. supervised entity extraction and unsupervised or semi-supervised text clustering
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -781,3 +802,5 @@ delve deeply into a model’s details in order to excel at predictive performanc
 27. Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. ArXiv.
 
 28. 
+
+29. Ifrim, G., Bakir, G., & Weikum, G. (2008, August). Fast logistic regression for text categorization with variable-length n-grams. In Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 354-362).
