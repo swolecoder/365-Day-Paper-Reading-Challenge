@@ -1,5 +1,5 @@
 * Duration
-From 25 Aug 2020 to
+From 25 Aug 2020 to 23 Sep 2020
 
 * Content
 1. [[#day-61-nlp][Day 61: Contextual Word Representations: A Contextual Introduction]]
@@ -30,7 +30,9 @@ Improved Information Retrieval in Software Engineering]]
 25. [[#day-85-nlp][Day 85: GraphCodeBERT: pre-training code representations with data flow]]
 26. [[#day-86-nlp][Day 86: Improve Document Embedding for Text Categorization Through Deep Siamese Neural Network]]
 27. [[#day-87-nlp][Day 87: Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks]]
-28. [[#day-88-ml][Day 88: Fast Logistic Regression for Text Categorization with Variable-Length N-grams]]
+28. [[#day-88-nlp][Day 88: Lessons Learned from Applying off-the-shelf BERT: There is no Silver Bullet]]
+29. [[#day-89-ml][Day 89: Fast Logistic Regression for Text Categorization with Variable-Length N-grams]]
+30. [[#day-90-cv][FaceNet: A Uniﬁed Embedding for Face Recognition and Clustering]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction
@@ -746,6 +748,24 @@ They demonstrate the efficiency of their approach compared to state-of-the-art c
 
 2. supervised entity extraction and unsupervised or semi-supervised text clustering
 
+
+* Day 90: CV
+- *Title*: FaceNet: A Uniﬁed Embedding for Face Recognition and Clustering
+- *Year*: 2015
+
+The following content is referred from [30]
+** Problem
+Despite significant recent advances in the field of face recognition, implementing face verificationand recognition efficiently at scale presents serious challenges to current approaches.
+
+** Method
+Our method uses a deep convolutional network trainedto directly optimize the embedding itself, rather than an in-termediate  bottleneck  layer  as  in  previous  deep  learningapproaches.   To  train,  we  use  triplets  of  roughly  alignedmatching  /  non-matching  face  patches  generated  using  anovel  online  triplet  mining  method.    The  benefit  of  ourapproach  is  much  greater  representational  efficiency:  weachieve state-of-the-art face recognition performance usingonly 128-bytes per face.
+
+** Result
+On the widely used Labeled Faces in the Wild (LFW) dataset, our system achieves a new record accuracy of 99.63%. On YouTube Faces DB it achieves 95.12%. Our system cuts the error rate in comparison to the best published result [15] by 30% on both datasets.
+
+** Future work
+Future  work  will  focus  on  better  understanding  of  theerror cases,  further improving the model,  and also reduc-ing model size and reducing CPU requirements.   We willalso look into ways of improving the currently extremelylong training times,e.g. variations of our curriculum learn-ing with smaller batch sizes and offline as well as onlinepositive and negative mining.
+
 * Reference
 1. Smith, N. A. (2019). Contextual word representations: A contextual introduction. arXiv preprint arXiv:1902.06006.
 
@@ -804,3 +824,5 @@ They demonstrate the efficiency of their approach compared to state-of-the-art c
 28. 
 
 29. Ifrim, G., Bakir, G., & Weikum, G. (2008, August). Fast logistic regression for text categorization with variable-length n-grams. In Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining (pp. 354-362).
+
+30. Schroff, F., Kalenichenko, D., & Philbin, J. (2015). Facenet: A unified embedding for face recognition and clustering. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 815-823).

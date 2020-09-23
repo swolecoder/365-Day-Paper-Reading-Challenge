@@ -106,3 +106,4 @@ I hope I could keep it work up and improve my ability to read and write.
 87. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
 88. Lessons Learned from Applying off-the-shelf BERT: There is no Silver Bullet
 89. Fast Logistic Regression for Text Categorization with Variable-Length N-grams
+90. FaceNet: A Uniﬁed Embedding for Face Recognition and Clustering
