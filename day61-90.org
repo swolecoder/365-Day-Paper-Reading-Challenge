@@ -32,7 +32,7 @@ Improved Information Retrieval in Software Engineering]]
 27. [[#day-87-nlp][Day 87: Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks]]
 28. [[#day-88-nlp][Day 88: Lessons Learned from Applying off-the-shelf BERT: There is no Silver Bullet]]
 29. [[#day-89-ml][Day 89: Fast Logistic Regression for Text Categorization with Variable-Length N-grams]]
-30. [[#day-90-cv][FaceNet: A Uniﬁed Embedding for Face Recognition and Clustering]]
+30. [[#day-90-cv][Day 90: FaceNet: A Uniﬁed Embedding for Face Recognition and Clustering]]
 
 * Day 61: NLP
 - *Title*: Contextual Word Representations: A Contextual Introduction

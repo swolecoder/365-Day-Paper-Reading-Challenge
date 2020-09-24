@@ -1,0 +1,30 @@
+* Duration
+From 24 Sep 2020 to 
+
+* Content
+1. [[#day-91-se][Day 91: Towards Accurate Duplicate Bug Retrieval using Deep Learning TechniquesTowards Accurate Duplicate Bug Retrieval using Deep Learning Techniques]]
+
+* Day 91: SE
+- *Title*: Towards Accurate Duplicate Bug Retrieval using Deep Learning Techniques
+- *Year*: 2017
+- *Proc*: ICSME
+
+The following content is referred from [1]
+** Problem
+duplicate bug detection
+
+** Method
+They proposed a retrieval and classification model using Siamese Convolution Neural Networks (CNN) and Long Short Term Memory (LSTM) for accurate detection and retrieval of duplicate and similar bugs.
+
+- Unsupervised Approaches: Typical strategy used here is to create a numerical similarity scoring function like cosine similarity.
+- 
+** Result
+They report an accuracy close to 90% and recall rate close to 80%, which makes possible the practical use of such a system.
+
+** Future work
+1. Elaborate experimentation is required to train the model effectively, using techniques like batch normalization and various other tweaks. Hyperparameter tuning is done only to a certain extent, more can be done in this regard to improve the results further. The training data is also less for a model of this scale, more training data has to be consolidated for various domains (across projects) to train the model.
+2. Incorporating attention mechanism: The currently the model does not have any attention mechanism. Incorporating an appropriate attention mechanism to automatically learn the part of the bug that has to be attended and prioritized, while processing a certain part of duplicate and non duplicate bug, will deﬁnitely yield better results.
+3. Other models: Attempting models like Tree-LSTMs for the encodings of single sentence bug descriptions compared to bi-LSTMs. Paragraph vectors and document vectors 5 for the original duplicate/similar bug matching problem should be explored.
+
+* Reference
+1. Deshmukh, J., Podder, S., Sengupta, S., & Dubash, N. (2017, September). Towards accurate duplicate bug retrieval using deep learning techniques. In 2017 IEEE International conference on software maintenance and evolution (ICSME) (pp. 115-124). IEEE.
