@@ -107,3 +107,5 @@ I hope I could keep it work up and improve my ability to read and write.
 88. Lessons Learned from Applying off-the-shelf BERT: There is no Silver Bullet
 89. Fast Logistic Regression for Text Categorization with Variable-Length N-grams
 90. FaceNet: A Uniﬁed Embedding for Face Recognition and Clustering
+91. Towards Accurate Duplicate Bug Retrieval using Deep Learning Techniques
+92. Deeper Text Understanding for IR with Contextual Neural Language Modeling
