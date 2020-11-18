@@ -28,7 +28,7 @@ They report an accuracy close to 90% and recall rate close to 80%, which makes p
 3. Other models: Attempting models like Tree-LSTMs for the encodings of single sentence bug descriptions compared to bi-LSTMs. Paragraph vectors and document vectors 5 for the original duplicate/similar bug matching problem should be explored.
 
 * Day 92: NLP
-- *Title*: 
+- *Title*: Deeper Text Understanding for IR with Contextual Neural Language Modeling
 - *Year*: 2019
 - *Proc*: SIGIR
 
@@ -43,6 +43,56 @@ We adopt a simple passage level approach for document retrieval. We split a docu
 
 ** Result
 Compared to bag-of-words retrieval models, the contextual language model can better leverage language structures, bringing large improvements on queries written in natural languages.
+
+
+* Day 93: SE
+- *Title*: Automatically Repairing Programs Using Both Tests and Bug Reports
+- *Year*: 2020
+- *Source*: ArXiv
+
+The paper can be accessed from https://arxiv.org/pdf/2011.08340.pdf
+** Problem
+*** Important Concepts
+1. fault localization (FL)
+2. spectrum-based (SBFL): test executions
+3. information-retrieval (IRFL): using bug reports
+
+They developed Blues, a new statement-level IRBL technique that uses bug reports, and an unsupervised approach to localize defects.
+
+Three steps for automated program repair tools:
+1. Identifying the location of bug
+2. Producing candidate patches
+3. Validating those patches
+
+This work focuses on fault localization.
+
+To the best of our knowledge, only two repair tools, R2Fix and iFixR, use IRFL, which ranks suspicious program elements based on their similarity with bug reports.
+
+** Method
+They develop RAFL (Rank-Aggregation-Based Fault Localization), a novel FL approach that combines multiple FL techniques.
+
+RAFL measures the similarity of the two ranked lists using the Spearman footrule distance and runs the cross-entropy Monte Carlo algorithm to produce a super list of top-k statements while maximizing the similarity to the individual lists.
+
+
+We formulate the problem of combining multiple FL techniques as a rank aggregation (RA) problem.
+
+We propose to use RA algorithms for combining multiple FL techniques’ ranked lists of suspicious statements.
+
+** Result
+
+** Future Work
+
+
+* Day 94: SE
+- *Title*: iFixR: Bug Report driven Program Repair
+- *Year*: 2019
+- *Source*: FSE'19
+
+The paper can be accessed from https://arxiv.org/pdf/1907.05620.pdf
+** Problem
+** Method
+** Result
+** Future Work
 
 * Reference
 1. Deshmukh, J., Podder, S., Sengupta, S., & Dubash, N. (2017, September). Towards accurate duplicate bug retrieval using deep learning techniques. In 2017 IEEE International conference on software maintenance and evolution (ICSME) (pp. 115-124). IEEE.
